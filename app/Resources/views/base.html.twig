@@ -2,16 +2,17 @@
 <html>
 <head>
     <meta charset="UTF-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>
         {% block title %}
-            Welcome!
+            Events
         {% endblock %}
     </title>
     {% block styles %}
 
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('public/css/component.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
 
@@ -22,6 +23,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
+         {# TODO: use yep nope for feature detection (vw, vh, etc...) #}
         <script src="{{ asset('public/js/rem.js') }}"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -29,8 +31,6 @@
         <script src="{{ asset('public/js/respond.min.js') }}"></script>
         <![endif]-->
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
-        {{ ws_client() }}
-        <script src="{{ asset('public/js/socket.js') }}"></script>
     {% endblock %}
 
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
