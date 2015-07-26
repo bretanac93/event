@@ -2,13 +2,26 @@
 
 {% block body %}
 
-    {# TODO: check landscape and portrait styles #}
-
     <div class="morphsearch visible-xs" id="morphsearch">
         <form action="" class="morphsearch-form">
             <input type="text" class="morphsearch-input" placeholder="busca tu evento">
         </form>
         <span class="morphsearch-close"></span>
+    </div>
+
+    <div class="swiper-container" data-stellar-ratio="0.4">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg1.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg2.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg3.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg4.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg5.jpg') }})"></div>
+        </div>
+        <!-- Add Pagination -->
+        <div class="swiper-pagination swiper-pagination-white"></div>
+        <!-- Add Arrows -->
+        <div class="swiper-button-next swiper-button-white"></div>
+        <div class="swiper-button-prev swiper-button-white"></div>
     </div>
 
     <div class="container-fluid">
@@ -25,39 +38,6 @@
                     <img src="{{ asset('public/img/1/plus.png') }}"/>
                     <span>Sube un Evento</span>
                 </a>
-            </div>
-        </div>
-
-        <div class="row">
-            <div class="slider" data-stellar-ratio="0.4">
-                <div id="carousel" class="carousel slide" data-ride="carousel">
-                    <ol class="carousel-indicators">
-                        <li data-target="#carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#carousel" data-slide-to="1" class=""></li>
-                        <li data-target="#carousel" data-slide-to="2" class=""></li>
-                        <li data-target="#carousel" data-slide-to="3" class=""></li>
-                        <li data-target="#carousel" data-slide-to="4" class=""></li>
-                    </ol>
-                    <div class="carousel-inner">
-                        <div class="item active">
-                            <img src="{{ asset('public/img/2/bg1.jpg') }}">
-
-                            <div class="shade"></div>
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('public/img/2/bg2.jpg') }}">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('public/img/2/bg3.jpg') }}">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('public/img/2/bg4.jpg') }}">
-                        </div>
-                        <div class="item">
-                            <img src="{{ asset('public/img/2/bg5.jpg') }}">
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
 
@@ -162,8 +142,8 @@
 {% endblock %}
 
 {% block page_scripts %}
+    <script src="{{ asset('public/js/swiper.js') }}"></script>
     <script src="{{ asset('public/js/jquery.stellar.js') }}"></script>
-    <script src="{{ asset('public/js/classie.js') }}"></script>
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 

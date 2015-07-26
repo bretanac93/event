@@ -3,27 +3,6 @@ $(function () {
         var $window = $(window),
             $menu = $('.st-menu');
 
-        var fixedHandler = (function () {
-            var topbar = 49,
-                ratio = 1.777777777777778, //aspect ratio for 1920x1080 images
-                compute = function () {
-                    return topbar + ($window.width() + 30) / ratio;
-                },
-                locate = function () {
-                    var ch = $('.carousel').height() + topbar;
-                    $('.wrapper').css({'top': (ch || compute()) + 'px'});
-                },
-                resize = function () {
-                    $('.wrapper').css({'top': $('.carousel').height() + topbar + 'px'});
-                    // TODO: update carousel indicators
-                };
-            return {
-                locate: locate,
-                resize: resize
-            }
-        })();
-
-        // morph search input
         var morphComponent = (function () {
             var $morphSearch = $('#morphsearch'),
                 $input = $('input.morphsearch-input'),
@@ -68,6 +47,19 @@ $(function () {
             return {toggle: toggleSearch};
         })();
 
+        //todo: sort plugins scripts
+
+        var swiper = new Swiper('.swiper-container', {
+            pagination: '.swiper-pagination',
+            autoplay: 3500,
+            paginationClickable: '.swiper-pagination',
+            nextButton: '.swiper-button-next',
+            prevButton: '.swiper-button-prev',
+            spaceBetween: 30,
+            effect: 'fade',
+            loop: true
+        });
+
         function all() {
             var args = Array.prototype.slice.call(arguments);
             args.forEach(function (item) {
@@ -89,8 +81,15 @@ $(function () {
             }
         }
 
-        $('#carousel').carousel({
-            interval: 3500
+        // todo: use modernizr
+
+        function locateWrapper() {
+            $('.wrapper').css({'top': $window.height()});
+        }
+
+        $window.resize(function () {
+            if ($('.wrapper').scrollTop() > $window.height())
+                locateWrapper();
         });
 
         $.stellar({
@@ -98,9 +97,6 @@ $(function () {
             responsive: true,
             hideDistantElements: false
         });
-
-        fixedHandler.locate();
-        $window.resize(fixedHandler.resize);
 
         $('#profile').click(function (ev) {
             ev.preventDefault();
