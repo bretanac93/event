@@ -1,0 +1,131 @@
+/* variables */
+lightBlue = rgb(84, 169, 203)
+darkBlue = rgb(0, 126, 177)
+textBlue = rgb(57, 150, 191)
+textGray = rgb(180, 180, 180)
+
+
+/* mixins */
+rounded()
+    -webkit-border-radius arguments
+    -moz-border-radius arguments
+    border-radius arguments
+
+shadow(hoff, voff, blur, color = rgba(0, 0, 0, .7))
+    -webkit-box-shadow hoff voff blur color
+    -moz-box-shadow hoff voff blur color
+    box-shadow hoff voff blur color
+
+center(wo)
+    position absolute
+    margin-left 0% - (wo / 2)
+    left 50%
+
+/* styles */
+.bgblue
+    background-color rgb(0, 126, 177)
+
+.bggreen
+    background-color rgb(21, 172, 163)
+
+.bggray
+    background-color rgb(237, 237, 237)
+
+.top-blue
+    background-image linear-gradient(to bottom, rgba(101, 170, 206, 1), transparent)
+
+.top-brown
+    background-image linear-gradient(to bottom, rgba(198, 176, 140, 1), transparent)
+
+.top-green
+    background-image linear-gradient(to bottom, rgba(45, 175, 110, 1), transparent)
+
+.top-pink
+    background-image linear-gradient(to bottom, rgba(186, 141, 155, 1), transparent)
+    
+
+.container-fluid
+	position relative 
+    
+.topbar
+    font-size 0.9em
+    padding 12px
+    color white
+    float right
+    width 100%
+    position fixed
+    z-index 100
+
+    a
+        text-decoration none
+        color white
+        
+        &:last-of-type
+        	float right
+        	padding-top 5px
+        
+	.caret-down
+		display inline-block
+		width 0
+		height 0
+		border-right 5px solid transparent
+		border-left 5px solid transparent
+		border-top 5px solid white
+		vertical-align middle
+		
+.slider
+	z-index 10
+	position fixed
+	top 51px
+	left 0
+
+	.carousel .item::after
+	    content " "
+	    z-index 1
+	    display block
+	    position absolute
+	    top 0
+	    left 0
+	    right 0
+	    bottom 0
+	    background-color rgba(0, 0, 0, .3)
+	    
+	// IE fix
+	#carousel img
+		width 100%
+		max-height 100%
+
+	.carousel-indicators li
+		background-color white
+		
+		&.active
+			background-color rgb(17, 171, 161) !important
+			border none !important
+			
+.search-wrapper
+	position relative
+	z-index 99
+	top .3rem
+	left 50%
+	
+	
+	input
+		display block
+		width 100%
+		border none
+		rounded(5px)
+		
+.wrapper
+	position absolute
+	z-index 99
+	background-color rgba(0,0,0,.7)		
+	
+
+
+/* media queries */
+@media(max-width 768px)
+	.search-wrapper
+		margin-left (-66.66666667% / 2)
+	
+
+

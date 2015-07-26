@@ -1,0 +1,7 @@
+parameters:
+  app_utils.class:   Events\UserBundle\Services\UtilityService
+
+services:
+    app_utils:
+        class: "%app_utils.class%"
+        arguments: [@doctrine.orm.entity_manager]

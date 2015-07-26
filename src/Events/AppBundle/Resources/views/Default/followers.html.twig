@@ -1,0 +1,8 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for item in entities %}
+        {{ item.sender.username }}
+    {% else %}
+    {% endfor %}
+{% endblock %}

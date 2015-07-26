@@ -1,0 +1,10 @@
+- Put three forms in the user manage url
+   * The first form will be to the basic profile information
+   * The second one will be to change the password
+   * The third one will be to upload/update the profile picture.
+
+- Configure toastrs to notifie the user when some details is missing from his profile (ex: Profile picture, Full name, etc.)
+
+- Email confirmation (Already done.)
+
+- Users Rest API

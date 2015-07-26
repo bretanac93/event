@@ -1,0 +1,17 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for item in entities %}
+        <form action="{{ url('app_accept_requests') }}" method="post">
+            <label>{{ item.sender.username }}</label>
+            <input type="hidden" value="{{ item.sender.id }}" name="from_id" id="from_id"/>
+
+            {% if item.status == "Pending" %}
+                <input type="submit" value="Accept"/>
+            {% else %}
+                <small>Already accepted</small>
+            {% endif %}
+        </form>
+    {% else %}
+    {% endfor %}
+{% endblock %}

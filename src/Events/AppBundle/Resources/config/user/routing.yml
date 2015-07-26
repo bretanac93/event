@@ -1,0 +1,25 @@
+app_users_index:
+    path:    /
+    defaults: { _controller: AppBundle:User:index }
+
+app_follow_request:
+    path:     /request
+    defaults: { _controller: AppBundle:User:followRequest }
+    methods:  POST
+
+app_follow_requests:
+    path:     /requests
+    defaults: { _controller: AppBundle:User:followRequests }
+
+app_accept_requests:
+    path:     /ok_request
+    defaults: { _controller: AppBundle:User:acceptRequest }
+    methods:  POST
+
+app_following:
+    path:     /following
+    defaults: { _controller: AppBundle:User:following }
+
+app_followers:
+    path:     /followers
+    defaults:  { _controller: AppBundle:User:followers }

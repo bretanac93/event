@@ -1,0 +1,6 @@
+#services:
+#  events_user.registration.form.type:
+#    class:  Events\UserBundle\Form\RegistrationFormType
+#    arguments:  [%fos_user.model.user.class%]
+#    tags:
+#      - { name: form.type, alias: events_user_registration }
