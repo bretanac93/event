@@ -9,7 +9,7 @@
         <span class="morphsearch-close"></span>
     </div>
 
-    <div class="swiper-container" data-stellar-ratio="0.4">
+    <div class="swiper-container">
         <div class="swiper-wrapper">
             <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg1.jpg') }})"></div>
             <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg2.jpg') }})"></div>
@@ -142,8 +142,8 @@
 {% endblock %}
 
 {% block page_scripts %}
-    <script src="{{ asset('public/js/swiper.js') }}"></script>
-    <script src="{{ asset('public/js/jquery.stellar.js') }}"></script>
+    <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
+    {#<script src="{{ asset('public/plugins/stellar/jquery.stellar.js') }}"></script>#}
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 

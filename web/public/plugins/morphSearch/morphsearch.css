@@ -23,13 +23,16 @@ body {
     top: 30%;
     right: 20%;
     -webkit-transform-origin: 100% 0;
+    -moz-transform-origin: 100% 0;
+    -ms-transform-origin: 100% 0;
     transform-origin: 100% 0;
-    -webkit-transition-property: min-height, width, top, right, border-radius;
-    transition-property: min-height, width, top, right, border-radius;
-    -webkit-transition-duration: 0.5s;
-    transition-duration: 0.5s;
-    -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
-    transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
+    /*-webkit-transition-property: min-height, width, top, right, border-radius;*/
+    /*transition-property: min-height, width, top, right, border-radius;*/
+    -webkit-transition: all .5s cubic-bezier(0.7, 0, 0.3, 1);
+    -moz-transition: all .5s cubic-bezier(0.7, 0, 0.3, 1);
+    -ms-transition: all .5s cubic-bezier(0.7, 0, 0.3, 1);
+    -o-transition: all .5s cubic-bezier(0.7, 0, 0.3, 1);
+    transition: all .5s cubic-bezier(0.7, 0, 0.3, 1);
 }
 
 .morphsearch.open {
@@ -246,52 +249,5 @@ input[type="search"] {
     .morphsearch.open .morphsearch-submit {
         -webkit-transform: translate3d(0, -50%, 0) scale3d(0.5, 0.5, 1);
         transform: translate3d(0, -50%, 0) scale3d(0.5, 0.5, 1);
-    }
-}
-
-/* Sidebar Menu */
-
-.st-menu {
-    position: absolute;
-    top: 51px;
-    right: 0;
-    width: 300px;
-    height: 100%;
-    background-color: rgba(0, 0, 0, .6);
-    color: white;
-    z-index: 200;
-    -webkit-transition: all .25s;
-    -moz-transition: all .25s;
-    -ms-transition: all .25s;
-    -o-transition: all .25s;
-    transition: all .25s;
-    -webkit-transform: translate3d(100%, 0, 0);
-    -moz-transform: translate3d(100%, 0, 0);
-    -ms-transform: translate3d(100%, 0, 0);
-    -o-transform: translate3d(100%, 0, 0);
-    transform: translate3d(100%, 0, 0);
-}
-
-.st-open {
-    -webkit-transform: translate3d(0, 0, 0);
-    -moz-transform: translate3d(0, 0, 0);
-    -ms-transform: translate3d(0, 0, 0);
-    -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.st-open {
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.st-effect.st-menu::after {
-    display: none;
-}
-
-@media screen and (max-width: 320px) {
-    .st-menu {
-        width: 250px;
     }
 }

@@ -22,8 +22,30 @@
 .top-pink {
   background-image: linear-gradient(to bottom, #ba8d9b, transparent);
 }
+.swiper-container {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+}
+.swiper-slide {
+  background-position: center;
+  background-size: cover;
+}
+.swiper-pagination-bullet {
+  width: 15px;
+  height: 15px;
+  opacity: 1;
+}
+.swiper-pagination-bullet-active {
+  background-color: #11aba1 !important;
+}
+[class^=swiper-button] {
+  display: none;
+}
 .container-fluid {
   position: relative;
+  top: 100%;
+  z-index: 99;
 }
 .topbar {
   font-size: 0.9em;
@@ -47,19 +69,7 @@
   border-top: 5px solid #fff;
   vertical-align: middle;
 }
-.swiper-container {
-  width: 100%;
-  height: 100%;
-  position: fixed;
-}
-.swiper-slide {
-  background-position: center;
-  background-size: cover;
-}
 .wrapper {
-  position: absolute;
-  top: 100vh;
-  z-index: 99;
   background-color: rgba(0,0,0,0.7);
 }
 @media screen and (min-width: 992px) {

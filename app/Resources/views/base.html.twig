@@ -12,8 +12,9 @@
 
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('public/css/swiper.css') }}">
-            <link rel="stylesheet" href="{{ asset('public/css/component.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('public/plugins/sidebar/sidebar.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
 
@@ -24,7 +25,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
-         {# TODO: use yep nope for feature detection (vw, vh, etc...) #}
+        {# TODO: use yep nope for feature detection (vw, vh, etc...) #}
         <script src="{{ asset('public/js/rem.js') }}"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
@@ -45,6 +46,7 @@
         {% block default_scripts %}
             <script src="{{ asset('public/js/jquery.js') }}"></script>
             <script src="{{ asset('public/js/bootstrap.js') }}"></script>
+            <script src="{{ asset('public/js/classie.js') }}"></script>
         {% endblock %}
 
         {% block page_scripts %}
