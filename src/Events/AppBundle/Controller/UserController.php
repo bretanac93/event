@@ -8,7 +8,7 @@ use Symfony\Component\HttpFoundation\Request;
 
 class UserController extends Controller
 {
-    //Get all users in the system.
+    // Get all users in the system.
     public function indexAction()
     {
         if ($this->getUser() == null)
@@ -46,7 +46,8 @@ class UserController extends Controller
             //If it's null there is not friend request, show the button
             if ($temp == null) {
                 $users_request_status[$users_result[$i]->getId()] = 0;
-                return $this->render('AppBundle:Default:index.html.twig', array(
+//                print_r($users_request_status);
+                return $this->render('UserBundle:Default:index.html.twig', array(
                     'entities' => $users_result,
                     'requests_status' => $users_request_status
                 ));
@@ -132,4 +133,7 @@ class UserController extends Controller
 
         return $this->render('AppBundle:Default:followers.html.twig', array('entities' => $entities));
     }
+
+
+
 }

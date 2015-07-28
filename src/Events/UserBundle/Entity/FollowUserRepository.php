@@ -12,29 +12,22 @@ use Doctrine\ORM\EntityRepository;
  */
 class FollowUserRepository extends EntityRepository
 {
-    public function getPendingFollowRequests($userId) {
+    /**
+     * @param User $userId
+     */
+    public function findFollowers(User $user) {
         $em = $this->getEntityManager();
-        $query = $em->createQuery("SELECT fu FROM UserBundle:FollowUser fu WHERE fu.toUser = :user_id AND fu.status = :status");
-        $query->setParameter('user_id', $userId);
-        $query->setParameter('status', "Pending");
+        $query = $em->createQuery("SELECT u, s FROM UserBundle:User u JOIN u.senders s WHERE s.sender = u AND s.receiver = :userS");
+        $query->setParameter('userS', $user);
 
-        return $query->getResult();
+        return $query->getArrayResult();
     }
 
-    public function Following($userId) {
+    public function findFollowings(User $user) {
         $em = $this->getEntityManager();
-        $query = $em->createQuery("SELECT u FROM UserBundle:User u JOIN UserBundle:FollowUser fu WHERE fu.fromUser = :id AND u.id = :id");
-        $query->setParameter('id', $userId);
+        $query = $em->createQuery("SELECT u, r FROM UserBundle:User u JOIN u.senders r WHERE r.sender = u AND r.receiver = :userS");
+        $query->setParameter('userS', $user);
 
-        return $query->getResult();
+        return $query->getArrayResult();
     }
-
-    public function Followers($userId) {
-        $em = $this->getEntityManager();
-        $query = $em->createQuery("SELECT u FROM UserBundle:User u JOIN UserBundle:FollowUser fu WHERE fu.toUser = :id AND fu.toUser = u.id");
-        $query->setParameter('id', $userId);
-
-        return $query->getResult();
-    }
-
 }

@@ -4,3 +4,7 @@ app:
 
 fos_user:
     resource: "@UserBundle/Resources/config/routing.yml"
+
+oauth:
+    resource: "@AppBundle/Resources/config/oauth/routing.yml"
+    prefix:  /oauth

@@ -28,12 +28,12 @@ class User extends BaseUser
     protected $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="sender")
+     * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\FollowUser", mappedBy="sender")
      */
     private $senders;
 
     /**
-     * @ORM\OneToMany(targetEntity="User", mappedBy="receiver")
+     * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\FollowUser", mappedBy="receiver")
      */
     private $receivers;
 
@@ -41,6 +41,20 @@ class User extends BaseUser
      * @ORM\OneToOne(targetEntity="ProfilePic", mappedBy="user")
      */
     private $profile_pic;
+
+
+    /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Notification", mappedBy="user")
+     */
+    private $notifications;
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getNotifications()
+    {
+        return $this->notifications;
+    }
 
     /**
      * @return ProfilePic
@@ -68,6 +82,7 @@ class User extends BaseUser
 
         $this->senders = new ArrayCollection();
         $this->receivers = new ArrayCollection();
+        $this->notifications = new ArrayCollection();
     }
 
     /**
@@ -84,5 +99,10 @@ class User extends BaseUser
     public function getReceivers()
     {
         return $this->receivers;
+    }
+
+    public function __toString()
+    {
+        return $this->getUsername();
     }
 }
