@@ -23,3 +23,7 @@ app_following:
 app_followers:
     path:     /followers
     defaults:  { _controller: AppBundle:User:followers }
+
+app_user_notifications:
+    path:     /notifications
+    defaults: { _controller: AppBundle:Default:notifications }

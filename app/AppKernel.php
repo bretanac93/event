@@ -20,7 +20,8 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new Gos\Bundle\WebSocketBundle\GosWebSocketBundle(),
             new Gos\Bundle\PubSubRouterBundle\GosPubSubRouterBundle(),
-            new \Events\UserBundle\UserBundle()
+            new \Events\UserBundle\UserBundle(),
+//            new HWI\Bundle\OAuthBundle\HWIOAuthBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
