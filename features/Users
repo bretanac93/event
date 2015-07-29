@@ -3,8 +3,12 @@
    * The second one will be to change the password
    * The third one will be to upload/update the profile picture.
 
-- Configure toastrs to notifie the user when some details is missing from his profile (ex: Profile picture, Full name, etc.)
+- Configure toasts to notify the user when some details is missing from his profile (ex: Profile picture, Full name, etc.)
 
 - Email confirmation (Already done.)
 
 - Users Rest API
+
+
+Notes:
+1 - In the notifications entity, the 'creator' field is to filter the notification per followers.

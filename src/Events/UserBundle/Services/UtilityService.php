@@ -10,6 +10,7 @@ namespace Events\UserBundle\Services;
 
 
 use Doctrine\ORM\EntityManager;
+use Events\AppBundle\Entity\Notification;
 use Events\UserBundle\Entity\FollowUser;
 use Events\UserBundle\Entity\User;
 use Symfony\Component\DependencyInjection\Container;
@@ -154,6 +155,19 @@ class UtilityService
             $result = $em->getRepository('UserBundle:FollowUser')->findOneBy(array('sender' => $sender, 'receiver' => $receiver));
 
         return isset($result);
+    }
+
+    public function addNotification(User $creator, $content, $type)
+    {
+        $notification = new Notification();
+        $notification->setContent($content);
+        $notification->setCreator($creator);
+        $notification->setDate(new \DateTime('now'));
+        $notification->setType($type);
+
+        $em = $this->container;
+        $em->persist($notification);
+        $em->flush();
     }
 
 } 

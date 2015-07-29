@@ -42,6 +42,13 @@ class Notification
      */
     private $user;
 
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="type", type="string", length=30)
+     */
+    private $type;
+
 
     /**
      * Get id
@@ -104,7 +111,7 @@ class Notification
      *
      * @param User $user
      * @return Notification
-     * @internal param string $creator
+     * @param string $creator
      */
     public function setCreator(User $user)
     {
@@ -121,6 +128,24 @@ class Notification
     public function getCreator()
     {
         return $this->user;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param $type
+     * @return $this
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+        return $this;
     }
 
     public function __toString()
