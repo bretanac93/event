@@ -1,0 +1,9 @@
+{% extends '::base.html.twig' %}
+
+{% block body %}
+    {% for item in entities %}
+        <p>{{ item.username }}</p>
+    {% else %}
+        <h1>Not any pending request</h1>
+    {% endfor %}
+{% endblock %}

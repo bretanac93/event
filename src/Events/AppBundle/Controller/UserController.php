@@ -14,61 +14,21 @@ class UserController extends Controller
         if ($this->getUser() == null)
             return $this->render('UserBundle:Default:index.html.twig');
 
+        $dc = $this->get('app_utils');
         $user_logged = $this->getUser();
         $em = $this->getDoctrine()->getManager();
         $users = $em->getRepository('UserBundle:User')->findAll();
 
         $users_result = array();
 
+
         for ($i = 0; $i < count($users); $i++) {
-            if ($users[$i]->getUsername() != $user_logged)
+            if ($users[$i]->getUsername() != $user_logged && !$dc->hasFriendRequest($user_logged, $users[$i]))
                 array_push($users_result, $users[$i]);
         }
 
-        $users_request_status = array();
-
-        $follow_users_repository = $em->getRepository('UserBundle:FollowUser');
-
-        //First, we have to check the status of every users in FollowUsers entity
-        $list = $follow_users_repository->findBy(array('sender' => $user_logged));
-
-        if (count($list) == 0) {
-            $users_request_status = null;
-            return $this->render('UserBundle:Default:index.html.twig', array(
-                'entities' => $users_result,
-                'requests_status' => $users_request_status
-            ));
-        }
-
-        for ($i = 0; $i < count($users_result); $i++) {
-            $temp = $follow_users_repository->findOneBy(array('sender' => $user_logged, 'receiver' => $users_result[$i]));
-
-            //If it's null there is not friend request, show the button
-            if ($temp == null) {
-                $users_request_status[$users_result[$i]->getId()] = 0;
-//                print_r($users_request_status);
-                return $this->render('UserBundle:Default:index.html.twig', array(
-                    'entities' => $users_result,
-                    'requests_status' => $users_request_status
-                ));
-            }
-
-            switch ($temp->getStatus()) {
-                case "Pending":
-                    $users_request_status[$users_result[$i]->getId()] = 1;
-                    break;
-                case "Accepted":
-                    $users_request_status[$users_result[$i]->getId()] = 2;
-                    break;
-                default:
-                    $users_request_status[$users_result[$i]->getId()] = 0;
-                    break;
-            }
-        }
-
         return $this->render('UserBundle:Default:index.html.twig', array(
-            'entities' => $users_result,
-            'requests_status' => $users_request_status
+            'entities' => $users_result
         ));
     }
 
@@ -134,6 +94,26 @@ class UserController extends Controller
         return $this->render('AppBundle:Default:followers.html.twig', array('entities' => $entities));
     }
 
+    public function pendingRequestsAction()
+    {
+        if ($this->getUser() == null)
+            return $this->render('AppBundle:Default:index.html.twig');
 
+        $dc = $this->get('app_utils');
+        $user_logged = $this->getUser();
+        $em = $this->getDoctrine()->getManager();
+        $users = $em->getRepository('UserBundle:User')->findAll();
+
+        $users_result = array();
+
+        for ($i = 0; $i < count($users); $i++) {
+            if ($users[$i]->getUsername() != $user_logged && !$dc->hasFriendRequest($user_logged, $users[$i], "Pending"))
+                array_push($users_result, $users[$i]);
+        }
+
+        return $this->render('UserBundle:Default:pending.html.twig', array(
+            'entities' => $users_result
+        ));
+    }
 
 }

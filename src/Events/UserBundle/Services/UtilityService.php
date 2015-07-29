@@ -73,7 +73,8 @@ class UtilityService
         return $result;
     }
 
-    public function sort(array $notifications) {
+    public function sort(array $notifications)
+    {
         $result = $notifications;
         $this->quickSort($result, 0, count($result) - 1);
         return $result;
@@ -118,7 +119,8 @@ class UtilityService
      * @param User $user
      * @return array|\Events\AppBundle\Entity\Notification[] $notifications
      */
-    public function notificationsFor(User $user) {
+    public function notificationsFor(User $user)
+    {
 
         $em = $this->container;
 
@@ -135,6 +137,23 @@ class UtilityService
         }
 
         return $notifications;
+    }
+
+    /**
+     * @param User $sender
+     * @param User $receiver
+     * @param $status
+     * @return bool
+     */
+    public function hasFriendRequest(User $sender, User $receiver, $status = null)
+    {
+        $em = $this->container;
+        if ($status != null)
+            $result = $em->getRepository('UserBundle:FollowUser')->findOneBy(array('sender' => $sender, 'receiver' => $receiver, 'status' => $status));
+        else
+            $result = $em->getRepository('UserBundle:FollowUser')->findOneBy(array('sender' => $sender, 'receiver' => $receiver));
+
+        return isset($result);
     }
 
 } 
