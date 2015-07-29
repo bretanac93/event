@@ -4,9 +4,9 @@
     right: 0;
     width: 300px;
     height: 100%;
-    background-color: rgba(0, 0, 0, .6);
+    background-color: rgba(0, 0, 0, .8);
     color: white;
-    z-index: 200;
+    z-index: 75;
     -webkit-transition: all .25s;
     -moz-transition: all .25s;
     -ms-transition: all .25s;
@@ -35,6 +35,38 @@
 
 .st-effect.st-menu::after {
     display: none;
+}
+
+.user > img {
+    border-radius: 50%;
+    margin-top: 13px;
+}
+
+.user > h3 {
+    margin-top: 10px;
+}
+
+.right-menu {
+    margin-top: 18px;
+}
+
+.right-menu .badge {
+    background-color: rgb(0, 126, 177);
+}
+
+.right-menu li p {
+    background-color: rgb(53, 53, 53);
+    -webkit-transition: background-color .1s ease-in;
+    -moz-transition: background-color .1s ease-in;
+    -ms-transition: background-color .1s ease-in;
+    -o-transition: background-color .1s ease-in;
+    transition: background-color .1s ease-in;
+    margin-bottom: 1px;
+    padding: 7px 20px 7px 42px;
+}
+
+.right-menu li p:hover {
+    background-color: rgb(0, 126, 177);
 }
 
 @media screen and (max-width: 320px) {

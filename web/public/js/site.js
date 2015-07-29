@@ -120,12 +120,7 @@ $(function () {
 
     $window.scroll(function () {
 
-        if ($menu.hasClass('st-open'))
-            $menu.removeClass('st-open');
-        else
-            $menu.css({'top': $window.scrollTop() + 51});
-
-        if ($('.morphsearch').hasClass('open'))
-            morphComponent.toggle();
+        //if ($menu.hasClass('st-open'))
+        //    $menu.removeClass('st-open');
     });
 });

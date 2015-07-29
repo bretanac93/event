@@ -1,26 +1,34 @@
-/* variables */
-/* mixins */
-/* styles */
-.bgblue {
+html,
+body {
+  height: 100%;
+}
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+}
+.topbar {
+  width: 100%;
+  font-size: 0.9em;
+  padding: 12px 10px;
   background-color: #007eb1;
+  color: #fff;
+  float: right;
+  position: fixed;
+  top: 0;
+  z-index: 200 !important;
 }
-.bggreen {
-  background-color: #15aca3;
+.topbar a {
+  text-decoration: none;
+  color: #fff;
 }
-.bggray {
-  background-color: #ededed;
-}
-.top-blue {
-  background-image: linear-gradient(to bottom, #65aace, transparent);
-}
-.top-brown {
-  background-image: linear-gradient(to bottom, #c6b08c, transparent);
-}
-.top-green {
-  background-image: linear-gradient(to bottom, #2daf6e, transparent);
-}
-.top-pink {
-  background-image: linear-gradient(to bottom, #ba8d9b, transparent);
+.caret-down {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  border-top: 5px solid #fff;
+  vertical-align: middle;
 }
 .swiper-container {
   width: 100%;
@@ -45,29 +53,7 @@
 .container-fluid {
   position: relative;
   top: 100%;
-  z-index: 99;
-}
-.topbar {
-  font-size: 0.9em;
-  padding: 12px 10px;
-  color: #fff;
-  float: right;
-  position: fixed;
-  top: 0;
-  z-index: 100;
-}
-.topbar a {
-  text-decoration: none;
-  color: #fff;
-}
-.caret-down {
-  display: inline-block;
-  width: 0;
-  height: 0;
-  border-right: 5px solid transparent;
-  border-left: 5px solid transparent;
-  border-top: 5px solid #fff;
-  vertical-align: middle;
+  z-index: 50;
 }
 .wrapper {
   background-color: rgba(0,0,0,0.7);

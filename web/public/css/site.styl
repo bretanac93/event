@@ -1,46 +1,44 @@
-/* variables */
-lightBlue = rgb(84, 169, 203)
-darkBlue = rgb(0, 126, 177)
-textBlue = rgb(57, 150, 191)
-textGray = rgb(180, 180, 180)
-
-/* mixins */
-rounded()
-    -webkit-border-radius arguments
-    -moz-border-radius arguments
-    border-radius arguments
-
-shadow(hoff, voff, blur, color = rgba(0, 0, 0, .7))
-    -webkit-box-shadow hoff voff blur color
-    -moz-box-shadow hoff voff blur color
-    box-shadow hoff voff blur color
+bgBlue = rgb(0, 126, 177)
+bgGreen = rgb(21, 172, 163)
 
 center(wo)
     position absolute
     margin-left 0% - (wo / 2)
     left 50%
 
-/* styles */
-.bgblue
-    background-color rgb(0, 126, 177)
+html, body
+    height 100%
 
-.bggreen
-    background-color rgb(21, 172, 163)
+body
+    overflow-x hidden
+    overflow-y scroll
 
-.bggray
-    background-color rgb(237, 237, 237)
+.topbar
+    width 100%
+    font-size 0.9em
+    padding 12px 10px
+    background-color bgBlue
+    color white
+    float right
+    position fixed
+    top 0
+    z-index 200 !important
 
-.top-blue
-    background-image linear-gradient(to bottom, rgba(101, 170, 206, 1), transparent)
+    a
+        text-decoration none
+        color white
 
-.top-brown
-    background-image linear-gradient(to bottom, rgba(198, 176, 140, 1), transparent)
+.caret-down
+    display inline-block
+    width 0
+    height 0
+    border-right 5px solid transparent
+    border-left 5px solid transparent
+    border-top 5px solid white
+    vertical-align middle
 
-.top-green
-    background-image linear-gradient(to bottom, rgba(45, 175, 110, 1), transparent)
-
-.top-pink
-    background-image linear-gradient(to bottom, rgba(186, 141, 155, 1), transparent)
+// gradients
+//    background-image linear-gradient(to bottom, rgba(101, 170, 206, 1), transparent)
 
 .swiper-container
     width 100%
@@ -65,29 +63,7 @@ center(wo)
 .container-fluid
     position relative
     top 100%
-    z-index 99
-
-.topbar
-    font-size 0.9em
-    padding 12px 10px
-    color white
-    float right
-    position fixed
-    top 0
-    z-index 100
-
-    a
-        text-decoration none
-        color white
-
-.caret-down
-    display inline-block
-    width 0
-    height 0
-    border-right 5px solid transparent
-    border-left 5px solid transparent
-    border-top 5px solid white
-    vertical-align middle
+    z-index 50
 
 .wrapper
     background-color rgba(0, 0, 0, .7)
