@@ -19,6 +19,7 @@ class EventType extends AbstractType
             ->add('category')
             ->add('description')
             ->add('skills')
+            ->add('capacity')
             ->add('date')
             ->add('time')
             ->add('price')

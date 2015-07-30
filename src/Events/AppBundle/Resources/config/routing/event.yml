@@ -28,3 +28,7 @@ event_delete:
     path:     /{id}/delete
     defaults: { _controller: "AppBundle:Event:delete" }
     methods:  [POST, DELETE]
+
+event_i_will_attend:
+    path: /{eventId}/willAttend
+    defaults: { _controller: "AppBundle:Event:willAttend" }

@@ -9,6 +9,7 @@
 namespace Events\UserBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
+use Events\AppBundle\Entity\Event;
 use FOS\UserBundle\Entity\User as BaseUser;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -36,6 +37,12 @@ class User extends BaseUser
      * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Event", mappedBy="isOrganizer")
      */
     private $isOrganizer;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Events\AppBundle\Entity\Event", inversedBy="willAttend")
+     * @ORM\JoinColumn(name="willAttend_id", referencedColumnName="id")
+     */
+    private $willAttend;
 
     /**
      * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Event", mappedBy="uploader")
@@ -108,6 +115,8 @@ class User extends BaseUser
         return $this->isOrganizer;
     }
 
+
+
     public function getUploader()
     {
         return $this->uploader;
@@ -119,6 +128,21 @@ class User extends BaseUser
     public function getReceivers()
     {
         return $this->receivers;
+    }
+
+    /**
+     * Get willAttend
+     *
+     * @return User
+     */
+    public function getWillAttend()
+    {
+        return $this->willAttend;
+    }
+
+    public function setWillAttend(Event $user)
+    {
+        return $this->willAttend = $user;
     }
 
     public function __toString()

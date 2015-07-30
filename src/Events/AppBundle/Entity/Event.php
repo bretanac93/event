@@ -2,7 +2,9 @@
 
 namespace Events\AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Events\UserBundle\Entity\User;
 
 /**
  * Event
@@ -103,6 +105,22 @@ class Event
      */
     private $uploader;
 
+
+    /**
+     * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\User", mappedBy="willAttend")
+     */
+    private $willAttend;
+
+
+    /**
+     *
+     */
+    public function __construct()
+    {
+
+        $this->willAttend = new ArrayCollection();
+
+    }
 
     /**
      * Get id
@@ -344,13 +362,8 @@ class Event
         return $this->eventType;
     }
 
-    /**
-     * Set isOrganizer
-     *
-     * @param boolean $isOrganizer
-     * @return Event
-     */
-    public function setIsOrganizer($isOrganizer)
+
+    public function setIsOrganizer(User $isOrganizer)
     {
         $this->isOrganizer = $isOrganizer;
 
@@ -360,20 +373,14 @@ class Event
     /**
      * Get isOrganizer
      *
-     * @return boolean 
+     * @return User
      */
     public function getIsOrganizer()
     {
         return $this->isOrganizer;
     }
 
-    /**
-     * Set uploader
-     *
-     * @param string $uploader
-     * @return Event
-     */
-    public function setUploader($uploader)
+    public function setUploader(User $uploader)
     {
         $this->uploader = $uploader;
 
@@ -383,10 +390,18 @@ class Event
     /**
      * Get uploader
      *
-     * @return string 
+     * @return User
      */
     public function getUploader()
     {
         return $this->uploader;
     }
+
+
+    public function getWillAttend()
+    {
+        return $this->willAttend;
+    }
+
+
 }

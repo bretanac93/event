@@ -221,4 +221,25 @@ class EventController extends Controller
             ->getForm()
         ;
     }
+
+    public function willAttendAction($eventId)
+    {
+        $em = $this->getDoctrine()->getManager();
+
+        $event = $em->getRepository('AppBundle:Event')->find($eventId);
+
+        $user = $this->getUser();
+
+        $user->setWillAttend($event);
+
+        $em->persist($user);
+        $em->flush();
+
+        $willAttend = $event->getWillAttend();
+
+        return $this->render("AppBundle:Event:willAttend.html.twig" , array(
+            'entity'=>$willAttend,
+            'amount'=>count($event->getWillAttend())
+        ));
+    }
 }
