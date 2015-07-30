@@ -6,6 +6,11 @@ center(wo)
     margin-left 0% - (wo / 2)
     left 50%
 
+shadow(hoff, voff, blur, color)
+    -webkit-box-shadow: hoff voff blur color
+    -moz-box-shadow: hoff voff blur color
+    box-shadow: hoff voff blur color
+
 html, body
     height 100%
 
@@ -16,17 +21,27 @@ body
 .topbar
     width 100%
     font-size 0.9em
-    padding 12px 10px
+    font-weight bold
+    padding 10px 25px
     background-color bgBlue
     color white
     float right
     position fixed
     top 0
     z-index 200 !important
+    shadow(0, 0, 5px, rgba(0, 0, 0, .8))
 
     a
         text-decoration none
         color white
+
+        &:first-child
+            color black
+
+            img
+                width 27px
+                height 27px
+                border-radius 50%
 
 .caret-down
     display inline-block
@@ -34,7 +49,7 @@ body
     height 0
     border-right 5px solid transparent
     border-left 5px solid transparent
-    border-top 5px solid white
+    border-top 5px solid black
     vertical-align middle
 
 // gradients
@@ -49,6 +64,9 @@ body
     background-position center
     background-size cover
 
+.swiper-pagination
+    z-index 51
+
 .swiper-pagination-bullet
     width 15px
     height 15px
@@ -60,13 +78,71 @@ body
 [class^=swiper-button]
     display none
 
+.shade
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    background-color rgba(0, 0, 0, .3)
+    z-index 50
+
 .container-fluid
-    position relative
+    position absolute
     top 100%
     z-index 50
 
+.search
+    position relative
+    top 30%
+    z-index 50
+    color white
+
+    h3, h5
+        margin 0
+
+    h5
+        margin-bottom 7%
+
+    .search-bar
+        position relative
+
+        .calendar, .glass
+            position absolute
+            z-index 100
+            top 10px
+
+        .calendar
+            right 25px
+
+        .glass
+            right 8px
+
+    input, button
+        border none
+        opacity .8
+
+    input
+        display block
+        width .9rem
+        margin-bottom 7%
+        color black
+        padding 6px
+        outline none
+
+    button
+        padding 5px 10px
+
+    .upload
+        background-color bgGreen
+
+    .register
+        color bgGreen
+        background-color white
+
 .wrapper
-    background-color rgba(0, 0, 0, .7)
+    background-color bgBlue
+    shadow(0, 0, 5px, rgba(0, 0, 0, .8))
 
 @media screen and (min-width 992px)
     .topbar

@@ -3,18 +3,35 @@
 {% block body %}
 
     <div class="swiper-container">
+        <div class="shade"></div>
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg1.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg2.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg3.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg4.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg5.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg1.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg2.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg3.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg4.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg5.jpg') }})"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>
         <!-- Add Arrows -->
         <div class="swiper-button-next swiper-button-white"></div>
         <div class="swiper-button-prev swiper-button-white"></div>
+    </div>
+
+    <div class="col-xs-12 col search text-center">
+        <h3 class="text-uppercase">Busca tu evento</h3>
+        <h5 class="visible-sm visible-xs">Las mejores actividades de tu zona</h5>
+        <h5 class="visible-md visible-lg">Descubre las mejores actividades de tu localidad</h5>
+
+        <form action="">
+            <div class="search-bar">
+                <img class="calendar" src="{{ asset('public/img/2/calendar.png') }}" alt="">
+                <img class="glass" src="{{ asset('public/img/2/search.png') }}" alt="">
+                <input type="search" class="col-xs-12">
+            </div>
+            <button class="upload">Sube tu evento</button>
+            <button class="register">Registrate</button>
+        </form>
     </div>
 
     <div class="container-fluid">

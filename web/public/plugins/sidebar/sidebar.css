@@ -1,6 +1,6 @@
 .st-menu {
     position: absolute;
-    top: 51px;
+    top: 47px;
     right: 0;
     width: 300px;
     height: 100%;
@@ -20,16 +20,11 @@
 }
 
 .st-open {
+    visibility: visible;
     -webkit-transform: translate3d(0, 0, 0);
     -moz-transform: translate3d(0, 0, 0);
     -ms-transform: translate3d(0, 0, 0);
     -o-transform: translate3d(0, 0, 0);
-    transform: translate3d(0, 0, 0);
-}
-
-.st-open {
-    visibility: visible;
-    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
 }
 
@@ -62,7 +57,6 @@
     -o-transition: background-color .1s ease-in;
     transition: background-color .1s ease-in;
     margin-bottom: 1px;
-    padding: 7px 20px 7px 42px;
 }
 
 .right-menu li p:hover {
