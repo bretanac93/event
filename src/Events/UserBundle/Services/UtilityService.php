@@ -9,6 +9,7 @@
 namespace Events\UserBundle\Services;
 
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\EntityManager;
 use Events\AppBundle\Entity\Notification;
 use Events\UserBundle\Entity\FollowUser;
@@ -131,7 +132,7 @@ class UtilityService
 
         for ($i = 0; $i < count($array_following); $i++) {
             $current_user = $array_following[$i];
-            $current_notifications = $current_user->getNotifications();
+            $current_notifications = $current_user->getNotificationsReceived();
             for ($j = 0; $j < count($current_notifications); $j++) {
                 array_push($notifications, $current_notifications[$j]);
             }
@@ -157,17 +158,34 @@ class UtilityService
         return isset($result);
     }
 
-    public function addNotification(User $creator, $content, $type)
+    /**
+     * @param User $creator
+     * @param array $receivers
+     * @param $content
+     * @param $type
+     */
+    public function addNotification(User $creator, array $receivers, $content, $type)
     {
-        $notification = new Notification();
-        $notification->setContent($content);
-        $notification->setCreator($creator);
-        $notification->setDate(new \DateTime('now'));
-        $notification->setType($type);
-
         $em = $this->container;
-        $em->persist($notification);
+        for ($i = 0; $i < count($receivers); $i++) {
+            $notification = new Notification();
+            $notification->setContent($content);
+            $notification->setSender($creator);
+            $notification->setReceiver($receivers[$i]);
+            $notification->setDate(new \DateTime('now'));
+            $notification->setType($type);
+            $em->persist($notification);
+        }
         $em->flush();
+    }
+
+    public function buildArrayFromCollection($collection)
+    {
+        $result = array();
+        for ($i = 0; $i < count($collection); $i++) {
+            array_push($result, $collection[$i]);
+        }
+        return $result;
     }
 
 } 

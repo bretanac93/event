@@ -49,9 +49,10 @@ class UserController extends Controller
 
         $em->persist($follow_user_entity);
         $em->flush();
+        $dc = $this->get('app_utils');
 
         $content = sprintf("%s sent a friend request to %s", $sender->getUsername(), $receiver->getUsername());
-        $this->get('app_utils')->addNotification($sender, $content, 'friend-request');
+        $this->get('app_utils')->addNotification($sender, $dc->buildArrayFromCollection($dc->getFollowers($sender)), $content, 'friend-request');
 
         return $this->redirect($this->generateUrl('app_homepage'));
     }
