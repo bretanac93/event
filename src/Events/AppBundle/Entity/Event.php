@@ -71,6 +71,13 @@ class Event
     private $price;
 
     /**
+     * @var integer
+     *
+     * @ORM\Column(name="capacity", type="integer")
+     */
+    private $capacity;
+
+    /**
      * @var boolean
      *
      * @ORM\Column(name="share_cost", type="boolean")
@@ -128,6 +135,29 @@ class Event
     public function getTitle()
     {
         return $this->title;
+    }
+
+    /**
+     * Set capacity
+     *
+     * @param integer $capacity
+     * @return Event
+     */
+    public function setCapacity($capacity)
+    {
+        $this->capacity = $capacity;
+
+        return $this;
+    }
+
+    /**
+     * Get capacity
+     *
+     * @return integer
+     */
+    public function getCapacity()
+    {
+        return $this->capacity;
     }
 
     /**
