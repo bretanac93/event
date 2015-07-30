@@ -33,6 +33,16 @@ class User extends BaseUser
     private $senders;
 
     /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Event", mappedBy="isOrganizer")
+     */
+    private $isOrganizer;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Event", mappedBy="uploader")
+     */
+    private $uploader;
+
+    /**
      * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\FollowUser", mappedBy="receiver")
      */
     private $receivers;
@@ -91,6 +101,16 @@ class User extends BaseUser
     public function getSenders()
     {
         return $this->senders;
+    }
+
+    public function getIsOrganizer()
+    {
+        return $this->isOrganizer;
+    }
+
+    public function getUploader()
+    {
+        return $this->uploader;
     }
 
     /**

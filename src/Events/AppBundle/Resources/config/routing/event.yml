@@ -1,0 +1,30 @@
+event:
+    path:     /
+    defaults: { _controller: "AppBundle:Event:index" }
+
+event_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Event:show" }
+
+event_new:
+    path:     /new
+    defaults: { _controller: "AppBundle:Event:new" }
+
+event_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Event:create" }
+    methods:  POST
+
+event_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Event:edit" }
+
+event_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Event:update" }
+    methods:  [POST, PUT]
+
+event_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Event:delete" }
+    methods:  [POST, DELETE]

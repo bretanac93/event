@@ -1,3 +1,7 @@
+app_event:
+    resource: "@AppBundle/Resources/config/routing/event.yml"
+    prefix:   /event
+
 app_homepage:
     path:     /
     defaults: { _controller: AppBundle:Default:index }
