@@ -13,7 +13,7 @@
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
-            <link rel="stylesheet" href="{{ asset('public/plugins/sidebar/sidebar.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}">
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
 
@@ -24,8 +24,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
-        {# TODO: use yep nope for feature detection (vw, vh, etc...) #}
-        <script src="{{ asset('public/js/rem.js') }}"></script>
+        {#<script src="{{ asset('public/js/rem.js') }}"></script>#}
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="{{ asset('public/js/html5shiv.js') }}"></script>
@@ -39,81 +38,58 @@
 <body>
 
     <div class="topbar">
-
         <a href="#" class="pull-right" id="profile">
             <img src="{{ asset('public/img/2/sidebar/user.png') }}"/>
             <span>Mi Perfil</span>
             <span class="caret-down"></span>
         </a>
-
         <a href="#">
             <img src="{{ asset('public/img/1/plus.png') }}"/>
             <span>Sube un Evento</span>
         </a>
     </div>
 
-    {% block body %}{% endblock %}
+    <div id="morphsearch" class="morphsearch">
+        <div class="morphsearch-content">
+            <div class="dummy-column text-center">
+                <img class="img-circle img-responsive" src="{{ asset('public/img/2/sidebar/user.png') }}" alt="">
 
-    <div class="st-menu">
-        <div class="user text-center">
-            <img src="{{ asset('public/img/2/sidebar/user.png') }}" alt="">
-
-            <h3>Julieta Fuentes</h3>
+                <h2 id="username">Julieta Fuentes</h2>
+            </div>
+            <div class="dummy-column">
+                <a class="dummy-media-object" href="#">
+                    <h3>Mi Perfil</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Amigos</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Mis tickets</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Mis eventos</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Notificaciones <span class="badge">5</span></h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Gestión</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>Finanzas</h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3 id="exit">Salir</h3>
+                </a>
+            </div>
         </div>
-        <div class="menu">
-            <ul class="right-menu list-unstyled">
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/mi_perfil.png') }}" alt="">
-                        Mi perfil
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/amigos.png') }}" alt="">
-                        Amigos
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/mis_tickets.png') }}" alt="">
-                        Mis tickets
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/mis_eventos.png') }}" alt="">
-                        Mis eventos
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/notificaciones.png') }}" alt="">
-                        Notificaciones <span class="badge pull-right">4</span>
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/gestion.png') }}" alt="">
-                        Gestión
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/finanzas.png') }}" alt="">
-                        Finanzas
-                    </p>
-                </li>
-                <li>
-                    <p>
-                        <img src="{{ asset('public/img/2/sidebar/salir.png') }}" alt="">
-                        Salir
-                    </p>
-                </li>
-            </ul>
-        </div>
+        <!-- /morphsearch-content -->
+        <span class="morphsearch-close"></span>
     </div>
+    <!-- /morphsearch -->
+    <div class="overlay"></div>
 
+    {% block body %}{% endblock %}
 
     {% block scripts %}
 
