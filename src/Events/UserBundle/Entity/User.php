@@ -14,7 +14,7 @@ use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
- * @ORM\Entity
+ * @ORM\Entity(repositoryClass="UserRepository")
  * @ORM\HasLifecycleCallbacks()
  * @ORM\Table(name="fos_user")
  */
@@ -44,17 +44,15 @@ class User extends BaseUser
 
 
     /**
-     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Notification", mappedBy="user")
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Notification", mappedBy="user_sent")
      */
-    private $notifications;
+    private $notifications_sent;
 
     /**
-     * @return ArrayCollection
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Notification", mappedBy="user_receive")
      */
-    public function getNotifications()
-    {
-        return $this->notifications;
-    }
+    private $notifications_received;
+
 
     /**
      * @return ProfilePic
@@ -82,7 +80,8 @@ class User extends BaseUser
 
         $this->senders = new ArrayCollection();
         $this->receivers = new ArrayCollection();
-        $this->notifications = new ArrayCollection();
+        $this->notifications_sent = new ArrayCollection();
+        $this->notifications_received = new ArrayCollection();
     }
 
     /**
@@ -99,6 +98,22 @@ class User extends BaseUser
     public function getReceivers()
     {
         return $this->receivers;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getNotificationsSent()
+    {
+        return $this->notifications_sent;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getNotificationsReceived()
+    {
+        return $this->notifications_received;
     }
 
     public function __toString()

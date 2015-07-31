@@ -3,6 +3,7 @@
 namespace Events\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
+use Symfony\Component\HttpFoundation\Request;
 
 class DefaultController extends Controller
 {
@@ -13,9 +14,14 @@ class DefaultController extends Controller
 
     public function notificationsAction()
     {
-
-        $result = $this->get('app_utils')->sort($this->get('app_utils')->notificationsFor($this->getUser()));
+        $user = $this->getUser();
+        $result = $this->get('app_utils')->sort($this->get('app_utils')->buildArrayFromCollection($user->getNotificationsReceived()));
 
         return $this->render('@App/Notification/index.html.twig', array('entities' => $result));
+    }
+
+    public function deleteNotificationsAction(Request $request)
+    {
+        $em = $this->getDoctrine()->getManager();
     }
 }

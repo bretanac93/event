@@ -37,10 +37,16 @@ class Notification
     private $date;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Events\UserBundle\Entity\User", inversedBy="notifications")
-     * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="Events\UserBundle\Entity\User", inversedBy="notifications_sent")
+     * @ORM\JoinColumn(name="sender_id", referencedColumnName="id")
      */
-    private $user;
+    private $user_sent;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Events\UserBundle\Entity\User", inversedBy="notifications_received")
+     * @ORM\JoinColumn(name="receiver_id", referencedColumnName="id")
+     */
+    private $user_receive;
 
     /**
      * @var string
@@ -113,9 +119,9 @@ class Notification
      * @return Notification
      * @param string $creator
      */
-    public function setCreator(User $user)
+    public function setSender(User $user)
     {
-        $this->user = $user;
+        $this->user_sent = $user;
 
         return $this;
     }
@@ -125,9 +131,33 @@ class Notification
      *
      * @return User
      */
-    public function getCreator()
+    public function getSender()
     {
-        return $this->user;
+        return $this->user_sent;
+    }
+
+    /**
+     * Set user
+     *
+     * @param User $user
+     * @return Notification
+     * @param string $creator
+     */
+    public function setReceiver(User $user)
+    {
+        $this->user_receive = $user;
+
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return User
+     */
+    public function getReceiver()
+    {
+        return $this->user_receive;
     }
 
     /**
