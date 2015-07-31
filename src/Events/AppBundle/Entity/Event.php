@@ -402,6 +402,4 @@ class Event
     {
         return $this->willAttend;
     }
-
-
 }

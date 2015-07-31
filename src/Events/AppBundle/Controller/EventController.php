@@ -235,11 +235,10 @@ class EventController extends Controller
         $em->persist($user);
         $em->flush();
 
-        $willAttend = $event->getWillAttend();
+        $willAttend = $user->getWillAttend();
 
         return $this->render("AppBundle:Event:willAttend.html.twig" , array(
-            'entity'=>$willAttend,
-            'amount'=>count($event->getWillAttend())
+            'entity'=>$willAttend
         ));
     }
 }
