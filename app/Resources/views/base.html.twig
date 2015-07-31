@@ -13,6 +13,7 @@
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/css/icomoon.css') }}">
             <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}">
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
@@ -39,12 +40,12 @@
 
     <div class="topbar">
         <a href="#" class="pull-right" id="profile">
-            <img src="{{ asset('public/img/2/sidebar/user.png') }}"/>
+            <img src="{{ asset('anonymous.png') }}"/>
             <span>Mi Perfil</span>
             <span class="caret-down"></span>
         </a>
         <a href="#">
-            <img src="{{ asset('public/img/1/plus.png') }}"/>
+            <span class="icon icon-plus"></span>
             <span>Sube un Evento</span>
         </a>
     </div>
@@ -52,34 +53,60 @@
     <div id="morphsearch" class="morphsearch">
         <div class="morphsearch-content">
             <div class="dummy-column text-center">
-                <img class="img-circle img-responsive" src="{{ asset('public/img/2/sidebar/user.png') }}" alt="">
+                <img class="img-circle img-responsive" src="{{ asset('anonymous.png') }}" alt="">
 
                 <h2 id="username">Julieta Fuentes</h2>
             </div>
             <div class="dummy-column">
                 <a class="dummy-media-object" href="#">
-                    <h3>Mi Perfil</h3>
+                    <h3>
+                        <span class="icon icon-user"></span>
+                        Mi Perfil
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Amigos</h3>
+                    <h3>
+                        <span class="icon icon-users"></span>
+                        Amigos
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Mis tickets</h3>
+                    <h3>
+                        <span class="icon icon-ticket"></span>
+                        Mis tickets
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Mis eventos</h3>
+                    <h3>
+                        <span class="icon icon-location"></span>
+                        Mis eventos
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Notificaciones <span class="badge">5</span></h3>
+                    <h3>
+                        <span class="icon icon-notification"></span>
+                        Notificaciones
+                        <span class="badge">5</span>
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Gestión</h3>
+                    <h3>
+                        <span class="icon icon-bookmark"></span>
+                        {#todo: why twig doesn't see the utf-8#}
+                        Gestión
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Finanzas</h3>
+                    <h3>
+                        <span class="icon icon-coin-dollar"></span>
+                        Finanzas
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3 id="exit">Salir</h3>
+                    <h3 id="exit">
+                        <span class="icon icon-exit"></span>
+                        Salir
+                    </h3>
                 </a>
             </div>
         </div>

@@ -18,6 +18,9 @@ body
     overflow-x hidden
     overflow-y scroll
 
+a:hover
+    text-decoration none
+
 .topbar
     width 100%
     font-size 0.9em
@@ -34,14 +37,24 @@ body
     a
         text-decoration none
         color white
+        display block
 
         &:first-child
             color black
+            margin-left 35px
 
             img
                 width 27px
                 height 27px
                 border-radius 50%
+
+        &:last-child
+            margin-top 3px
+            float right
+
+            .icon
+                font-size large
+                vertical-align text-bottom
 
 .caret-down
     display inline-block
@@ -129,10 +142,7 @@ body
     background-color bgBlue
     shadow(0, 0, 5px, rgba(0, 0, 0, .8))
 
-@media screen and (min-width 992px)
-    .topbar
-        a
-            padding-right 50px
-
-            &:last-of-type
-                float right
+@media screen and (max-width 768px)
+    .topbar a
+        & > img + span, .icon-plus + span
+            display none
