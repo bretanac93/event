@@ -1,7 +1,6 @@
 $(function () {
 
-    var $window = $(window),
-        $menu = $('.st-menu');
+    var $window = $(window);
 
     function mobilecheck() {
         var check = false;
@@ -11,71 +10,81 @@ $(function () {
         return check;
     }
 
+    var eventType = mobilecheck() ? 'touchstart' : 'click';
+
     var morphComponent = (function () {
-        var $morphSearch = $('#morphsearch'),
-            $profile = $('#profile'),
+        var $profile = $('#profile'),
+            $morphSearch = $('#morphsearch'),
             $ctrlClose = $('span.morphsearch-close'),
+
             isOpen = false,
 
-            toggleSearch = function (ev) {
+            toggle = function (ev) {
                 if (ev) ev.preventDefault();
 
-                if (isOpen) {
-                    $morphSearch.removeClass('open');
-                } else {
-                    $morphSearch.addClass('open');
-                }
+                if (isOpen) $morphSearch.removeClass('open');
+                else $morphSearch.addClass('open');
+
                 isOpen = !isOpen;
+            },
+
+            locate = function () {
+                var offset = $window.scrollTop(),
+                    container = $morphSearch[0].getBoundingClientRect(),
+                    content = $('.morphsearch-content')[0].getBoundingClientRect();
+
+                if (!isOpen)
+                    $morphSearch.css('top', offset);
+                else {
+                    if (container.top > 10 || content.bottom < $window.height()) {
+                        morphComponent.toggle();
+                        $morphSearch.css('top', offset);
+                    }
+                }
             };
 
-        var eventType = mobilecheck() ? 'touchstart' : 'click';
-
-        $profile.on(eventType, toggleSearch);
-        $ctrlClose.on(eventType, toggleSearch);
+        $profile.on(eventType, toggle);
+        $ctrlClose.on(eventType, toggle);
 
         $(document).keydown(function (ev) {
             var keyCode = ev.keyCode || ev.which;
             if (keyCode === 27 && isOpen) {
-                toggleSearch(ev);
+                toggle(ev);
             }
         });
 
-        return {toggle: toggleSearch};
+        return {
+            toggle: toggle,
+            locate: locate
+        };
     })();
 
-    var swiper = new Swiper(
-        '.swiper-container', {
-            pagination: '.swiper-pagination',
-            autoplay: 3500,
-            paginationClickable: '.swiper-pagination',
-            spaceBetween: 30,
-            effect: 'fade',
-            loop: true
-        });
+    var swiper = new Swiper('.swiper-container', {
+        pagination: '.swiper-pagination',
+        autoplay: 3500,
+        paginationClickable: '.swiper-pagination',
+        spaceBetween: 30,
+        effect: 'fade',
+        loop: true
+    });
 
     $window.scroll(function () {
+        morphComponent.locate();
 
-            var $morph = $('#morphsearch');
-            var container = $morph[0].getBoundingClientRect();
-            var offset = $window.scrollTop();
-            var content = $('.morphsearch-content')[0].getBoundingClientRect();
+        var searchOffset = $('#searchMain')[0].getBoundingClientRect().top;
 
-            console.log(container);
+        if (searchOffset < 0)
+            $('#searchTop').addClass('toggle');
+        else
+            $('#searchTop').removeClass('toggle');
+    });
 
-            function isOpen() {
-                return $morph.css('opacity') === '1';
-            }
-
-            if (!isOpen())
-                $morph.css('top', offset);
-            else {
-                if (container.top > 10 || content.bottom < $window.height()) {
-                    morphComponent.toggle();
-                    $morph.css('top', offset);
-                }
-            }
-        }
-    );
-
-
+    $('#searchTop').on(eventType, function (ev) {
+        ev.preventDefault()
+        $('html, body').animate({
+            scrollTop: 0
+        }, 1000, function () {
+            $('#searchMain').focus();
+        });
+    })
 });

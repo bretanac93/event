@@ -22,9 +22,9 @@ body {
     -webkit-transition-property: all;
     -moz-transition-property: all;
     transition-property: all;
-    -webkit-transition-duration: 0.5s;
-    -moz-transition-duration: 0.5s;
-    transition-duration: 0.5s;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    transition-duration: 0.3s;
     -webkit-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     -moz-transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
     transition-timing-function: cubic-bezier(0.7, 0, 0.3, 1);
@@ -126,13 +126,13 @@ body {
 }
 
 .morphsearch.open .dummy-column:first-child {
-    -webkit-transition-delay: 0.4s;
-    transition-delay: 0.4s;
+    -webkit-transition-delay: 0.5s;
+    transition-delay: 0.5s;
 }
 
 .morphsearch.open .dummy-column:nth-child(2) {
-    -webkit-transition-delay: 0.45s;
-    transition-delay: 0.45s;
+    -webkit-transition-delay: 0.6s;
+    transition-delay: 0.6s;
     margin-bottom: 2em;
 }
 
@@ -186,7 +186,7 @@ body {
 
 .dummy-media-object .badge {
     opacity: 0;
-    margin-right: -20%;
+    margin-right: 1%;
     background-color: rgb(0, 126, 177);
     float: right;
     -webkit-transform: scale3d(0, 0, 1);
@@ -216,7 +216,7 @@ body {
     display: inline-block;
     padding-left: 3%;
     margin: 0;
-    width: calc(100% - 70px);
+    width: 100%;
     color: rgba(145, 145, 145, 0.8);
 }
 
