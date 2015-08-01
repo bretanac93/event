@@ -1,8 +1,14 @@
 {% extends '::base.html.twig' %}
 {% block body %}
-    {% for item in entities %}
-        <p>{{ item.content }}</p>
-    {% else %}
-        <h1>Sorry, 0 notifications for you</h1>
-    {% endfor %}
+    <div class="row" style="position: absolute; top: 10%; left: 10%">
+        {% for item in entities %}
+            <form action="{{ url('app_user_notifications_delete') }}" method="post">
+                <input type="hidden" name="notification-id" id="notification-id" value="{{ item.id }}">
+                <span>{{ item.content }}</span>
+                <input type="submit" value="Delete">
+            </form>
+        {% else %}
+            <h1>Sorry, 0 notifications for you</h1>
+        {% endfor %}
+    </div>
 {% endblock %}

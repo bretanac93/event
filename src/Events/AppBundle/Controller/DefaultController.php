@@ -23,5 +23,9 @@ class DefaultController extends Controller
     public function deleteNotificationsAction(Request $request)
     {
         $em = $this->getDoctrine()->getManager();
+        $notification = $this->getDoctrine()->getManager()->getRepository('AppBundle:Notification')->find($request->get('notification-id'));
+        $em->remove($notification);
+        $em->flush();
+        return $this->redirect($this->generateUrl('app_user_notifications'));
     }
 }

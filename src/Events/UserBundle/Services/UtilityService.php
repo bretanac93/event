@@ -164,8 +164,9 @@ class UtilityService
      * @param $content
      * @param $type
      */
-    public function addNotification(User $creator, array $receivers, $content, $type)
+    public function addNotification(User $creator, $receivers, $content, $type)
     {
+        $receivers = $this->buildArrayFromCollection($receivers);
         $em = $this->container;
         for ($i = 0; $i < count($receivers); $i++) {
             $notification = new Notification();
