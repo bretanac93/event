@@ -27,6 +27,12 @@ app_followers:
 app_user_notifications:
     path:     /notifications
     defaults: { _controller: AppBundle:Default:notifications }
+
 app_user_pending:
     path:     /pending_requests
     defaults: { _controller: AppBundle:User:pendingRequests }
+
+app_user_notifications_delete:
+    path:     /notification_delete
+    defaults: { _controller: AppBundle:Default:deleteNotifications }
+    methods:  POST
