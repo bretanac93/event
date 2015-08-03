@@ -2,6 +2,10 @@
 
 {% block body %}
 
+    {% block page_styles %}
+        <link rel="stylesheet" href="{{ asset('public/plugins/datepicker/bootstrap-datepicker3.min.css') }}">
+    {% endblock %}
+
     <div class="swiper-container">
         <div class="shade"></div>
         <div class="swiper-wrapper">
@@ -27,137 +31,139 @@
 
         <form action="">
             <div class="search-bar">
-                <a href="#"><span class="icon icon-calendar"></span></a>
+                <a href="#" class="date-picker"><span class="icon icon-calendar"></span></a>
                 <a href="#"><span class="icon icon-search"></span></a>
                 <input type="search" id="searchMain">
             </div>
             <div class="buttons">
                 <button class="upload">Sube tu evento</button>
-                <button class="register">Registrate</button>
+                <button class="register">Regístrate</button>
             </div>
         </form>
     </div>
 
     <div class="container-fluid">
+        <div class="row blue">
+            <header class="col-xs-12">
+                <!-- navigation -->
+                <nav class="text-center text-uppercase navg" role="navigation">
+                    <div class="first">
+                        <h3>¿cómo funciona?</h3>
+                        <ul class="list-inline">
+                            <li id="go_second" class="item">
+                                <img src="{{ asset('public/img/3/organize.png') }}"/>
+
+                                <p>sube un evento</p>
+                            </li>
+                            <li class="middle"></li>
+                            <li id="go_third" class="item">
+                                <img src="{{ asset('public/img/3/attend.png') }}"/>
+
+                                <p>asiste a un evento</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="second">
+                        <h3>asiste a un evento</h3>
+                        <ul class="list-inline">
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/ticket.png') }}"/>
+
+                                    <p>saca tu entrada</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/share.png') }}"/>
+
+                                    <p>comparte con tus amigos</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/happy.png') }}"/>
+
+                                    <p>pásalo genial</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/chat.png') }}"/>
+
+                                    <p>cuéntanos como te fue</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/save_money.png') }}"/>
+
+                                    <p>tiempo y dinero</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="third">
+                        <h3>sube un evento</h3>
+                        <ul class="list-inline">
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/create.png') }}"/>
+
+                                    <p>crea un evento</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/publish.png') }}"/>
+
+                                    <p>publica y comparte</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/make.png') }}"/>
+
+                                    <p>realiza el evento</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/chat_white.png') }}"/>
+
+                                    <p>cuentanos tu experiencia</p>
+                                </a>
+                            </li>
+                            <li class="item">
+                                <a href="#">
+                                    <img src="{{ asset('public/img/3/bag.png') }}"/>
+
+                                    <p>obtén ingresos extras</p>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </header>
+        </div>
         <div class="row">
-            <div class="col-xs-12 wrapper">
-                <header>
-                    <!-- navigation -->
-                    <nav class="text-center text-uppercase navg" role="navigation">
-                        <div class="first">
-                            <h3>¿cómo funciona?</h3>
-                            <ul class="list-inline">
-                                <li id="go_second" class="item">
-                                    <img src="{{ asset('public/img/3/organize.png') }}"/>
-
-                                    <p>sube un evento</p>
-                                </li>
-                                <li id="go_third" class="item">
-                                    <img src="{{ asset('public/img/3/attend.png') }}"/>
-
-                                    <p>asiste a un evento</p>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="second">
-                            <h3>asiste a un evento</h3>
-                            <ul class="list-inline">
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/ticket.png') }}"/>
-
-                                        <p>saca tu entrada</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/share.png') }}"/>
-
-                                        <p>comparte con tus amigos</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/happy.png') }}"/>
-
-                                        <p>pásala genial</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/chat.png') }}"/>
-
-                                        <p>cuéntanos como te fue</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/save_money.png') }}"/>
-
-                                        <p>ahorra dinero</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="third">
-                            <h3>sube un evento</h3>
-                            <ul class="list-inline">
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/create.png') }}"/>
-
-                                        <p>crea un evento</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/publish.png') }}"/>
-
-                                        <p>publica y comparte</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/make.png') }}"/>
-
-                                        <p>realiza el evento</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/chat_white.png') }}"/>
-
-                                        <p>cuentanos la diferencia</p>
-                                    </a>
-                                </li>
-                                <li class="item">
-                                    <a href="#">
-                                        <img src="{{ asset('public/img/3/bag.png') }}"/>
-
-                                        <p>obten ingresos extras</p>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </header>
-                <div class="lorem">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error et, maxime! Cum deleniti eaque,
-                        ex excepturi id itaque iure laboriosam maiores nesciunt nihil quaerat quod sit soluta ullam
-                        velit. Labore.</p>
-
-                    <p>Dolorum id quisquam sequi sunt ut! Aliquam amet consectetur, corporis ducimus ex exercitationem,
-                        facilis in modi odit optio quae quod quos sunt? Aliquid aut minus nulla, quae repellendus sed
-                        tenetur?</p>
-
-                    <p>Consequatur debitis nostrum similique? Ab accusamus aliquid ducimus labore maxime minima omnis,
-                        perferendis rem rerum sunt veniam veritatis voluptates voluptatibus? Architecto et natus officia
-                        quae quis recusandae sed sit, vitae.</p>
-
-                    <p>Aliquam delectus necessitatibus quasi rerum. Atque earum laborum nesciunt sapiente tempore. Est,
-                        magnam quidem. Aliquam commodi consequuntur laudantium molestiae nemo numquam optio praesentium
-                        quisquam ut voluptatibus? Facilis illum, voluptatibus? Eaque?</p>
-                </div>
+            <div class="col-xs-12 events">
+                <h3 class="visible-xs visible-sm text-uppercase text-center">últimos eventos</h3>
+                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+                </a>
+                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+                </a>
+                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+                </a>
+                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+                </a>
+                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                    <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+                </a>
             </div>
         </div>
     </div>
@@ -168,6 +174,7 @@
 
 {% block page_scripts %}
     <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
+    <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.min.js') }}"></script>
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 

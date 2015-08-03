@@ -80,6 +80,12 @@ $(function () {
         loop: true
     });
 
+    // todo: it is used in input-group
+    //$('.date-picker').datepicker({
+    //    orientation: "right",
+    //    autoclose: true
+    //});
+
     $window.scroll(function () {
         morphComponent.locate();
 

@@ -14,7 +14,7 @@ body
     font-family "Arial"
 
 a:hover
-    text-decoration none
+    text-decoration none !important
 
 .topbar
     width 100%
@@ -56,7 +56,7 @@ a:hover
         transform: scale3d(1, 1, 1)
 
     a
-        text-decoration none
+        text-decoration none !important
         color white
         display block
         margin-left 25px
@@ -121,6 +121,11 @@ a:hover
     top 100%
     z-index 50
     width 100%
+    background-color white
+    shadow(0, 0, 5px, rgba(0, 0, 0, .8))
+
+.blue
+    background-color bgBlue
 
 .search
     position relative
@@ -182,10 +187,11 @@ a:hover
         margin-right 6%
 
 .wrapper
-    background-color bgBlue
-    shadow(0, 0, 5px, rgba(0, 0, 0, .8))
+    background-color white
+
 
 nav
+    background-color bgBlue
     color white
     height 200px
     position relative
@@ -209,11 +215,16 @@ nav
 .first
     display block
 
+    .middle
+        position absolute
+        top 70px
+        width 2px
+        height 75px
+        background-color lightblue
+        padding 0
+
     .item
         padding 0 12%
-
-    .item:first-of-type
-        border-right 3px solid lightBlue
 
     .item:last-of-type
         margin-left -5px
@@ -227,6 +238,16 @@ nav
     ul
         margin-top 20px
 
+.events
+    margin-top 30px
+
+.event
+    position relative
+    shadow(1px, 1px, 5px, rgba(0,0,0,.4))
+    padding-right 0
+    padding-left 0
+    margin 5px
+
 // media queries
 @media screen and (max-width 768px)
     span.hs
@@ -234,6 +255,10 @@ nav
 
     .search
         center(91.66666667%)
+
+    .events
+        .event
+            margin-left 0
 
 @media screen and (max-width 550px)
     .first .item
@@ -253,8 +278,6 @@ nav
     nav, .search
         font-size smaller
 
-
-
 @media screen and (min-width 768px)
     .search
         font-size large
@@ -262,6 +285,13 @@ nav
 
         h4
             letter-spacing 1px
+
+    .events
+        .event.col-md-4
+            width 48.8% !important
+
+            &:nth-of-type(3n)
+                margin-right 0
 
 @media screen and (min-width 992px)
     .search
@@ -272,7 +302,7 @@ nav
             font-size 35px
 
         & > h4
-            font-size 20px
+            font-size 19px
 
         button
             text-transform uppercase
@@ -280,7 +310,20 @@ nav
     .first .item
         padding 0 17%
 
+    .events
+        .event.col-md-4
+            width 32.2% !important
+
+            &:nth-of-type(3n)
+                margin-right 0
 
 @media screen and (min-width 1200px)
+    .events
+        .event.col-lg-3
+            width 24.2% !important
+
+            &:nth-of-type(4n)
+                margin-right 0
+
     .second .item, .third .item
         padding 0 3%
