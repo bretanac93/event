@@ -11,7 +11,7 @@ $(function () {
         if (e === document) return false;
         if ($(e).hasClass(classname)) return true;
         return e.parentNode && hasParentClass(e.parentNode, classname);
-    }
+    };
 
     var $window = $(window),
         mobile = function mobilecheck() {
