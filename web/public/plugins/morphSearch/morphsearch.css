@@ -177,6 +177,11 @@ body {
     color: white;
 }
 
+.dummy-media-object span:not(.badge) {
+    padding-left: 1%;
+    width: 10%;
+}
+
 .dummy-media-object img {
     display: inline-block;
     width: 50px;

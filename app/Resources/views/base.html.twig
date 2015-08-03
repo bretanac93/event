@@ -13,7 +13,7 @@
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
-            <link rel="stylesheet" href="{{ asset('public/css/icomoon.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/css/font-awesome.min.css') }}">
             <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}">
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
@@ -25,7 +25,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
-        <script src="{{ asset('public/js/rem.js') }}"></script>
+        {#<script src="{{ asset('public/js/rem.js') }}"></script>#}
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="{{ asset('public/js/html5shiv.js') }}"></script>
@@ -46,12 +46,12 @@
         </a>
 
         <a href="#" class="pull-right">
-            <span class="icon icon-plus"></span>
+            <span class="fa fa-plus"></span>
             <span class="hs">Sube un Evento</span>
         </a>
 
         <a href="#" class="pull-right" id="searchTop">
-            <span class="icon icon-search"></span>
+            <span class="fa fa-search"></span>
             <span class="hs">Busca tu Evento</span>
         </a>
     </div>
@@ -66,51 +66,50 @@
             <div class="dummy-column">
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-user"></span>
+                        <span class="fa fa-user"></span>
                         Mi Perfil
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-users"></span>
+                        <span class="fa fa-users"></span>
                         Amigos
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-ticket"></span>
+                        <span class="fa fa-ticket"></span>
                         Mis tickets
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-location"></span>
+                        <span class="fa fa-map-marker"></span>
                         Mis eventos
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-notification"></span>
+                        <span class="fa fa-info-circle"></span>
                         Notificaciones
                         <span class="badge">5</span>
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-bookmark"></span>
-                        {#todo: why twig doesn't see the utf-8#}
+                        <span class="fa fa-bookmark"></span>
                         Gestión
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3>
-                        <span class="icon icon-coin-dollar"></span>
+                        <span class="fa fa-dollar"></span>
                         Finanzas
                     </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
                     <h3 id="exit">
-                        <span class="icon icon-exit"></span>
+                        <span class="fa fa-sign-out"></span>
                         Salir
                     </h3>
                 </a>

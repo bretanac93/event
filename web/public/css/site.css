@@ -19,9 +19,9 @@ a:hover {
   -moz-box-shadow: 0 0 5px rgba(0,0,0,0.8);
   box-shadow: 0 0 5px rgba(0,0,0,0.8);
 }
-.topbar .icon {
+.topbar .fa {
   font-size: large;
-  vertical-align: text-bottom;
+  vertical-align: bottom;
 }
 .topbar #searchTop {
   float: left;
@@ -137,7 +137,7 @@ a:hover {
 .search a {
   position: absolute;
   font-size: 1.6em;
-  top: 15%;
+  top: 10%;
   z-index: 51;
   right: 5px;
 }
@@ -238,17 +238,30 @@ nav {
 .third ul {
   margin-top: 20px;
 }
+.top-blue {
+  background-image: linear-gradient(to bottom, #65aace, transparent);
+}
 .events {
-  margin-top: 30px;
+  margin-top: 20px;
+}
+.events:last-child {
+  color: #007eb1;
 }
 .event {
   position: relative;
-  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
-  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  -webkit-box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 10px rgba(0,0,0,0.4);
   padding-right: 0;
   padding-left: 0;
   margin: 5px;
+}
+.event .top {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+background-color
 }
 @media screen and (max-width: 768px) {
   span.hs {
@@ -296,7 +309,7 @@ nav {
   .events .event.col-md-4 {
     width: 48.8% !important;
   }
-  .events .event.col-md-4:nth-of-type(3n) {
+  .events .event.col-md-4:nth-of-type(2n) {
     margin-right: 0;
   }
 }
@@ -321,6 +334,9 @@ nav {
   .events .event.col-md-4 {
     width: 32.2% !important;
   }
+  .events .event.col-md-4:nth-of-type(2n) {
+    margin-right: 5px;
+  }
   .events .event.col-md-4:nth-of-type(3n) {
     margin-right: 0;
   }
@@ -328,6 +344,10 @@ nav {
 @media screen and (min-width: 1200px) {
   .events .event.col-lg-3 {
     width: 24.2% !important;
+  }
+  .events .event.col-lg-3:nth-of-type(2n),
+  .events .event.col-lg-3:nth-of-type(3n) {
+    margin-right: 5px;
   }
   .events .event.col-lg-3:nth-of-type(4n) {
     margin-right: 0;
