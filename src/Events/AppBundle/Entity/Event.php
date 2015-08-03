@@ -100,6 +100,11 @@ class Event
     private $isOrganizer;
 
     /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Comment", mappedBy="events")
+     */
+    private $comments;
+
+    /**
      * @ORM\ManyToOne(targetEntity="Events\UserBundle\Entity\User", inversedBy="uploader")
      * @ORM\JoinColumn(name="uploader", referencedColumnName="id")
      */
@@ -119,7 +124,7 @@ class Event
     {
 
         $this->willAttend = new ArrayCollection();
-
+        $this->comments = new ArrayCollection();
     }
 
     /**
@@ -176,6 +181,15 @@ class Event
     public function getCapacity()
     {
         return $this->capacity;
+    }
+
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 
     /**

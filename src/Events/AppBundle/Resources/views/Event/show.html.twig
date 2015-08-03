@@ -61,4 +61,8 @@
     </li>
     <li>{{ form(delete_form) }}</li>
 </ul>
+    <h2>Event Comments</h2>
+    {% for comment in comments %}
+        <h3>{{ comment.content }}</h3>
+    {% endfor %}
 {% endblock %}

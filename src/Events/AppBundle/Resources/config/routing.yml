@@ -1,3 +1,7 @@
+app_comment:
+    resource: "@AppBundle/Resources/config/routing/comment.yml"
+    prefix:   /comment
+
 app_event:
     resource: "@AppBundle/Resources/config/routing/event.yml"
     prefix:   /event

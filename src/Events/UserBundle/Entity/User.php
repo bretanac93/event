@@ -34,6 +34,11 @@ class User extends BaseUser
     private $senders;
 
     /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Comment", mappedBy="users")
+     */
+    private $comments;
+
+    /**
      * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\Event", mappedBy="isOrganizer")
      */
     private $isOrganizer;
@@ -100,6 +105,7 @@ class User extends BaseUser
         $this->senders = new ArrayCollection();
         $this->receivers = new ArrayCollection();
         $this->notifications = new ArrayCollection();
+        $this->comments = new ArrayCollection();
     }
 
     /**
@@ -108,6 +114,14 @@ class User extends BaseUser
     public function getSenders()
     {
         return $this->senders;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getComments()
+    {
+        return $this->comments;
     }
 
     public function getIsOrganizer()
@@ -140,9 +154,9 @@ class User extends BaseUser
         return $this->willAttend;
     }
 
-    public function setWillAttend(Event $user)
+    public function setWillAttend(Event $event)
     {
-        return $this->willAttend = $user;
+        return $this->willAttend = $event;
     }
 
     public function __toString()
