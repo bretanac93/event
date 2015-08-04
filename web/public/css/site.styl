@@ -1,9 +1,19 @@
+@font-face
+    font-family: 'homemade-apple';
+    src url(../fonts/HomemadeApple.ttf) format('truetype')
+
 bgBlue = rgb(0, 126, 177)
 bgGreen = rgb(21, 172, 163)
+bgGrey = rgb(237, 237, 237)
 
 center(wo)
     margin-left 0% - (wo / 2)
     left 50%
+
+borderRadius(amount)
+    -webkit-border-radius: amount
+    -moz-border-radius: amount
+    border-radius: amount
 
 shadow(hoff, voff, blur, color)
     -webkit-box-shadow: hoff voff blur color
@@ -124,7 +134,7 @@ a:hover
     right 0
     bottom 0
     left 0
-    background-color rgba(0, 0, 0, .3)
+    background-color rgba(0, 0, 0, .4)
     z-index 50
 
 .container-fluid
@@ -248,8 +258,6 @@ nav
     ul
         margin-top 20px
 
-
-
 .events
     margin-top 20px
 
@@ -258,20 +266,19 @@ nav
 
 .event
     position relative
-    shadow(1px, 1px, 10px, rgba(0, 0, 0, .4))
+    shadow(1px, 1px, 3px, rgba(0, 0, 0, .6))
+    transition(.25s)
     padding-right 0
     padding-left 0
     margin 5px
     font-size large
-
-
 
     .top
         position absolute
         top 0
         left 0
         width 100%
-        padding 1% 2% 1.5%
+        padding 1% 2% 2%
         color white
 
     .middle
@@ -306,30 +313,124 @@ nav
         color white
 
     .left-bar
+        padding-top 5%
+        top 0
         background-color bgBlue
-        width 20%
-        z-index 51
+        width 52px
         height 100%
+        z-index 51
+
+        .lgroup
+            height 30%
+
+        p:nth-child(2n)
+            margin-top -3px
+            padding-bottom 1%
+
+        p:nth-child(2n+1)
+            margin-bottom 0
 
     .bottom-bar
-        background-color bgGreen
         bottom 0
+        background-color bgGreen
         width 100%
-        height 46px
+        height 52px
         z-index 52
         font-size larger
         padding-top 8px
+
+    .ttip
+        background-color white
+        position absolute
+        left 75px
+        width 70%
+        borderRadius(10px)
+        z-index 60
+        opacity 0
+
+        &:before
+            content " "
+            width 0
+            height 0
+            border-top 5px solid transparent
+            border-bottom 5px solid transparent
+            border-right 15px solid white
+            position absolute
+            top 38%
+            left -15px
+            
+        p
+            color black
+            font-size smaller
+            margin 0
+
+    .ttip.active
+        opacity 1
+
+    .ot
+        top 4%
+
+    .om
+        top 34%
+
+    .ob
+        top 64%
 
     .shade, .left-bar, .bottom-bar
         opacity 0
         transition(.25s)
 
 .event.active
+    shadow(1px, 1px, 6px, rgba(0, 0, 0, .5))
+
     .shade, .left-bar, .bottom-bar
         opacity 1
 
+.pager
 
+    .fa
+        vertical-align bottom
 
+    & > span:first-child
+        padding-right 15px
+
+    & > span:last-child
+        padding-left 15px
+
+    .pages
+        display inline-block
+        font-size larger
+
+    .active
+        color bgBlue
+        font-size 2em
+        padding-left 10px
+        padding-right 10px
+
+.palm-trees
+    font-family homemade-apple
+    background-color bgGrey
+    padding 2% 0
+    color rgb(128, 128, 128)
+    position relative
+    overflow hidden
+
+    h2
+        z-index 10
+        position relative
+
+    .left-palm, .right-palm
+        position absolute
+        top 0
+        height 120%
+        z-index 5
+        opacity .4
+
+    .left-palm
+        left 0
+
+    .right-palm
+        right 0
 
 .top-deporte
     gradient(rgba(144, 174, 98, .8))

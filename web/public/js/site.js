@@ -11,7 +11,7 @@ $(function () {
         if (e === document) return false;
         if ($(e).hasClass(classname)) return true;
         return e.parentNode && hasParentClass(e.parentNode, classname);
-    };
+    }
 
     var $window = $(window),
         mobile = function mobilecheck() {
@@ -59,7 +59,7 @@ $(function () {
         $ctrlClose.on(eventType, toggle);
 
         $(document).keydown(function (ev) {
-            var keyCode = ev.keyCode || ev.which;
+            var keyCode = ev.keyCode || ev.obj;
             if (keyCode === 27 && isOpen) {
                 toggle(ev);
             }
@@ -107,7 +107,6 @@ $(function () {
     });
 
     function hideNavMobile(ev) {
-
         if (hasParentClass(ev.target, 'navg'))
             return;
 
@@ -146,7 +145,49 @@ $(function () {
         });
 
     $('.event').hover(function () {
-        $(this).toggleClass('active');
+        $(this).addClass('active');
+    }, function () {
+        tooltips.reset();
+        $(this).removeClass('active');
     });
+
+    var tooltips = (function () {
+        var active = null,
+            $that = undefined,
+            show = function (obj) {
+                var $target = $that.parent().siblings(obj);
+                $target.addClass('active').mouseleave(function () {
+                    hide($(this));
+                    active = null;
+                });
+                active = obj;
+            },
+            hide = function (obj) {
+                $(obj).removeClass('active');
+            },
+            reset = function () {
+                if (active) {
+                    $(active).removeClass('active');
+                    active = null;
+                }
+            };
+
+        $('.lgroup').mouseenter(function () {
+            $that = $(this);
+            var targetClass = ['.', $that.data('toggle')].join('');
+
+            if (active) {
+                if (active !== targetClass) {
+                    hide(active);
+                    show(targetClass);
+                }
+            } else {
+                show(targetClass);
+            }
+        });
+
+        return {reset: reset};
+
+    })();
 
 });

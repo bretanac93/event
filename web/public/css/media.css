@@ -5,6 +5,11 @@
   .events .event {
     margin-left: 0;
   }
+  .palm-trees h2 {
+    font-size: 18px;
+    padding-left: 5px;
+    padding-right: 5px;
+  }
 }
 @media screen and (max-width: 550px) {
   .first .item {
