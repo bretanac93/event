@@ -1,7 +1,7 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8"/>
+    <meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
     <title>
         {% block title %}
@@ -13,8 +13,8 @@
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
-            <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}"/>
-            <link rel="stylesheet" href="{{ asset('public/plugins/sidebar/sidebar.css') }}"/>
+            <link rel="stylesheet" href="{{ asset('public/css/icomoon.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}">
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
 
@@ -25,8 +25,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
-        {# TODO: use yep nope for feature detection (vw, vh, etc...) #}
-        <script src="{{ asset('public/js/rem.js') }}"></script>
+        {#<script src="{{ asset('public/js/rem.js') }}"></script>#}
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="{{ asset('public/js/html5shiv.js') }}"></script>
@@ -38,8 +37,92 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-    {% block body %}{% endblock %}
 
+    <div class="topbar">
+        <a href="#" class="pull-right" id="profile">
+            <img src="{{ asset('anonymous.png') }}"/>
+            <span class="hs">Mi Perfil</span>
+            <span class="caret-down"></span>
+        </a>
+
+        <a href="#" class="pull-right">
+            <span class="icon icon-plus"></span>
+            <span class="hs">Sube un Evento</span>
+        </a>
+
+        <a href="#" class="pull-right" id="searchTop">
+            <span class="icon icon-search"></span>
+            <span class="hs">Busca tu Evento</span>
+        </a>
+    </div>
+
+    <div id="morphsearch" class="morphsearch">
+        <div class="morphsearch-content">
+            <div class="dummy-column text-center">
+                <img class="img-circle img-responsive" src="{{ asset('anonymous.png') }}" alt="">
+
+                <h2 id="username">Julieta Fuentes</h2>
+            </div>
+            <div class="dummy-column">
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-user"></span>
+                        Mi Perfil
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-users"></span>
+                        Amigos
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-ticket"></span>
+                        Mis tickets
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-location"></span>
+                        Mis eventos
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-notification"></span>
+                        Notificaciones
+                        <span class="badge">5</span>
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-bookmark"></span>
+                        {#todo: why twig doesn't see the utf-8#}
+                        Gestión
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3>
+                        <span class="icon icon-coin-dollar"></span>
+                        Finanzas
+                    </h3>
+                </a>
+                <a class="dummy-media-object" href="#">
+                    <h3 id="exit">
+                        <span class="icon icon-exit"></span>
+                        Salir
+                    </h3>
+                </a>
+            </div>
+        </div>
+        <!-- /morphsearch-content -->
+        <span class="morphsearch-close"></span>
+    </div>
+    <!-- /morphsearch -->
+    <div class="overlay"></div>
+
+    {% block body %}{% endblock %}
 
     {% block scripts %}
 

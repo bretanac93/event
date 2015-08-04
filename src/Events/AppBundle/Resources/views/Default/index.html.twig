@@ -2,20 +2,14 @@
 
 {% block body %}
 
-    <div class="morphsearch visible-xs" id="morphsearch">
-        <form action="" class="morphsearch-form">
-            <input type="text" class="morphsearch-input" placeholder="busca tu evento">
-        </form>
-        <span class="morphsearch-close"></span>
-    </div>
-
     <div class="swiper-container">
+        <div class="shade"></div>
         <div class="swiper-wrapper">
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg1.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg2.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg3.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg4.jpg') }})"></div>
-            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/bg5.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg1.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg2.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg3.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg4.jpg') }})"></div>
+            <div class="swiper-slide" style="background-image:url({{ asset('public/img/2/slider/bg5.jpg') }})"></div>
         </div>
         <!-- Add Pagination -->
         <div class="swiper-pagination swiper-pagination-white"></div>
@@ -24,23 +18,23 @@
         <div class="swiper-button-prev swiper-button-white"></div>
     </div>
 
-    <div class="container-fluid">
-        <div class="row">
-            <div class="col-xs-12 topbar bgblue">
+    <div class="col-xs-12 col search text-center">
+        <h3 class="text-uppercase">Busca tu evento</h3>
+        <h5 class="visible-sm visible-xs">Las mejores actividades de tu zona</h5>
+        <h5 class="visible-md visible-lg">Descubre las mejores actividades de tu localidad</h5>
 
-                <a href="#" class="pull-right" id="profile">
-                    <img src="{{ asset('public/img/1/user.png') }}"/>
-                    <span>Mi Perfil</span>
-                    <span class="caret-down"></span>
-                </a>
-
-                <a href="#">
-                    <img src="{{ asset('public/img/1/plus.png') }}"/>
-                    <span>Sube un Evento</span>
-                </a>
+        <form action="">
+            <div class="search-bar">
+                <input type="search" id="searchMain" class="col-xs-12">
             </div>
-        </div>
+            <div class="buttons">
+                <button class="upload">Sube tu evento</button>
+                <button class="register">Registrate</button>
+            </div>
+        </form>
+    </div>
 
+    <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 wrapper">
                 <div class="lorem">
@@ -128,22 +122,12 @@
         </div>
     </div>
 
-    <div class="st-menu">
-        <h3>testing menu</h3>
-        <ul>
-            <li>click me 1</li>
-            <li>click me 2</li>
-            <li>click me 3</li>
-            <li>click me 4</li>
-            <li>click me 5</li>
-        </ul>
-    </div>
+
 
 {% endblock %}
 
 {% block page_scripts %}
     <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
-    {#<script src="{{ asset('public/plugins/stellar/jquery.stellar.js') }}"></script>#}
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 

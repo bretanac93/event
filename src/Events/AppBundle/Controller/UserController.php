@@ -49,9 +49,10 @@ class UserController extends Controller
 
         $em->persist($follow_user_entity);
         $em->flush();
+        $dc = $this->get('app_utils');
 
         $content = sprintf("%s sent a friend request to %s", $sender->getUsername(), $receiver->getUsername());
-        $this->get('app_utils')->addNotification($sender, $content, 'friend-request');
+        $this->get('app_utils')->addNotification($sender, $dc->getFollowers($sender), $content, 'friend-request');
 
         return $this->redirect($this->generateUrl('app_homepage'));
     }
@@ -79,9 +80,9 @@ class UserController extends Controller
 
         $em->persist($follow_request_accept);
         $em->flush();
-
+        $dc = $this->get('app_utils');
         $content = sprintf("%s accepted the %s friend request", $receiver->getUsername(), $sender->getUsername());
-        $this->get('app_utils')->addNotification($receiver, $content, 'friend-request-accepted');
+        $this->get('app_utils')->addNotification($receiver, $dc->getFollowers($sender), $content, 'friend-request-accepted');
 
         return $this->redirect($this->generateUrl('app_follow_requests'));
     }
