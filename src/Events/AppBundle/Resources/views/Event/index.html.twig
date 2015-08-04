@@ -46,6 +46,12 @@
                     <li>
                         <a href="{{ path('comment_new', { 'eventId': entity.id }) }}">Make a comment</a>
                     </li>
+                    <li>
+                        <form action="{{ url('follow_event') }}" method="post">
+                            <input type="hidden" name="event_id" id="event_id" value="{{ entity.id }}">
+                            <input type="submit" value="Follow">
+                        </form>
+                    </li>
                 </ul>
                 </td>
             </tr>
