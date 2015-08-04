@@ -1,0 +1,84 @@
+@media screen and (max-width 768px)
+    span.hs
+        display none
+
+    .search
+        center(91.66666667%)
+
+    .events
+        .event
+            margin-left 0
+
+@media screen and (max-width 550px)
+    .first .item
+        padding 0 5%
+
+@media screen and (max-width 480px)
+    .first .item
+        padding 0 10px
+
+@media screen and (max-width 360px)
+    h2
+        font-size 24px
+
+    h4
+        font-size 16px
+
+    nav, .search
+        font-size smaller
+
+@media screen and (min-width 768px)
+    .search
+        font-size large
+        center(66.66666667%)
+
+        h4
+            letter-spacing 1px
+
+    .events
+        .event.col-md-4
+            width 48.8% !important
+
+            &:nth-of-type(2n)
+                margin-right 0
+
+@media screen and (min-width 992px)
+    .search
+        center(50%)
+
+        & > h2
+            margin-bottom 3%
+            font-size 35px
+
+        & > h4
+            font-size 19px
+
+        button
+            text-transform uppercase
+
+    .first .item
+        padding 0 17%
+
+    .events
+        .event.col-md-4
+            width 32.2% !important
+
+            &:nth-of-type(2n)
+                margin-right 5px
+            &:nth-of-type(3n)
+                margin-right 0
+
+@media screen and (min-width 1200px)
+    .events
+        .event.col-lg-3
+            width 24.2% !important
+
+            &:nth-of-type(2n),
+            &:nth-of-type(3n)
+                margin-right 5px
+            &:nth-of-type(4n)
+                margin-right 0
+
+    .second .item, .third .item
+        padding 0 3%
+

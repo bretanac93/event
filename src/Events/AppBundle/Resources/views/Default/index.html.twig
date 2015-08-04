@@ -33,6 +33,7 @@
             <div class="search-bar">
                 <a href="#" class="date-picker"><span class="fa fa-calendar"></span></a>
                 <a href="#"><span class="fa fa-search"></span></a>
+                {#todo: line height not working on IE#}
                 <input type="search" id="searchMain">
             </div>
             <div class="buttons">
@@ -151,14 +152,35 @@
                 <h3 class="visible-xs visible-sm text-uppercase text-center">últimos eventos</h3>
                 <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
-                    <div class="top top-blue">
-                        <div class="type pull-left">
 
+                    <div class="top top-pelicula">
+                        <div class="type pull-left">
+                            {#todo: get all activity icons#}
+                            <span class="fa fa-film"></span>
                             <span class="text-uppercase">aventura</span>
                         </div>
                         <span class="price pull-right">
                             &euro; 150
                         </span>
+                    </div>
+                    <span class="middle">Viaje en globo por Gijón</span>
+                    <div class="bottom text-center">
+                        <div class="location pull-left">
+                            <p class="text-uppercase">asturias</p>
+                            <p class="text-muted"><small>26/07/2015</small></span>
+                        </div>
+                        <div class="capacity pull-right">
+                            <p class="text-center">30</p>
+                            <p class="text-muted text-capitalize"><small>plazas</small></p>
+                        </div>
+                    </div>
+
+                    <span class="shade"></span>
+                    <div class="left-bar">
+                        p+span
+                    </div>
+                    <div class="bottom-bar">
+                        <p class="text-center">Asistir al Evento</p>
                     </div>
 
                 </a>

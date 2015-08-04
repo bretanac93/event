@@ -91,7 +91,7 @@ $(function () {
 
         var searchOffset = $('#searchMain')[0].getBoundingClientRect().top;
 
-        if (searchOffset < 0)
+        if (searchOffset < 40)
             $('#searchTop').addClass('toggle');
         else
             $('#searchTop').removeClass('toggle');
@@ -144,5 +144,9 @@ $(function () {
             $(this).children().fadeOut(100);
             $('.first').fadeIn(100);
         });
+
+    $('.event').hover(function () {
+        $(this).toggleClass('active');
+    });
 
 });
