@@ -156,10 +156,12 @@ $(function () {
             $that = undefined,
             show = function (obj) {
                 var $target = $that.parent().siblings(obj);
-                $target.addClass('active').mouseleave(function () {
-                    hide($(this));
-                    active = null;
-                });
+
+                $target.addClass('active')
+                    .mouseleave(function () {
+                        hide($target);
+                    });
+
                 active = obj;
             },
             hide = function (obj) {
@@ -167,7 +169,7 @@ $(function () {
             },
             reset = function () {
                 if (active) {
-                    $(active).removeClass('active');
+                    hide(active);
                     active = null;
                 }
             };
