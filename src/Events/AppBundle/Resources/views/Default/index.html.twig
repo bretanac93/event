@@ -18,103 +18,145 @@
         <div class="swiper-button-prev swiper-button-white"></div>
     </div>
 
-    <div class="col-xs-12 col search text-center">
-        <h3 class="text-uppercase">Busca tu evento</h3>
-        <h5 class="visible-sm visible-xs">Las mejores actividades de tu zona</h5>
-        <h5 class="visible-md visible-lg">Descubre las mejores actividades de tu localidad</h5>
+    <div class="col-xs-11 col-sm-8 col-md-6 search text-center">
+        <h2 class="text-uppercase">Busca tu evento</h2>
+
+        <h4 class="visible-sm visible-xs">Las mejores actividades de tu zona</h4>
+
+        <h4 class="visible-md visible-lg">Descubre las mejores actividades de tu localidad</h4>
 
         <form action="">
             <div class="search-bar">
-                <input type="search" class="col-xs-12">
+                <a href="#"><span class="icon icon-calendar"></span></a>
+                <a href="#"><span class="icon icon-search"></span></a>
+                <input type="search" id="searchMain">
             </div>
-            <button class="upload">Sube tu evento</button>
-            <button class="register">Registrate</button>
+            <div class="buttons">
+                <button class="upload">Sube tu evento</button>
+                <button class="register">Registrate</button>
+            </div>
         </form>
     </div>
 
     <div class="container-fluid">
         <div class="row">
             <div class="col-xs-12 wrapper">
+                <header>
+                    <!-- navigation -->
+                    <nav class="text-center text-uppercase navg" role="navigation">
+                        <div class="first">
+                            <h3>¿cómo funciona?</h3>
+                            <ul class="list-inline">
+                                <li id="go_second" class="item">
+                                    <img src="{{ asset('public/img/3/organize.png') }}"/>
+
+                                    <p>sube un evento</p>
+                                </li>
+                                <li id="go_third" class="item">
+                                    <img src="{{ asset('public/img/3/attend.png') }}"/>
+
+                                    <p>asiste a un evento</p>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="second">
+                            <h3>asiste a un evento</h3>
+                            <ul class="list-inline">
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/ticket.png') }}"/>
+
+                                        <p>saca tu entrada</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/share.png') }}"/>
+
+                                        <p>comparte con tus amigos</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/happy.png') }}"/>
+
+                                        <p>pásala genial</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/chat.png') }}"/>
+
+                                        <p>cuéntanos como te fue</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/save_money.png') }}"/>
+
+                                        <p>ahorra dinero</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="third">
+                            <h3>sube un evento</h3>
+                            <ul class="list-inline">
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/create.png') }}"/>
+
+                                        <p>crea un evento</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/publish.png') }}"/>
+
+                                        <p>publica y comparte</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/make.png') }}"/>
+
+                                        <p>realiza el evento</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/chat_white.png') }}"/>
+
+                                        <p>cuentanos la diferencia</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/bag.png') }}"/>
+
+                                        <p>obten ingresos extras</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
                 <div class="lorem">
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Corporis optio, consequatur ut
-                        veritatis numquam laudantium, asperiores repellendus nulla! Voluptates earum porro voluptatibus,
-                        consectetur ad ut laboriosam architecto dolor magnam officiis.</p>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Error et, maxime! Cum deleniti eaque,
+                        ex excepturi id itaque iure laboriosam maiores nesciunt nihil quaerat quod sit soluta ullam
+                        velit. Labore.</p>
 
-                    <p>Omnis nihil rem quaerat ipsa doloremque suscipit perferendis magni ratione reprehenderit natus
-                        laborum excepturi, eos quasi repudiandae rerum minus dolorem quidem quibusdam tempore illo! Ut
-                        deserunt iusto ex ad, enim!</p>
+                    <p>Dolorum id quisquam sequi sunt ut! Aliquam amet consectetur, corporis ducimus ex exercitationem,
+                        facilis in modi odit optio quae quod quos sunt? Aliquid aut minus nulla, quae repellendus sed
+                        tenetur?</p>
 
-                    <p>Voluptate repellendus quae pariatur dolorum excepturi facilis, nulla officia optio asperiores non
-                        maiores odit nemo modi, amet porro sint similique deserunt. Nam totam eius ratione inventore
-                        blanditiis ipsa, sint aliquid!</p>
+                    <p>Consequatur debitis nostrum similique? Ab accusamus aliquid ducimus labore maxime minima omnis,
+                        perferendis rem rerum sunt veniam veritatis voluptates voluptatibus? Architecto et natus officia
+                        quae quis recusandae sed sit, vitae.</p>
 
-                    <p>Velit facere placeat molestiae libero amet fuga, voluptate dicta eum quas, quidem quod nemo quis
-                        ab provident aperiam incidunt veniam ipsa aliquam dolores, sed sapiente odit iusto id similique.
-                        Et.</p>
-
-                    <p>Natus aperiam expedita deserunt labore perferendis earum ea numquam voluptatem fugit deleniti,
-                        fugiat ipsam totam rem eaque. Fugiat quos nihil incidunt laudantium, recusandae ullam dolor sint
-                        laborum, illum, nisi eaque.</p>
-
-                    <p>Ipsam vero accusamus, veniam obcaecati sapiente? Blanditiis, aliquid. Provident cupiditate,
-                        adipisci velit, minus, minima voluptas blanditiis odit maxime doloremque pariatur voluptatum,
-                        iure eligendi nisi exercitationem dolorem error hic sint rerum.</p>
-
-                    <p>Quia reprehenderit voluptatem, sequi magnam delectus dolor ipsa! Repellat asperiores accusantium
-                        sapiente dolore incidunt ut mollitia, doloremque ratione nesciunt, voluptate accusamus maiores
-                        architecto vel est optio omnis ea, eius quibusdam.</p>
-
-                    <p>Temporibus ullam quae veritatis labore ratione error aspernatur repellendus, assumenda aut
-                        eveniet. Inventore, quia officiis! Doloremque obcaecati nemo dignissimos facere aspernatur
-                        ducimus, dolorum cupiditate nihil adipisci saepe praesentium aliquam laboriosam!</p>
-
-                    <p>Possimus fugiat ab mollitia vitae, alias nesciunt qui eaque impedit quisquam debitis accusamus
-                        delectus rerum quidem dolorum, nisi eveniet perferendis, quas molestias consectetur! Molestiae
-                        adipisci doloremque officiis quasi, ducimus consequuntur.</p>
-
-                    <p>Ut magnam accusantium minus in inventore fuga architecto, earum assumenda, ratione, rem, modi
-                        fugit porro! Omnis eum quibusdam saepe, porro animi tempore dignissimos, asperiores natus,
-                        placeat qui illum laborum in!</p>
-
-                    <p>Ipsa repellendus deserunt cum quam aspernatur, praesentium numquam beatae repudiandae quod culpa
-                        a expedita atque error quasi tempore qui odit quidem vitae quia! Quas maxime dignissimos a, ea
-                        doloribus inventore.</p>
-
-                    <p>A illo asperiores, ullam voluptatum error accusantium harum quod sequi, quia aspernatur labore
-                        est sit libero recusandae temporibus culpa modi dicta, aut aperiam? Sapiente alias perferendis
-                        tenetur harum, nostrum fuga!</p>
-
-                    <p>Repellat odit quaerat dicta praesentium, dolorum in ipsum facere ut consectetur dolores
-                        recusandae, quibusdam earum corporis doloribus sapiente necessitatibus alias blanditiis beatae.
-                        Quaerat error quas quam incidunt unde, quibusdam tempora.</p>
-
-                    <p>Alias rerum nam consectetur, sed dolor hic rem ab quis, officia maxime architecto pariatur,
-                        veritatis dolorem neque provident repellendus ipsam. Ipsa odit, amet, animi fuga obcaecati iste
-                        praesentium ut totam!</p>
-
-                    <p>Doloremque eligendi, fuga perferendis earum reiciendis voluptas! Voluptatibus ab quaerat tempora,
-                        esse soluta vel cupiditate aut perspiciatis sit libero reiciendis neque accusantium dicta
-                        possimus doloremque porro quo saepe amet sequi!</p>
-
-                    <p>Quis fugit, vel delectus voluptatibus voluptatum placeat nihil iste rerum eligendi consectetur
-                        odio dolorem, pariatur reprehenderit alias. Repudiandae aliquid obcaecati in at, temporibus
-                        quis, dolorum quae, reprehenderit fuga corrupti alias.</p>
-
-                    <p>Asperiores tempora modi, dolorum illum, facere dolorem obcaecati fuga accusamus, esse ut
-                        inventore! Sunt molestias, distinctio odit temporibus officiis tempora maxime repellendus quam
-                        est nemo necessitatibus architecto minus ab laboriosam?</p>
-
-                    <p>Cumque reprehenderit vel sapiente perspiciatis quasi minus dolores illo eum, in suscipit,
-                        officiis incidunt necessitatibus magni. Necessitatibus suscipit ut, quae incidunt repellendus,
-                        vero sunt, vel, laborum qui quos recusandae. Quidem.</p>
-
-                    <p>Eaque quaerat atque laudantium vero earum repudiandae quisquam, soluta, debitis, consectetur
-                        excepturi nam quae architecto minima distinctio incidunt? Rerum totam iure illo, voluptate nihil
-                        debitis ab itaque. Repellendus, ipsa, perferendis.</p>
-
-                    <p>Eos non, molestias odit in, distinctio inventore ad amet et animi! Culpa quidem quas dolorem
-                        recusandae delectus, fugiat soluta cumque odio dolore ut debitis quae voluptatum harum velit.
-                        Excepturi, maiores.</p>
+                    <p>Aliquam delectus necessitatibus quasi rerum. Atque earum laborum nesciunt sapiente tempore. Est,
+                        magnam quidem. Aliquam commodi consequuntur laudantium molestiae nemo numquam optio praesentium
+                        quisquam ut voluptatibus? Facilis illum, voluptatibus? Eaque?</p>
                 </div>
             </div>
         </div>

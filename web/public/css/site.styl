@@ -2,7 +2,6 @@ bgBlue = rgb(0, 126, 177)
 bgGreen = rgb(21, 172, 163)
 
 center(wo)
-    position absolute
     margin-left 0% - (wo / 2)
     left 50%
 
@@ -11,12 +10,11 @@ shadow(hoff, voff, blur, color)
     -moz-box-shadow: hoff voff blur color
     box-shadow: hoff voff blur color
 
-html, body
-    height 100%
-
 body
-    overflow-x hidden
-    overflow-y scroll
+    font-family "Arial"
+
+a:hover
+    text-decoration none
 
 .topbar
     width 100%
@@ -31,9 +29,37 @@ body
     z-index 200 !important
     shadow(0, 0, 5px, rgba(0, 0, 0, .8))
 
+    .icon
+        font-size large
+        vertical-align text-bottom
+
+    #searchTop
+        float left
+        opacity 0
+        -webkit-transform: scale3d(0, 0, 1)
+        -moz-transform: scale3d(0, 0, 1)
+        -ms-transform: scale3d(0, 0, 1)
+        -o-transform: scale3d(0, 0, 1)
+        transform: scale3d(0, 0, 1)
+        -webkit-transition: all .3s
+        -moz-transition: all .3s
+        -ms-transition: all .3s
+        -o-transition: all .3s
+        transition: all .3s
+
+    #searchTop.toggle
+        opacity 1
+        -webkit-transform: scale3d(1, 1, 1)
+        -moz-transform: scale3d(1, 1, 1)
+        -ms-transform: scale3d(1, 1, 1)
+        -o-transform: scale3d(1, 1, 1)
+        transform: scale3d(1, 1, 1)
+
     a
         text-decoration none
         color white
+        display block
+        margin-left 25px
 
         &:first-child
             color black
@@ -42,6 +68,9 @@ body
                 width 27px
                 height 27px
                 border-radius 50%
+
+        &:nth-child(2), &:last-child
+            margin-top 3px
 
 .caret-down
     display inline-block
@@ -91,6 +120,7 @@ body
     position absolute
     top 100%
     z-index 50
+    width 100%
 
 .search
     position relative
@@ -98,11 +128,25 @@ body
     z-index 50
     color white
 
-    h3, h5
+    h2, h4
         margin 0
 
-    h5
+    h4, input
         margin-bottom 7%
+
+    .search-bar
+        position relative
+
+    a
+        position absolute
+        font-size 1.6em
+        top 15%
+        z-index 51
+        right 5px
+
+        &:first-of-type
+            right 35px
+            color rgb(168, 168, 170)
 
     input, button
         border none
@@ -110,29 +154,133 @@ body
 
     input
         display block
-        margin-bottom 7%
+        width 100%
         color black
-        padding 6px
+        padding 6px 10px
         outline none
+        line-height 2
+
+        &::-ms-clear
+            /* remove cross in IE */
+            display none
 
     button
-        padding 5px 10px
+        padding 7px 25px
+        background-color bgGreen
+        -webkit-transition: all .3s
+        -moz-transition: all .3s
+        -ms-transition: all .3s
+        -o-transition: all .3s
+        transition: all .3s
+
+        &:hover, &:active
+            color bgGreen
+            background-color white
+            outline none
 
     .upload
-        background-color bgGreen
-
-    .register
-        color bgGreen
-        background-color white
+        margin-right 6%
 
 .wrapper
     background-color bgBlue
     shadow(0, 0, 5px, rgba(0, 0, 0, .8))
 
-@media screen and (min-width 992px)
-    .topbar
-        a
-            padding-right 50px
+nav
+    color white
+    height 200px
+    position relative
+    padding-bottom 10px
+    overflow-x auto
+    overflow-y hidden
+    white-space nowrap
 
-            &:last-of-type
-                float right
+.first, .second, .third
+    width 100%
+    position absolute
+    top 0
+    left 0
+    bottom 0
+
+    a
+        color white
+        text-decoration none
+        display inline-block
+
+.first
+    display block
+
+    .item
+        padding 0 12%
+
+    .item:first-of-type
+        border-right 3px solid lightBlue
+
+    .item:last-of-type
+        margin-left -5px
+
+.second, .third
+    display none
+
+    .item
+        padding 0 2%
+
+    ul
+        margin-top 20px
+
+// media queries
+@media screen and (max-width 768px)
+    span.hs
+        display none
+
+    .search
+        center(91.66666667%)
+
+@media screen and (max-width 550px)
+    .first .item
+        padding 0 5%
+
+@media screen and (max-width 480px)
+    .first .item
+        padding 0 10px
+
+@media screen and (max-width 360px)
+    h2
+        font-size 24px
+
+    h4
+        font-size 16px
+
+    nav, .search
+        font-size smaller
+
+
+
+@media screen and (min-width 768px)
+    .search
+        font-size large
+        center(66.66666667%)
+
+        h4
+            letter-spacing 1px
+
+@media screen and (min-width 992px)
+    .search
+        center(50%)
+
+        & > h2
+            margin-bottom 3%
+            font-size 35px
+
+        & > h4
+            font-size 20px
+
+        button
+            text-transform uppercase
+
+    .first .item
+        padding 0 17%
+
+
+@media screen and (min-width 1200px)
+    .second .item, .third .item
+        padding 0 3%

@@ -13,6 +13,7 @@
         {% block default_styles %}
             <link rel="stylesheet" href="{{ asset('public/css/bootstrap.css') }}"/>
             <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
+            <link rel="stylesheet" href="{{ asset('public/css/icomoon.css') }}">
             <link rel="stylesheet" href="{{ asset('public/plugins/morphSearch/morphsearch.css') }}">
             <link rel="stylesheet" href="{{ asset('public/css/site.css') }}"/>
         {% endblock %}
@@ -24,7 +25,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
-        {#<script src="{{ asset('public/js/rem.js') }}"></script>#}
+        <script src="{{ asset('public/js/rem.js') }}"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="{{ asset('public/js/html5shiv.js') }}"></script>
@@ -40,12 +41,18 @@
     <div class="topbar">
         <a href="#" class="pull-right" id="profile">
             <img src="{{ asset('anonymous.png') }}"/>
-            <span>Mi Perfil</span>
+            <span class="hs">Mi Perfil</span>
             <span class="caret-down"></span>
         </a>
-        <a href="#">
-            <img src="{{ asset('public/img/1/plus.png') }}"/>
-            <span>Sube un Evento</span>
+
+        <a href="#" class="pull-right">
+            <span class="icon icon-plus"></span>
+            <span class="hs">Sube un Evento</span>
+        </a>
+
+        <a href="#" class="pull-right" id="searchTop">
+            <span class="icon icon-search"></span>
+            <span class="hs">Busca tu Evento</span>
         </a>
     </div>
 
@@ -58,28 +65,54 @@
             </div>
             <div class="dummy-column">
                 <a class="dummy-media-object" href="#">
-                    <h3>Mi Perfil</h3>
+                    <h3>
+                        <span class="icon icon-user"></span>
+                        Mi Perfil
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Amigos</h3>
+                    <h3>
+                        <span class="icon icon-users"></span>
+                        Amigos
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Mis tickets</h3>
+                    <h3>
+                        <span class="icon icon-ticket"></span>
+                        Mis tickets
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Mis eventos</h3>
+                    <h3>
+                        <span class="icon icon-location"></span>
+                        Mis eventos
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Notificaciones <span class="badge">5</span></h3>
+                    <h3>
+                        <span class="icon icon-notification"></span>
+                        Notificaciones
+                        <span class="badge">5</span>
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Gestión</h3>
+                    <h3>
+                        <span class="icon icon-bookmark"></span>
+                        {#todo: why twig doesn't see the utf-8#}
+                        GestiÃ³n
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3>Finanzas</h3>
+                    <h3>
+                        <span class="icon icon-coin-dollar"></span>
+                        Finanzas
+                    </h3>
                 </a>
                 <a class="dummy-media-object" href="#">
-                    <h3 id="exit">Salir</h3>
+                    <h3 id="exit">
+                        <span class="icon icon-exit"></span>
+                        Salir
+                    </h3>
                 </a>
             </div>
         </div>
