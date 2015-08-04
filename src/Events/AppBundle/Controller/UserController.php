@@ -34,6 +34,8 @@ class UserController extends Controller
 
     public function followRequestAction(Request $request)
     {
+        if ($request->get('to_id'))
+            return $this->redirect($this->generateUrl('app_homepage'));
 
         $em = $this->getDoctrine()->getManager();
         $sender = $this->getUser();
@@ -70,6 +72,10 @@ class UserController extends Controller
     //Accept friend request.
     public function acceptRequestAction(Request $request)
     {
+
+        if ($request->get('from_id'))
+            return $this->redirect($this->generateUrl('app_homepage'));
+
         $em = $this->getDoctrine()->getManager();
         $sender = $em->getRepository('UserBundle:User')->find($request->get('from_id'));
         $receiver = $this->getUser();
