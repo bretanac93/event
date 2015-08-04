@@ -267,6 +267,9 @@ class EventController extends Controller
 
         $em->persist($follow);
         $em->flush();
+        $dc = $this->get('app_utils');
+        $content = sprintf("%s is now following the event %s", $user->getUsername(), $event->getTitle());
+        $dc->addNotification($user, $dc->getFollowers($user), $content, 'follow-event');
 
         return $this->redirect($this->generateUrl('event'));
     }
