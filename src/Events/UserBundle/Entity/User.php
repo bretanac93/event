@@ -75,6 +75,10 @@ class User extends BaseUser
      */
     private $notifications_received;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\FollowEvent", mappedBy="user")
+     */
+    private $followEvents;
 
     /**
      * @return ProfilePic
@@ -105,6 +109,7 @@ class User extends BaseUser
 
         $this->notifications_sent = new ArrayCollection();
         $this->notifications_received = new ArrayCollection();
+        $this->followEvents = new ArrayCollection();
 
     }
 
@@ -128,7 +133,6 @@ class User extends BaseUser
     {
         return $this->isOrganizer;
     }
-
 
 
     public function getUploader()
@@ -158,6 +162,7 @@ class User extends BaseUser
     {
         return $this->willAttend = $event;
     }
+
     /**
      * @return ArrayCollection
      */
@@ -172,6 +177,11 @@ class User extends BaseUser
     public function getNotificationsReceived()
     {
         return $this->notifications_received;
+    }
+
+    public function getEventsFollowed()
+    {
+        return $this->followEvents;
     }
 
     public function __toString()
