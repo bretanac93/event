@@ -1,0 +1,8 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    {% for event in entity %}
+        <h1>{{ event.username }}</h1>
+    {% endfor %}
+
+{% endblock %}

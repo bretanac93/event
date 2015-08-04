@@ -1,0 +1,30 @@
+comment:
+    path:     /
+    defaults: { _controller: "AppBundle:Comment:index" }
+
+comment_show:
+    path:     /{id}/show
+    defaults: { _controller: "AppBundle:Comment:show" }
+
+comment_new:
+    path:     /{eventId}/new
+    defaults: { _controller: "AppBundle:Comment:new" }
+
+comment_create:
+    path:     /create
+    defaults: { _controller: "AppBundle:Comment:create" }
+    methods:  POST
+
+comment_edit:
+    path:     /{id}/edit
+    defaults: { _controller: "AppBundle:Comment:edit" }
+
+comment_update:
+    path:     /{id}/update
+    defaults: { _controller: "AppBundle:Comment:update" }
+    methods:  [POST, PUT]
+
+comment_delete:
+    path:     /{id}/delete
+    defaults: { _controller: "AppBundle:Comment:delete" }
+    methods:  [POST, DELETE]

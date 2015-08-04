@@ -14,7 +14,6 @@ class DefaultController extends Controller
 
     public function notificationsAction()
     {
-        $user = $this->getUser();
         $result = $this->get('app_utils')->sort($this->get('app_utils')->buildArrayFromCollection($user->getNotificationsReceived()));
 
         return $this->render('@App/Notification/index.html.twig', array('entities' => $result));
