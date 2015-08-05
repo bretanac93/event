@@ -116,21 +116,22 @@ class Event
      */
     private $willAttend;
 
-
     /**
-     *
+     * @ORM\OneToMany(targetEntity="Events\AppBundle\Entity\FollowEvent", mappedBy="event")
      */
+    private $followers;
+
     public function __construct()
     {
-
         $this->willAttend = new ArrayCollection();
         $this->comments = new ArrayCollection();
+        $this->followers = new ArrayCollection();
     }
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -153,7 +154,7 @@ class Event
     /**
      * Get title
      *
-     * @return string 
+     * @return string
      */
     public function getTitle()
     {
@@ -208,7 +209,7 @@ class Event
     /**
      * Get category
      *
-     * @return string 
+     * @return string
      */
     public function getCategory()
     {
@@ -231,7 +232,7 @@ class Event
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -254,7 +255,7 @@ class Event
     /**
      * Get skills
      *
-     * @return string 
+     * @return string
      */
     public function getSkills()
     {
@@ -277,7 +278,7 @@ class Event
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -300,7 +301,7 @@ class Event
     /**
      * Get time
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getTime()
     {
@@ -323,7 +324,7 @@ class Event
     /**
      * Get price
      *
-     * @return string 
+     * @return string
      */
     public function getPrice()
     {
@@ -346,7 +347,7 @@ class Event
     /**
      * Get shareCost
      *
-     * @return boolean 
+     * @return boolean
      */
     public function getShareCost()
     {
@@ -369,7 +370,7 @@ class Event
     /**
      * Get eventType
      *
-     * @return string 
+     * @return string
      */
     public function getEventType()
     {
@@ -415,5 +416,13 @@ class Event
     public function getWillAttend()
     {
         return $this->willAttend;
+    }
+
+    /**
+     * @return ArrayCollection
+     */
+    public function getFollowers()
+    {
+        return $this->followers;
     }
 }

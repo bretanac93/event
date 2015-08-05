@@ -32,3 +32,8 @@ event_delete:
 event_i_will_attend:
     path: /{eventId}/willAttend
     defaults: { _controller: "AppBundle:Event:willAttend" }
+
+follow_event:
+    path: /follow_event
+    defaults: { _controller: "AppBundle:Event:followEvent" }
+    methods: POST

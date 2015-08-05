@@ -2,6 +2,7 @@
 
 namespace Events\AppBundle\Controller;
 
+use Events\AppBundle\Entity\FollowEvent;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 
@@ -24,11 +25,11 @@ class EventController extends Controller
         $em = $this->getDoctrine()->getManager();
 
         $entities = $em->getRepository('AppBundle:Event')->findAll();
-
         return $this->render('AppBundle:Event:index.html.twig', array(
             'entities' => $entities,
         ));
     }
+
     /**
      * Creates a new Event entity.
      *
@@ -49,7 +50,7 @@ class EventController extends Controller
 
         return $this->render('AppBundle:Event:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -79,11 +80,11 @@ class EventController extends Controller
     public function newAction()
     {
         $entity = new Event();
-        $form   = $this->createCreateForm($entity);
+        $form = $this->createCreateForm($entity);
 
         return $this->render('AppBundle:Event:new.html.twig', array(
             'entity' => $entity,
-            'form'   => $form->createView(),
+            'form' => $form->createView(),
         ));
     }
 
@@ -99,7 +100,7 @@ class EventController extends Controller
 
         $user = $this->getUser();
 
-        $comments = $em->getRepository('AppBundle:Comment')->findBy(array('users'=>$user , 'events'=>$entity));
+        $comments = $em->getRepository('AppBundle:Comment')->findBy(array('users' => $user, 'events' => $entity));
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find Event entity.');
@@ -108,9 +109,9 @@ class EventController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AppBundle:Event:show.html.twig', array(
-            'entity'      => $entity,
+            'entity' => $entity,
             'delete_form' => $deleteForm->createView(),
-            'comments'=>$comments
+            'comments' => $comments
         ));
     }
 
@@ -132,19 +133,19 @@ class EventController extends Controller
         $deleteForm = $this->createDeleteForm($id);
 
         return $this->render('AppBundle:Event:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
 
     /**
-    * Creates a form to edit a Event entity.
-    *
-    * @param Event $entity The entity
-    *
-    * @return \Symfony\Component\Form\Form The form
-    */
+     * Creates a form to edit a Event entity.
+     *
+     * @param Event $entity The entity
+     *
+     * @return \Symfony\Component\Form\Form The form
+     */
     private function createEditForm(Event $entity)
     {
         $form = $this->createForm(new EventType(), $entity, array(
@@ -156,6 +157,7 @@ class EventController extends Controller
 
         return $form;
     }
+
     /**
      * Edits an existing Event entity.
      *
@@ -181,11 +183,12 @@ class EventController extends Controller
         }
 
         return $this->render('AppBundle:Event:edit.html.twig', array(
-            'entity'      => $entity,
-            'edit_form'   => $editForm->createView(),
+            'entity' => $entity,
+            'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));
     }
+
     /**
      * Deletes a Event entity.
      *
@@ -223,8 +226,7 @@ class EventController extends Controller
             ->setAction($this->generateUrl('event_delete', array('id' => $id)))
             ->setMethod('DELETE')
             ->add('submit', 'submit', array('label' => 'Delete'))
-            ->getForm()
-        ;
+            ->getForm();
     }
 
     public function willAttendAction($eventId)
@@ -241,5 +243,34 @@ class EventController extends Controller
         $em->flush();
 
         return $this->redirect($this->generateUrl('app_homepage'));
+    }
+
+    public function followEventAction(Request $request)
+    {
+        if ($this->getUser() == null) {
+            return $this->redirect($this->generateUrl('app_homepage'));
+        }
+        $em = $this->getDoctrine()->getManager();
+
+        $user = $this->getUser();
+        $event_id = $request->get('event_id');
+
+        if ($event_id <= 0)
+            return $this->redirect($this->generateUrl('app_homepage'));
+
+        $event = $em->getRepository('AppBundle:Event')->find($event_id);
+
+        $follow = new FollowEvent();
+        $follow->setUser($user);
+        $follow->setEvent($event);
+        $follow->setCreationDate(new \DateTime('now'));
+
+        $em->persist($follow);
+        $em->flush();
+        $dc = $this->get('app_utils');
+        $content = sprintf("%s is now following the event %s", $user->getUsername(), $event->getTitle());
+        $dc->addNotification($user, $dc->getFollowers($user), $content, 'follow-event');
+
+        return $this->redirect($this->generateUrl('event'));
     }
 }
