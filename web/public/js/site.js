@@ -160,6 +160,7 @@ $(function () {
                 $target.addClass('active')
                     .mouseleave(function () {
                         hide($target);
+                        reset();
                     });
 
                 active = obj;

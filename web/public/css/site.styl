@@ -275,6 +275,7 @@ nav
 
     .top
         position absolute
+        opacity 1
         top 0
         left 0
         width 100%
@@ -358,7 +359,7 @@ nav
             position absolute
             top 38%
             left -15px
-            
+
         p
             color black
             font-size smaller
@@ -382,6 +383,9 @@ nav
 
 .event.active
     shadow(1px, 1px, 6px, rgba(0, 0, 0, .5))
+
+    .top
+        opacity 0
 
     .shade, .left-bar, .bottom-bar
         opacity 1
@@ -431,6 +435,37 @@ nav
 
     .right-palm
         right 0
+
+.done
+    h3
+        color bgBlue
+
+    .finalized
+        width 30%
+        height 100%
+
+.comments
+    h3
+        font-size 1.8em
+        color bgBlue
+        span
+            font-size 1.6em
+            padding-right 10px
+            vertical-align sub
+
+.comment
+    width 100%
+    margin-bottom 1%
+    figure
+        vertical-align top
+        margin-top 5px
+        display inline-block
+        width 20%
+        margin-right 1%
+        borderRadius(10px)
+    .text
+        width 75%
+        display inline-block
 
 .top-deporte
     gradient(rgba(144, 174, 98, .8))

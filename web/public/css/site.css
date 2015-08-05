@@ -273,6 +273,7 @@ nav {
 }
 .event .top {
   position: absolute;
+  opacity: 1;
   top: 0;
   left: 0;
   width: 100%;
@@ -392,6 +393,9 @@ nav {
   -moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
   box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
 }
+.event.active .top {
+  opacity: 0;
+}
 .event.active .shade,
 .event.active .left-bar,
 .event.active .bottom-bar {
@@ -441,6 +445,40 @@ nav {
 }
 .palm-trees .right-palm {
   right: 0;
+}
+.done h3 {
+  color: #007eb1;
+}
+.done .finalized {
+  width: 30%;
+  height: 100%;
+}
+.comments h3 {
+  font-size: 1.8em;
+  color: #007eb1;
+}
+.comments h3 span {
+  font-size: 1.6em;
+  padding-right: 10px;
+  vertical-align: sub;
+}
+.comment {
+  width: 100%;
+  margin-bottom: 1%;
+}
+.comment figure {
+  vertical-align: top;
+  margin-top: 5px;
+  display: inline-block;
+  width: 20%;
+  margin-right: 1%;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+}
+.comment .text {
+  width: 75%;
+  display: inline-block;
 }
 .top-deporte {
   background-image: -webkit-linear-gradient(180deg, rgba(144,174,98,0.8), rgba(144,174,98,0.8) 60%, transparent);
