@@ -1,3 +1,21 @@
+@media screen and (max-width 1200px)
+    .done
+
+
+        .list-inline
+            margin-top 2%
+            white-space nowrap
+            overflow-x auto
+            overflow-y hidden
+
+            li
+                float none
+
+                &:first-child,
+                &:last-child
+                    display none !important
+
+
 @media screen and (max-width 768px)
     span.hs
         display none
@@ -73,6 +91,10 @@
             &:nth-of-type(3n)
                 margin-right 0
 
+    .done
+        li.col-md-4
+            width 31% !important
+
 @media screen and (min-width 1200px)
     .events
         .event.col-lg-3
@@ -86,4 +108,3 @@
 
     .second .item, .third .item
         padding 0 3%
-
