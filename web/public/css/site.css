@@ -309,6 +309,7 @@ nav {
   position: absolute;
   left: 0;
   color: #fff;
+  z-index: 45;
 }
 .event .left-bar {
   padding-top: 5%;
@@ -316,7 +317,6 @@ nav {
   background-color: #007eb1;
   width: 52px;
   height: 100%;
-  z-index: 51;
 }
 .event .left-bar .lgroup {
   height: 30%;
@@ -333,7 +333,6 @@ nav {
   background-color: #15aca3;
   width: 100%;
   height: 52px;
-  z-index: 52;
   font-size: larger;
   padding-top: 8px;
 }
@@ -386,11 +385,6 @@ nav {
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-.event.active {
-  -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-  -moz-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-  box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
-}
 .event.active .top {
   opacity: 0;
 }
@@ -398,6 +392,12 @@ nav {
 .event.active .left-bar,
 .event.active .bottom-bar {
   opacity: 1;
+}
+.event.active .left-bar {
+  z-index: 51;
+}
+.event.active .bottom-bar {
+  z-index: 52;
 }
 .pager .fa {
   vertical-align: bottom;
@@ -462,6 +462,39 @@ nav {
   float: left;
   display: inline-block !important;
   margin-top: 10%;
+}
+.done .event .left-bar {
+  height: calc(100% - 46px);
+  padding-top: 15% !important;
+}
+.done .event .left-bar .lgroup {
+  height: 45% !important;
+}
+.done .event .shade {
+  bottom: 46px;
+}
+.done .event .bottom {
+  color: #007eb1;
+  padding: 0 0 0 4%;
+}
+.done .event .capacity {
+  width: 50%;
+  background-color: #f00;
+  color: #fff;
+  height: 46px;
+}
+.done .event .capacity p {
+  margin: 8px !important;
+  font-weight: normal !important;
+}
+.done .event .ttip {
+  white-space: initial;
+}
+.done .event .ot {
+  top: 15%;
+}
+.done .event .om {
+  top: 50%;
 }
 .comments h3 {
   font-size: 1.8em;
@@ -575,17 +608,17 @@ nav {
   background-image: linear-gradient(180deg, rgba(76,228,190,0.8), rgba(76,228,190,0.8) 60%, transparent);
 }
 @media screen and (max-width: 1200px) {
-  .done .list-inline {
+  .done > .list-inline {
     margin-top: 2%;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
   }
-  .done .list-inline li {
+  .done > .list-inline li {
     float: none;
   }
-  .done .list-inline li:first-child,
-  .done .list-inline li:last-child {
+  .done > .list-inline li:first-child,
+  .done > .list-inline li:last-child {
     display: none !important;
   }
 }
@@ -672,7 +705,7 @@ nav {
     margin-right: 0;
   }
   .done li.col-md-4 {
-    width: 31% !important;
+    width: 30% !important;
   }
 }
 @media screen and (min-width: 1200px) {

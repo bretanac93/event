@@ -1,15 +1,15 @@
 @media screen and (max-width: 1200px) {
-  .done .list-inline {
+  .done > .list-inline {
     margin-top: 2%;
     white-space: nowrap;
     overflow-x: auto;
     overflow-y: hidden;
   }
-  .done .list-inline li {
+  .done > .list-inline li {
     float: none;
   }
-  .done .list-inline li:first-child,
-  .done .list-inline li:last-child {
+  .done > .list-inline li:first-child,
+  .done > .list-inline li:last-child {
     display: none !important;
   }
 }
@@ -86,7 +86,7 @@
     margin-right: 0;
   }
   .done li.col-md-4 {
-    width: 31% !important;
+    width: 30% !important;
   }
 }
 @media screen and (min-width: 1200px) {
