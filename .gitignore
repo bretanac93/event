@@ -7,3 +7,4 @@ app/config/parameters.yml
 /bin/
 /web/uploads/profile
 .idea
+web/public/video
