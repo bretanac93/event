@@ -59,9 +59,6 @@ a:hover {
   display: block;
   margin-left: 25px;
 }
-.topbar a:first-child {
-  color: #000;
-}
 .topbar a:first-child img {
   width: 27px;
   height: 27px;
@@ -261,11 +258,11 @@ nav {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -ms-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
   padding-right: 0;
   padding-left: 0;
   margin: 5px;
@@ -390,9 +387,9 @@ nav {
   transition: all 0.25s ease;
 }
 .event.active {
-  -webkit-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-  -moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 .event.active .top {
   opacity: 0;
@@ -456,6 +453,9 @@ nav {
   margin-left: 3%;
   position: relative;
   margin-top: 8%;
+}
+.done .list-inline li {
+  padding: 0;
 }
 .done .list-inline li:first-child,
 .done .list-inline li:last-child {
