@@ -616,15 +616,44 @@ nav {
   color: #fff;
 }
 .modal-content .modal-body .brand {
-  padding: 15%;
+  padding: 7%;
   text-align: center;
 }
 .modal-content .modal-footer {
+  padding: 7%;
   background: #d3d3d3;
 }
-.fb {
-  background-color: #f00;
-  height: 20%;
+.social-buttons .text {
+  margin: 10%;
+  text-align: center;
+}
+.social-buttons .btn {
+  padding: 3.5%;
+  box-shadow: 0;
+}
+.social-buttons .fb {
+  background-color: #215bc2;
+  border: 1px #215bc2 solid;
+}
+.social-buttons .gplus {
+  background-color: #ed1c24;
+  border: 1px #ed1c24 solid;
+  margin-bottom: 1.3%;
+}
+.social-buttons .tw {
+  margin-top: 1.3%;
+  background-color: #00bcf2;
+  border: 1px #00bcf2 solid;
+  margin-bottom: 1.3%;
+}
+.social-buttons .in {
+  margin-top: 2%;
+  background-color: #424842;
+  border: 1px #424842 solid;
+}
+.social-button {
+  border-radius: 0;
+  width: 100%;
 }
 @media screen and (max-width: 1200px) {
   .done > .list-inline {
