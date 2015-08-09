@@ -607,6 +607,25 @@ nav {
   background-image: -o-linear-gradient(180deg, rgba(76,228,190,0.8), rgba(76,228,190,0.8) 60%, transparent);
   background-image: linear-gradient(180deg, rgba(76,228,190,0.8), rgba(76,228,190,0.8) 60%, transparent);
 }
+.modal-content {
+  border-radius: 0;
+}
+.modal-content .modal-header {
+  background: #0085ba;
+  text-align: center;
+  color: #fff;
+}
+.modal-content .modal-body .brand {
+  padding: 15%;
+  text-align: center;
+}
+.modal-content .modal-footer {
+  background: #d3d3d3;
+}
+.fb {
+  background-color: #f00;
+  height: 20%;
+}
 @media screen and (max-width: 1200px) {
   .done > .list-inline {
     margin-top: 2%;

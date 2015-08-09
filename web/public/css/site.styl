@@ -5,6 +5,8 @@
 bgBlue = rgb(0, 126, 177)
 bgGreen = rgb(21, 172, 163)
 bgGrey = rgb(237, 237, 237)
+modalBlue = rgb(0, 133, 186)
+modalGrey = rgb(211, 211, 211)
 
 center(wo)
     margin-left 0% - (wo / 2)
@@ -554,5 +556,26 @@ nav
 
 .top-pelicula
     gradient(rgba(76, 228, 190, .8))
+
+
+.modal-content
+    border-radius 0
+
+    .modal-header
+        background modalBlue
+        text-align center
+        color white
+
+    .modal-body
+        .brand
+            padding 15%
+            text-align center
+    .modal-footer
+        background modalGrey
+
+.fb
+    background-color red
+    height 20%
+
 
 @import media
