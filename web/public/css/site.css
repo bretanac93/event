@@ -452,7 +452,7 @@ nav {
 .done .list-inline {
   margin-left: 3%;
   position: relative;
-  margin-top: 8%;
+  margin-top: 10%;
 }
 .done .list-inline li {
   padding: 0;
@@ -477,6 +477,11 @@ nav {
   color: #007eb1;
   padding: 0 0 0 4%;
 }
+.done .event .location {
+  width: 50%;
+  font-size: initial !important;
+  padding-top: 5px;
+}
 .done .event .capacity {
   width: 50%;
   background-color: #f00;
@@ -484,8 +489,10 @@ nav {
   height: 46px;
 }
 .done .event .capacity p {
-  margin: 8px !important;
+  margin: 12px !important;
   font-weight: normal !important;
+  font-stretch: condensed !important;
+  font-size: large !important;
 }
 .done .event .ttip {
   white-space: initial;
@@ -522,6 +529,13 @@ nav {
 .comment .text {
   width: 75%;
   display: inline-block;
+}
+.video-wrapper {
+  padding-top: 30px;
+}
+.video-wrapper video {
+  width: 100%;
+  height: auto;
 }
 .top-deporte {
   background-image: -webkit-linear-gradient(180deg, rgba(144,174,98,0.8), rgba(144,174,98,0.8) 60%, transparent);
