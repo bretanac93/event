@@ -37,7 +37,6 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-
     <div class="topbar">
         <a href="#" class="pull-right" id="profile">
             <img src="{{ asset('anonymous.png') }}"/>
@@ -54,7 +53,24 @@
             <span class="icon icon-search"></span>
             <span class="hs">Busca tu Evento</span>
         </a>
+        <a data-toggle="modal" href="#rlogin-modal" class="pull-right">Launch demo modal</a>
     </div>
+
+    <div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title">Modal title</h4>
+                </div>
+                <div class="modal-body">
+                    ...
+                </div>
+                <div class="modal-footer">
+                </div>
+                </div>
+            </div>
+        </div>
 
     <div id="morphsearch" class="morphsearch">
         <div class="morphsearch-content">
