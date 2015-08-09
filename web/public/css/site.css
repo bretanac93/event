@@ -59,9 +59,6 @@ a:hover {
   display: block;
   margin-left: 25px;
 }
-.topbar a:first-child {
-  color: #000;
-}
 .topbar a:first-child img {
   width: 27px;
   height: 27px;
@@ -261,15 +258,16 @@ nav {
   -webkit-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   -moz-box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
   box-shadow: 1px 1px 3px rgba(0,0,0,0.6);
-  -webkit-transition: all 0.25s ease;
-  -moz-transition: all 0.25s ease;
-  -ms-transition: all 0.25s ease;
-  -o-transition: all 0.25s ease;
-  transition: all 0.25s ease;
+  -webkit-transition: all 0.25s linear;
+  -moz-transition: all 0.25s linear;
+  -ms-transition: all 0.25s linear;
+  -o-transition: all 0.25s linear;
+  transition: all 0.25s linear;
   padding-right: 0;
   padding-left: 0;
   margin: 5px;
   font-size: large;
+  display: inline-block;
 }
 .event .top {
   position: absolute;
@@ -366,7 +364,7 @@ nav {
   font-size: smaller;
   margin: 0;
 }
-.event .ttip.active {
+.event .ttip.working {
   opacity: 1;
 }
 .event .ot {
@@ -389,9 +387,9 @@ nav {
   transition: all 0.25s ease;
 }
 .event.active {
-  -webkit-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-  -moz-box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
-  box-shadow: 1px 1px 6px rgba(0,0,0,0.5);
+  -webkit-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  -moz-box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
+  box-shadow: 1px 1px 8px rgba(0,0,0,0.5);
 }
 .event.active .top {
   opacity: 0;
@@ -431,6 +429,8 @@ nav {
 .palm-trees h2 {
   z-index: 10;
   position: relative;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 .palm-trees .left-palm,
 .palm-trees .right-palm {
@@ -449,9 +449,19 @@ nav {
 .done h3 {
   color: #007eb1;
 }
-.done .finalized {
-  width: 30%;
-  height: 100%;
+.done .list-inline {
+  margin-left: 3%;
+  position: relative;
+  margin-top: 8%;
+}
+.done .list-inline li {
+  padding: 0;
+}
+.done .list-inline li:first-child,
+.done .list-inline li:last-child {
+  float: left;
+  display: inline-block !important;
+  margin-top: 10%;
 }
 .comments h3 {
   font-size: 1.8em;
@@ -564,6 +574,21 @@ nav {
   background-image: -o-linear-gradient(180deg, rgba(76,228,190,0.8), rgba(76,228,190,0.8) 60%, transparent);
   background-image: linear-gradient(180deg, rgba(76,228,190,0.8), rgba(76,228,190,0.8) 60%, transparent);
 }
+@media screen and (max-width: 1200px) {
+  .done .list-inline {
+    margin-top: 2%;
+    white-space: nowrap;
+    overflow-x: auto;
+    overflow-y: hidden;
+  }
+  .done .list-inline li {
+    float: none;
+  }
+  .done .list-inline li:first-child,
+  .done .list-inline li:last-child {
+    display: none !important;
+  }
+}
 @media screen and (max-width: 768px) {
   span.hs {
     display: none;
@@ -645,6 +670,9 @@ nav {
   }
   .events .event.col-md-4:nth-of-type(3n) {
     margin-right: 0;
+  }
+  .done li.col-md-4 {
+    width: 31% !important;
   }
 }
 @media screen and (min-width: 1200px) {

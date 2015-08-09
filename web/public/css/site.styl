@@ -86,7 +86,6 @@ a:hover
         margin-left 25px
 
         &:first-child
-            color black
 
             img
                 width 27px
@@ -267,11 +266,12 @@ nav
 .event
     position relative
     shadow(1px, 1px, 3px, rgba(0, 0, 0, .6))
-    transition(.25s)
+    transition(.25s, linear)
     padding-right 0
     padding-left 0
     margin 5px
     font-size large
+    display inline-block
 
     .top
         position absolute
@@ -365,7 +365,7 @@ nav
             font-size smaller
             margin 0
 
-    .ttip.active
+    .ttip.working
         opacity 1
 
     .ot
@@ -382,7 +382,7 @@ nav
         transition(.25s)
 
 .event.active
-    shadow(1px, 1px, 6px, rgba(0, 0, 0, .5))
+    shadow(1px, 1px, 8px, rgba(0, 0, 0, .5))
 
     .top
         opacity 0
@@ -422,6 +422,8 @@ nav
     h2
         z-index 10
         position relative
+        margin-left 2%
+        margin-right 2%
 
     .left-palm, .right-palm
         position absolute
@@ -440,9 +442,19 @@ nav
     h3
         color bgBlue
 
-    .finalized
-        width 30%
-        height 100%
+    .list-inline
+        margin-left 3%
+        position relative
+        margin-top 8%
+
+        li
+            padding 0
+
+    .list-inline li:first-child,
+    .list-inline li:last-child
+        float left
+        display inline-block !important
+        margin-top 10%
 
 .comments
     h3

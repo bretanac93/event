@@ -3,7 +3,7 @@
 {% block body %}
 
     {% block page_styles %}
-        <link rel="stylesheet" href="{{ asset('public/plugins/datepicker/bootstrap-datepicker3.min.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/plugins/datepicker/bootstrap-datepicker.css') }}">
     {% endblock %}
 
     <div class="swiper-container">
@@ -150,7 +150,8 @@
         <div class="row">
             <div class="col-xs-12 events">
                 <h3 class="visible-xs visible-sm text-uppercase text-center">últimos eventos</h3>
-                <a href="#" class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
+
+                <div class="event col-xs-12 col-sm-6 col-md-4 col-lg-3">
                     <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
 
                     <div class="top top-pelicula">
@@ -199,9 +200,9 @@
                             <p class="fa fa-2x fa-share-alt"></p>
                         </div>
                     </div>
-                    <div class="bottom-bar">
+                    <a href="#" class="bottom-bar">
                         <p class="text-center">Asistir al Evento</p>
-                    </div>
+                    </a>
 
                     <div class="ttip ot"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit.</p></div>
@@ -210,13 +211,13 @@
                     <div class="ttip ob"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
                             elit.</p></div>
 
-                </a>
+                </div>
             </div>
         </div>
 
         <div class="row">
             <div class="col-xs-12">
-                <div class="pager hidden-xs text-center text-muted">
+                <div class="pager hidden-xs hidden-sm text-center text-muted">
                     <span class="fa fa-3x fa-angle-left"></span>
 
                     <div class="pages">
@@ -230,7 +231,7 @@
                 </div>
 
                 <a href="#">
-                    <h4 class="text-uppercase pull-right visible-xs">más eventos...</h4>
+                    <h4 class="text-uppercase pull-right visible-xs visible-sm">más eventos...</h4>
                 </a>
             </div>
         </div>
@@ -253,18 +254,76 @@
 
         <div class="row">
             <div class="col-xs-12 col-lg-8 done">
-                <h3 class="visible-xs visible-sm text-uppercase text-center">eventos finalizados</h3>
+                <h3 class="hidden-lg text-uppercase text-center">eventos finalizados</h3>
 
-                <span class="fa fa-2x fa-angle-left"></span>
                 <ul class="list-inline">
-                    <li>
-                        <div class="finalized">
-                            <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt="">
-                            <span>asdasdasd</span>
+                    <li class="visible-lg">
+                        <span class="fa fa-3x fa-angle-left"></span>
+                    </li>
+                    <li class="event col-xs-11 col-sm-6 col-md-4">
+                        <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt=""/>
+
+                        <div class="top top-pelicula">
+                            <div class="type pull-left">
+                                {#todo: get all activity icons#}
+                                <span class="fa fa-film"></span>
+                                <span class="text-uppercase">aventura</span>
+                            </div>
+                        <span class="price pull-right">
+                            &euro; 150
+                        </span>
                         </div>
+                        <span class="middle">Viaje en globo por Gijón</span>
+
+                        <div class="bottom text-center">
+                            <div class="location pull-left">
+                                <p class="text-uppercase">asturias</p>
+
+                                <p class="text-muted">
+                                    <small>26/07/2015</small>
+                                    </span>
+                            </div>
+                            <div class="capacity pull-right">
+                                <p class="text-center text-capitalize">
+                                    finalizado
+                                </p>
+                            </div>
+                        </div>
+
+                        <span class="shade"></span>
+
+                        <div class="left-bar text-center">
+                            <div class="lgroup" data-toggle="ot">
+                                <p class="fa fa-2x fa-check-square-o"></p>
+
+                                <p>3</p>
+                            </div>
+                            <div class="lgroup" data-toggle="om">
+                                <p class="fa fa-2x fa-users"></p>
+
+                                <p>78</p>
+                            </div>
+                        </div>
+
+                        <div class="ttip ot"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                elit.</p></div>
+                        <div class="ttip om"><p class="text-center">Lorem ipsum dolor sit amet, consectetur adipisicing
+                                elit.</p></div>
+
+                    </li>
+                    <li class="col-xs-11 col-sm-6 col-md-4">
+                        <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt="">
+                        <span>asdasdasd</span>
+                    </li>
+                    <li class="col-xs-11 col-sm-6 col-md-4">
+                        <img class="img-responsive" src="{{ asset('public/img/4/bgm.jpg') }}" alt="">
+                        <span>asdasdasd</span>
+                    </li>
+                    <li class="visible-lg">
+                        <span class="fa fa-3x fa-angle-right"></span>
                     </li>
                 </ul>
-                <span class="fa fa-2x fa-angle-right"></span>
+
 
             </div>
             <div class="col-lg-4 hidden-xs hidden-sm hidden-md comments">
@@ -329,7 +388,7 @@
 
 {% block page_scripts %}
     <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
-    <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.min.js') }}"></script>
+    <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 
