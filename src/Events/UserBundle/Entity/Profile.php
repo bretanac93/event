@@ -353,4 +353,6 @@ class Profile
     {
         return $this->certifications;
     }
+    //TODO: Check how can I use the X-Maps API
+    //TODO: Make an entity to handle the certs, location, valuation_details, and the valuations in general (ManyToOne to all of these.)
 }
