@@ -82,13 +82,26 @@ class User extends BaseUser
 
     /**
      * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\Opinion", mappedBy="sender")
-    */
+     */
     private $messages_sent;
 
     /**
      * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\Opinion", mappedBy="receiver")
-    */
+     */
     private $messages_received;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Events\UserBundle\Entity\Profile", mappedBy="user")
+     */
+    private $profile_details;
+
+    /**
+     * @return Profile
+     */
+    public function getDetails()
+    {
+        return $this->profile_details;
+    }
 
     /**
      * @return ProfilePic
