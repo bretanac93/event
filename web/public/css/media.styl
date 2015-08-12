@@ -14,6 +14,18 @@
                     display none !important
 
 
+@media screen and (max-width 992px)
+    .words
+        margin-top 30px
+        p, .col-md-4
+            display inline-block
+        p
+            margin-right 30px
+            color bgBlue !important
+            font-size x-large !important
+        & > div:not(:last-of-type)
+            border-right none !important
+
 @media screen and (max-width 768px)
     span.hs
         display none
@@ -29,6 +41,17 @@
         font-size 18px
         padding-left 5px
         padding-right 5px
+
+    .counter
+        &.center
+            margin 0 10% !important
+
+        .rhombus
+            width .2rem !important
+            height .2rem !important
+
+        .amount
+            font-size .055rem !important
 
 @media screen and (max-width 550px)
     .first .item
@@ -48,6 +71,8 @@
     nav, .search
         font-size smaller
 
+
+
 @media screen and (min-width 768px)
     .search
         font-size large
@@ -62,6 +87,13 @@
 
             &:nth-of-type(2n)
                 margin-right 0
+
+    .counter
+        h4
+            font-size 18px !important
+            margin-left -20%
+        &.center h4
+            margin-left -70% !important
 
 @media screen and (min-width 992px)
     .search
@@ -93,6 +125,15 @@
         li.col-md-4
             width 30% !important
 
+    .counter
+        h4
+            margin-left -10%
+        &.center h4
+            margin-left -40% !important
+
+    .social li
+        padding 0 1% !important
+
 @media screen and (min-width 1200px)
     .events
         .event.col-lg-3
@@ -106,3 +147,10 @@
 
     .second .item, .third .item
         padding 0 3%
+
+
+    .counter
+        h4
+            margin-left -8%
+        &.center h4
+            margin-left -30% !important

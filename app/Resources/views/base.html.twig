@@ -25,6 +25,7 @@
 
     {% block init_scripts %}
         <script src="{{ asset('public/js/modernizr.js') }}"></script>
+        <script src="{{ asset('public/js/rem.js') }}"></script>
         <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
         <!--[if lt IE 9]>
         <script src="{{ asset('public/js/html5shiv.js') }}"></script>
@@ -55,7 +56,8 @@
         <a data-toggle="modal" href="#rlogin-modal" class="pull-right">Launch demo modal</a>
     </div>
 
-    <div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
@@ -73,9 +75,9 @@
                 <div class="modal-footer">
 
                 </div>
-                </div>
             </div>
         </div>
+    </div>
 
     <div id="morphsearch" class="morphsearch">
         <div class="morphsearch-content">
@@ -149,6 +151,7 @@
         {% block default_scripts %}
             <script src="{{ asset('public/js/jquery.js') }}"></script>
             <script src="{{ asset('public/js/bootstrap.js') }}"></script>
+            <script src="{{ asset('public/plugins/appear/jquery.appear.js') }}"></script>
         {% endblock %}
 
         {% block page_scripts %}

@@ -1,4 +1,28 @@
 $(function () {
+
+    // todo: use it in almost all webpage
+    (function () {
+        function where(dir) {
+            switch (dir) {
+                case 'top':
+                    return {top: '0px'};
+                case 'right':
+                    return {right: '0px'};
+                case 'left':
+                    return {left: '0px'};
+                default :
+                    return {bottom: '0px'}
+            }
+        };
+        $('.appear').each(function () {
+            $(this).appear(function () {
+                var dir = $(this).data('from');
+                var obj = $.extend({opacity: 1}, where(dir));
+                $(this).delay(300).animate(obj, 500);
+            })
+        });
+    })();
+
     $.extend($.expr[':'], {
         isBlock: function (obj) {
             if (!obj) return false;
@@ -71,7 +95,7 @@ $(function () {
         loop: true
     });
 
-    // todo: it is used in input-group
+    // todo: seek inside library a 2do
     $('.date-picker').datepicker({
         orientation: "right",
         autoclose: true
@@ -93,13 +117,13 @@ $(function () {
         });
     });
 
-    function hideNavMobile(ev) {
+    function toggleNavMobile(ev) {
         if (hasParentClass(ev.target, 'navg')) return;
         var active = $('nav').find('div:not(.first):isBlock');
         if (active.length === 0) return;
         $(active[0]).fadeOut(100);
         $('.first').fadeIn(100);
-        $(document).off(ev.type, hideNavMobile);
+        $(document).off(ev.type, toggleNavMobile);
     }
 
     function toggleNav(ev) {
@@ -109,7 +133,7 @@ $(function () {
         $('.first').fadeOut(100);
         $($target).fadeIn(100);
         if (ev.type === 'touchstart') {
-            $(document).on(ev.type, hideNavMobile);
+            $(document).on(ev.type, toggleNavMobile);
         }
     }
 
@@ -174,4 +198,17 @@ $(function () {
             reset: reset
         };
     })();
+
+    $('.stats > ul').appear(function () {
+        $("[data-to]").each(function () {
+            var count = $(this).attr('data-to');
+            $(this).delay(6000).countTo({
+                from: 50,
+                to: count,
+                speed: 3000,
+                refreshInterval: 50
+            });
+        });
+    });
+
 });

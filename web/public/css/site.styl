@@ -106,6 +106,22 @@ a:hover
     border-top 5px solid black
     vertical-align middle
 
+.appear
+    opacity 0
+    position relative
+
+[data-from=top]
+    top -30px
+
+[data-from=right]
+    right -60px
+
+[data-from=bottom]
+    bottom -30px
+
+[data-from=left]
+    left -60px
+
 .swiper-container
     width 100%
     height 100%
@@ -259,6 +275,42 @@ nav
     ul
         margin-top 20px
 
+.top-deporte
+    gradient(rgba(144, 174, 98, .8))
+
+.top-aventura
+    gradient(rgba(218, 138, 76, .8))
+
+.top-comida
+    gradient(rgba(175, 76, 76, .8))
+
+.top-bus
+    gradient(rgba(86, 113, 176, .8))
+
+.top-negocios
+    gradient(rgba(76, 208, 225, .8))
+
+.top-fiesta
+    gradient(rgba(209, 76, 255, .8))
+
+.top-belleza
+    gradient(rgba(254, 157, 157, .8))
+
+.top-musica
+    gradient(rgba(255, 76, 76, .8))
+
+.top-estudios
+    gradient(rgba(255, 121, 76, .8))
+
+.top-hombre
+    gradient(rgba(255, 183, 76, .8))
+
+.top-estrella
+    gradient(rgba(183, 202, 255, .8))
+
+.top-pelicula
+    gradient(rgba(76, 228, 190, .8))
+
 .events
     margin-top 20px
 
@@ -368,7 +420,6 @@ nav
 
     .ttip.working
         opacity 1
-
 
     .ot
         top 4%
@@ -529,48 +580,128 @@ nav
         display inline-block
 
 .video-wrapper
-    padding-top 30px
+    margin-top 30px
+    position relative
+    background-color rgb(211, 211, 211)
 
     video
         width 100%
         height auto
 
-.top-deporte
-    gradient(rgba(144, 174, 98, .8))
+    .reviews
+        position absolute
+        bottom -50px
+        left 50%
+        margin-left -179px
 
-.top-aventura
-    gradient(rgba(218, 138, 76, .8))
+        .user
+            position relative
+            padding 0
+            margin 0 5px
 
-.top-comida
-    gradient(rgba(175, 76, 76, .8))
+            .shade
+                border-radius 50%
 
-.top-bus
-    gradient(rgba(86, 113, 176, .8))
+        .user:not(.center) img
+            -webkit-box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
+            -moz-box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
+            box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
 
-.top-negocios
-    gradient(rgba(76, 208, 225, .8))
+        .user img
+            width 100px
 
-.top-fiesta
-    gradient(rgba(209, 76, 255, .8))
+        .user.center
+            margin-bottom -10px
+            img
+                width 120px
 
-.top-belleza
-    gradient(rgba(254, 157, 157, .8))
+.stats
+    background-color rgb(211, 211, 211)
 
-.top-musica
-    gradient(rgba(255, 76, 76, .8))
+    ul
+        padding 12% 0
 
-.top-estudios
-    gradient(rgba(255, 121, 76, .8))
+        .counter
+            position relative
+            padding 0
 
-.top-hombre
-    gradient(rgba(255, 183, 76, .8))
+            h4
+                position absolute
+                bottom -60%
+                white-space nowrap
+                color bgBlue
+                font-size .025rem
 
-.top-estrella
-    gradient(rgba(183, 202, 255, .8))
+            &.center
+                margin 0 20%
 
-.top-pelicula
-    gradient(rgba(76, 228, 190, .8))
+                h4
+                    margin-left -30%
 
+        .rhombus
+            background-color rgb(139, 139, 139)
+            width .1rem
+            height .1rem
+            borderRadius(8px)
+            -webkit-transform rotate(45deg)
+            -moz-transform rotate(45deg)
+            -ms-transform rotate(45deg)
+            -o-transform rotate(45deg)
+            transform rotate(45deg)
+
+        .amount
+            color rgb(105, 105, 105)
+            position absolute
+            top 30%
+            display block
+            width 100%
+            font-size .025rem
+            font-weight bold
+
+.social
+    background-color bgBlue
+    ul
+        margin 0
+        padding 10px 0
+        li
+            padding 0 2%
+            a
+                color white
+                text-decoration none
+
+div.row:last-of-type
+    color bgBlue
+    margin 30px 0
+
+    .words
+        text-align center
+        .col-md-4
+            padding-left 5%
+
+        p
+            color rgb(156, 156, 156)
+            font-size larger
+
+        & > div:not(:last-of-type)
+            border-right 3px solid rgb(142, 189, 210)
+
+    .square
+        width 240px
+        height 80px
+        background-color rgb(153, 203, 80)
+        position relative
+        left 50%
+        margin-left -120px
+
+footer
+    background-color rgb(105, 105, 105)
+
+    p
+        margin 0
+        padding 10px 0
+        color white
+
+/**********************************************************/
 
 .modal-content
     border-radius 0
@@ -590,6 +721,5 @@ nav
 .fb
     background-color red
     height 20%
-
 
 @import media
