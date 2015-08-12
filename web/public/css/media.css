@@ -15,6 +15,7 @@
 }
 @media screen and (max-width: 992px) {
   .words {
+    text-align: center;
     margin-top: 30px;
   }
   .words p,

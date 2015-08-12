@@ -13,7 +13,7 @@ $(function () {
                 default :
                     return {bottom: '0px'}
             }
-        };
+        }
         $('.appear').each(function () {
             $(this).appear(function () {
                 var dir = $(this).data('from');

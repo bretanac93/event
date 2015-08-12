@@ -730,9 +730,6 @@ div.row:last-of-type {
   color: #007eb1;
   margin: 30px 0;
 }
-div.row:last-of-type .words {
-  text-align: center;
-}
 div.row:last-of-type .words .col-md-4 {
   padding-left: 5%;
 }
@@ -796,6 +793,7 @@ footer p {
 }
 @media screen and (max-width: 992px) {
   .words {
+    text-align: center;
     margin-top: 30px;
   }
   .words p,
