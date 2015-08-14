@@ -81,6 +81,29 @@ class User extends BaseUser
     private $followEvents;
 
     /**
+     * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\Opinion", mappedBy="sender")
+     */
+    private $messages_sent;
+
+    /**
+     * @ORM\OneToMany(targetEntity="Events\UserBundle\Entity\Opinion", mappedBy="receiver")
+     */
+    private $messages_received;
+
+    /**
+     * @ORM\OneToOne(targetEntity="Events\UserBundle\Entity\Profile", mappedBy="user")
+     */
+    private $profile_details;
+
+    /**
+     * @return Profile
+     */
+    public function getDetails()
+    {
+        return $this->profile_details;
+    }
+
+    /**
      * @return ProfilePic
      */
     public function getProfilePic()
@@ -111,6 +134,8 @@ class User extends BaseUser
         $this->notifications_received = new ArrayCollection();
         $this->followEvents = new ArrayCollection();
 
+        $this->messages_sent = new ArrayCollection();
+        $this->messages_received = new ArrayCollection();
     }
 
     /**
@@ -182,6 +207,16 @@ class User extends BaseUser
     public function getEventsFollowed()
     {
         return $this->followEvents;
+    }
+
+    public function getSentMessages()
+    {
+        return $this->messages_sent;
+    }
+
+    public function getReceivedMessages()
+    {
+        return $this->messages_received;
     }
 
     public function __toString()

@@ -7,6 +7,10 @@ bgGreen = rgb(21, 172, 163)
 bgGrey = rgb(237, 237, 237)
 modalBlue = rgb(0, 133, 186)
 modalGrey = rgb(211, 211, 211)
+btnTw = #00bcf2
+btnFb = rgb(33, 91, 194)
+btnGp = rgb(237, 28, 36)
+btnIn = rgb(66, 72, 66)
 
 center(wo)
     margin-left 0% - (wo / 2)
@@ -712,13 +716,41 @@ footer
 
     .modal-body
         .brand
-            padding 15%
+            padding 7%
             text-align center
     .modal-footer
+        padding 7%
         background modalGrey
 
-.fb
-    background-color red
-    height 20%
+.social-buttons
+    .text
+        margin 10%
+        text-align: center
+    .btn
+        padding 3.5%
+        box-shadow 0
+    .fb
+        background-color btnFb
+        border 1px btnFb solid
+
+    .gplus
+        background-color btnGp
+        border 1px btnGp solid
+        margin-bottom 1.3%
+
+    .tw
+        margin-top 1.3%
+        background-color btnTw
+        border 1px btnTw solid
+        margin-bottom 1.3%
+
+    .in
+        margin-top 2%
+        background-color btnIn
+        border 1px btnIn solid
+
+.social-button
+    border-radius 0
+    width 100%
 
 @import media
