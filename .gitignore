@@ -8,3 +8,4 @@ app/config/parameters.yml
 /web/uploads/profile
 .idea
 web/public/video
+composer.phar
