@@ -548,6 +548,7 @@
 			}
 
 			// todo: this is where the magic happens
+			$('#date').val(formatted);
 
 			return this;
 		},

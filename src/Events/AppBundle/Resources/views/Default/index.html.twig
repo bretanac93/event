@@ -34,7 +34,8 @@
                 <a href="#" class="date-picker"><span class="fa fa-calendar"></span></a>
                 <a href="#"><span class="fa fa-search"></span></a>
                 {#todo: line height not working on IE, polyfill with height#}
-                <input type="search" id="searchMain">
+                <input type="search" id="searchMain" name="searchTerm">
+                <input type="hidden" id="date" name="date">
             </div>
             <div class="buttons">
                 <button class="upload">Sube tu evento</button>
