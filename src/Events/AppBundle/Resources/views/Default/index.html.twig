@@ -3,7 +3,9 @@
 {% block body %}
 
     {% block page_styles %}
+        <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
         <link rel="stylesheet" href="{{ asset('public/plugins/datepicker/bootstrap-datepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/home/home.css') }}"/>
     {% endblock %}
 
     <div class="swiper-container">
@@ -514,6 +516,7 @@
                     <h4 class="text-uppercase">eventos organizados</h4>
                 </li>
 
+                {# todo: shadow or path ? #}
                 <li class="counter">
                     <div class="rhombus"></div>
                     <span class="amount" data-to="877">877</span>
@@ -522,7 +525,6 @@
             </ul>
         </div>
 
-        {# todo: shadow or path ? #}
         <div class="row social text-center">
             <ul class="list-inline">
                 <li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>
