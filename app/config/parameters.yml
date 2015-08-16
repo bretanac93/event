@@ -1,0 +1,12 @@
+# This file is auto-generated during the composer install
+parameters:
+    database_host: ec2-54-83-10-210.compute-1.amazonaws.com
+    database_port: dfpla6019f22an
+    database_name: events
+    database_user: dxiymfvzqntfrp
+    database_password: 5PU4VznZlKk3aVVeY1_7fanaml
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: bf49853e39f65e8bb2966bdc66e1001ccbc9ac9d
