@@ -1,8 +1,8 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: ec2-54-83-10-210.compute-1.amazonaws.com
-    database_port: dfpla6019f22an
-    database_name: events
+    database_port: 5432
+    database_name: dfpla6019f22an
     database_user: dxiymfvzqntfrp
     database_password: 5PU4VznZlKk3aVVeY1_7fanaml
     mailer_transport: smtp
