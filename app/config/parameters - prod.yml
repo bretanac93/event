@@ -1,10 +1,10 @@
 # This file is auto-generated during the composer install
 parameters:
-    database_host: 127.0.0.1
+    database_host: ec2-54-83-10-210.compute-1.amazonaws.com
     database_port: 5432
-    database_name: events
-    database_user: postgre
-    database_password: 123
+    database_name: dfpla6019f22an
+    database_user: dxiymfvzqntfrp
+    database_password: 5PU4VznZlKk3aVVeY1_7fanaml
     mailer_transport: gmail
     mailer_host: ~
     mailer_user: mail4devpurp
