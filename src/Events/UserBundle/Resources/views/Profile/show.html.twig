@@ -1,14 +1,31 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+{% block page_styles %}
+    <link rel="stylesheet" href="{{ asset('public/css/user/user.css') }}"/>
+{% endblock %}
+
 {% block fos_user_content %}
 
-    {% block page_styles %}
-        <link rel="stylesheet" href="{{ asset('public/css/user/user.css') }}"/>
-    {% endblock %}
-
-
-    {% block page_scripts %}
-        <script src="{{ asset('public/js/site.js') }}"></script>
-    {% endblock %}
+    <div class="bgimg text-center">
+        <div class="main">
+            <img src="{{ asset('anonymous.png') }}" alt="">
+            <h3>Julieta Fuentes</h3>
+            <ul class="list-inline">
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+            </ul>
+            <p id="val">1.500 valoraciones</p>
+            <p class="text-uppercase">particular</p>
+            <p>Usuario desde 20/5/2015</p>
+        </div>
+    </div>
 
 {% endblock fos_user_content %}
+
+{% block page_scripts %}
+    <script src="{{ asset('public/js/site.js') }}"></script>
+{% endblock %}
+
