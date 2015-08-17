@@ -4,6 +4,7 @@ namespace Events\AppBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -30,5 +31,12 @@ class DefaultController extends Controller
         $em->remove($notification);
         $em->flush();
         return $this->redirect($this->generateUrl('app_user_notifications'));
+    }
+
+    public function searchAction()
+    {
+        $finder = $this->get('fos_elastica.finder.app.user');
+        $results = $finder->find('potete');
+        print_r($results);
     }
 }

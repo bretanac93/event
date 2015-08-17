@@ -17,6 +17,9 @@ class NativeSlugifyTest extends \PHPUnit_Framework_TestCase
 {
     public function testSlugify()
     {
+        setlocale(LC_ALL, 'en_US.utf8');
+        setlocale(LC_CTYPE, 'en_US.utf8');
+
         $service = new NativeSlugify();
 
         $this->assertEquals($service->slugify('test'), 'test');

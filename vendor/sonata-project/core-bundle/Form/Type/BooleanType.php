@@ -25,7 +25,7 @@ class BooleanType extends AbstractType
     const TYPE_NO = 2;
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
@@ -45,13 +45,13 @@ class BooleanType extends AbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'catalogue' => 'SonataCoreBundle',
-            'choices'   => array(
+            'translation_domain' => 'SonataCoreBundle',
+            'choices'            => array(
                 self::TYPE_YES  => 'label_type_yes',
                 self::TYPE_NO   => 'label_type_no',
             ),
@@ -60,7 +60,7 @@ class BooleanType extends AbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getParent()
     {
@@ -68,7 +68,7 @@ class BooleanType extends AbstractType
     }
 
     /**
-     * {@inheritDoc}
+     * {@inheritdoc}
      */
     public function getName()
     {

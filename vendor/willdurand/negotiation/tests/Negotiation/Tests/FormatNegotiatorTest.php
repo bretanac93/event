@@ -248,6 +248,15 @@ class FormatNegotiatorTest extends TestCase
                     'parameters' => array(),
                 ),
             ),
+            array(
+                '*/*',
+                array('foo', 'bar', 'baz'),
+                array(
+                    'value'      => 'foo',
+                    'quality'    => 0.01,
+                    'parameters' => array(),
+                ),
+            ),
             // Incompatible
             array(
                 'text/html',
@@ -371,6 +380,52 @@ class FormatNegotiatorTest extends TestCase
                 array('json', 'html', '*/*'),
                 array('application/json', 'application/x-json', 'text/html', 'application/xhtml+xml', '*/*')
             ),
+        );
+    }
+
+    /**
+     * cf.  https://github.com/willdurand/Negotiation/issues/30,
+     *      https://github.com/FriendsOfSymfony/FOSRestBundle/issues/610
+     *
+     * @dataProvider dataProviderForTakesParametersIntoAccount
+     */
+    public function testTakesParametersIntoAccount($acceptHeaderString, $expectedFormat)
+    {
+        $this->negotiator->registerFormat('xml', array(
+            'application/vnd.my.app+xml'
+        ), true);
+        $this->negotiator->registerFormat('json', array(
+            'application/vnd.my.app+json'
+        ), true);
+        $this->negotiator->registerFormat('odata-v4', array(
+            'application/json;odata.metadata=full',
+            'application/json;odata.metadata=none',
+            'application/json;odata.metadata=minimal'
+        ), true);
+        $this->negotiator->registerFormat('odata-v4-minimal-streaming', array(
+            'application/json;odata.metadata=minimal;odata.streaming=true'
+        ), true);
+        $this->negotiator->registerFormat('odata-v3-verbose', array(
+            'application/json;odata=verbose'
+        ), true);
+        $this->negotiator->registerFormat('atom-entry', array(
+            'application/atom+xml;type=entry'
+        ), true);
+
+        $this->assertEquals('json', $this->negotiator->getBestFormat('application/vnd.my.app', array('json', 'xml')));
+        $this->assertEquals('json', $this->negotiator->getBestFormat('application/vnd.my.app+json', array('json', 'xml')));
+        $this->assertEquals('xml', $this->negotiator->getBestFormat('application/vnd.my.app+xml', array('json', 'xml')));
+
+        $this->assertNotNull($this->negotiator->getBest($acceptHeaderString, array('*/*')));
+        $this->assertEquals($expectedFormat, $this->negotiator->getBestFormat($acceptHeaderString, array('*/*')));
+    }
+
+    public static function dataProviderForTakesParametersIntoAccount()
+    {
+        return array(
+            array('application/json;odata.metadata=minimal;odata.streaming=true', 'odata-v4-minimal-streaming'),
+            array('application/vnd.my.app+json;version=1.0', 'json'),
+            array('application/vnd.my.app+xml;version=1.0', 'xml'),
         );
     }
 }
