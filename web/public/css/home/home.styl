@@ -1,0 +1,594 @@
+@import "../base"
+
+@font-face {
+    font-family: 'homemade-apple';
+    src: url("../fonts/HomemadeApple.ttf") format('truetype');
+}
+
+.swiper-container
+    width 100%
+    height 100%
+    position fixed
+
+.swiper-slide
+    background-position center
+    background-size cover
+
+.swiper-pagination
+    z-index 51
+
+.swiper-pagination-bullet
+    width 15px
+    height 15px
+    opacity 1
+
+.swiper-pagination-bullet-active
+    background-color rgb(17, 171, 161) !important
+
+[class^=swiper-button]
+    display none
+
+.shade
+    position absolute
+    top 0
+    right 0
+    bottom 0
+    left 0
+    background-color rgba(0, 0, 0, .4)
+    z-index 50
+
+.container-fluid
+    position absolute
+    top 100%
+    z-index 50
+    width 100%
+    background-color white
+    shadow(0, 0, 5px, rgba(0, 0, 0, .8))
+
+.blue
+    background-color bgBlue
+
+.search
+    position relative
+    top 30%
+    z-index 50
+    color white
+
+    h2, h4
+        margin 0
+
+    h4, input
+        margin-bottom 7%
+
+    .search-bar
+        position relative
+
+    a
+        position absolute
+        font-size 1.6em
+        top 10%
+        z-index 51
+        right 5px
+
+        &:first-of-type
+            right 35px
+            color rgb(168, 168, 170)
+
+    input, button
+        border none
+        opacity .8
+
+    input
+        display block
+        width 100%
+        color black
+        padding 6px 10px
+        outline none
+        line-height 2
+
+        &::-ms-clear
+            /* remove cross in IE */
+            display none
+
+    button
+        padding 7px 25px
+        background-color bgGreen
+        -webkit-transition: all .3s
+        -moz-transition: all .3s
+        -ms-transition: all .3s
+        -o-transition: all .3s
+        transition: all .3s
+
+        &:hover, &:active
+            color bgGreen
+            background-color white
+            outline none
+
+    .upload
+        margin-right 6%
+
+.wrapper
+    background-color white
+
+nav
+    background-color bgBlue
+    color white
+    height 200px
+    position relative
+    padding-bottom 10px
+    overflow-x auto
+    overflow-y hidden
+    white-space nowrap
+
+.first, .second, .third
+    width 100%
+    position absolute
+    top 0
+    left 0
+    bottom 0
+
+    a
+        color white
+        text-decoration none
+        display inline-block
+
+.first
+    display block
+
+    .middle
+        position absolute
+        top 70px
+        width 2px
+        height 75px
+        background-color lightblue
+        padding 0
+
+    .item
+        padding 0 12%
+
+    .item:last-of-type
+        margin-left -5px
+
+.second, .third
+    display none
+
+    .item
+        padding 0 2%
+
+    ul
+        margin-top 20px
+
+.top-deporte
+    gradient(rgba(144, 174, 98, .8))
+
+.top-aventura
+    gradient(rgba(218, 138, 76, .8))
+
+.top-comida
+    gradient(rgba(175, 76, 76, .8))
+
+.top-bus
+    gradient(rgba(86, 113, 176, .8))
+
+.top-negocios
+    gradient(rgba(76, 208, 225, .8))
+
+.top-fiesta
+    gradient(rgba(209, 76, 255, .8))
+
+.top-belleza
+    gradient(rgba(254, 157, 157, .8))
+
+.top-musica
+    gradient(rgba(255, 76, 76, .8))
+
+.top-estudios
+    gradient(rgba(255, 121, 76, .8))
+
+.top-hombre
+    gradient(rgba(255, 183, 76, .8))
+
+.top-estrella
+    gradient(rgba(183, 202, 255, .8))
+
+.top-pelicula
+    gradient(rgba(76, 228, 190, .8))
+
+.events
+    margin-top 20px
+
+    &:last-child
+        color bgBlue
+
+.event
+    position relative
+    shadow(1px, 1px, 3px, rgba(0, 0, 0, .6))
+    transition(.25s, linear)
+    padding-right 0
+    padding-left 0
+    margin 5px
+    font-size large
+    display inline-block
+
+    .top
+        position absolute
+        opacity 1
+        top 0
+        left 0
+        width 100%
+        padding 1% 2% 2%
+        color white
+
+    .middle
+        display block
+        position absolute
+        bottom 50px
+        left 2%
+        color white
+        text-shadow 2px 2px 2px black
+        font-stretch ultra-condensed
+        font-size larger
+
+    .bottom
+        padding 0 4%
+        p
+            margin 0
+            padding 0
+
+        .location p:first-child,
+        .capacity p:first-child
+            font-size larger
+            font-weight bold
+
+        .location p:last-child,
+        .capacity p:last-child
+            margin-top -10px
+
+    .left-bar,
+    .bottom-bar
+        position absolute
+        left 0
+        color white
+        z-index 45
+
+    .left-bar
+        padding-top 5%
+        top 0
+        background-color bgBlue
+        width 52px
+        height 100%
+
+        .lgroup
+            height 30%
+
+        p:nth-child(2n)
+            margin-top -3px
+            padding-bottom 1%
+
+        p:nth-child(2n+1)
+            margin-bottom 0
+
+    .bottom-bar
+        bottom 0
+        background-color bgGreen
+        width 100%
+        height 52px
+        font-size larger
+        padding-top 8px
+
+    .ttip
+        background-color white
+        position absolute
+        left 75px
+        width 70%
+        borderRadius(10px)
+        z-index 60
+        opacity 0
+
+        &:before
+            content " "
+            width 0
+            height 0
+            border-top 5px solid transparent
+            border-bottom 5px solid transparent
+            border-right 15px solid white
+            position absolute
+            top 38%
+            left -15px
+
+        p
+            color black
+            font-size smaller
+            margin 0
+
+    .ttip.working
+        opacity 1
+
+    .ot
+        top 4%
+
+    .om
+        top 34%
+
+    .ob
+        top 64%
+
+    .shade, .left-bar, .bottom-bar
+        opacity 0
+        transition(.25s)
+
+.event.active
+    .top
+        opacity 0
+
+    .shade, .left-bar, .bottom-bar
+        opacity 1
+
+    .left-bar
+        z-index 51
+
+    .bottom-bar
+        z-index 52
+
+.pager
+
+    .fa
+        vertical-align bottom
+
+    & > span:first-child
+        padding-right 15px
+
+    & > span:last-child
+        padding-left 15px
+
+    .pages
+        display inline-block
+        font-size larger
+
+    .active
+        color bgBlue
+        font-size 2em
+        padding-left 10px
+        padding-right 10px
+
+.palm-trees
+    font-family homemade-apple
+    background-color bgGrey
+    padding 2% 0
+    color rgb(128, 128, 128)
+    position relative
+    overflow hidden
+
+    h2
+        z-index 10
+        position relative
+        margin-left 2%
+        margin-right 2%
+
+    .left-palm, .right-palm
+        position absolute
+        top 0
+        height 120%
+        z-index 5
+        opacity .4
+
+    .left-palm
+        left 0
+
+    .right-palm
+        right 0
+
+.done
+    h3
+        color bgBlue
+
+    .list-inline
+        margin-left 3%
+        position relative
+        margin-top 10%
+
+        li
+            padding 0
+
+    .list-inline li:first-child,
+    .list-inline li:last-child
+        float left
+        display inline-block !important
+        margin-top 10%
+
+    .event
+        .left-bar
+            height calc(100% - 46px)
+            padding-top 15% !important
+
+            .lgroup
+                height 45% !important
+
+        .shade
+            bottom 46px
+
+        .bottom
+            color bgBlue
+            padding 0 0 0 4%
+
+        .location
+            width 50%
+            font-size initial !important
+            padding-top 5px
+
+        .capacity
+            width 50%
+            background-color red
+            color white
+            height 46px
+
+            p
+                margin 12px !important
+                font-weight normal !important
+                font-stretch condensed !important
+                font-size large !important
+
+        .ttip
+            white-space initial
+
+        .ot
+            top 15%
+
+        .om
+            top 50%
+
+.comments
+    h3
+        font-size 1.8em
+        color bgBlue
+        span
+            font-size 1.6em
+            padding-right 10px
+            vertical-align sub
+
+.comment
+    width 100%
+    margin-bottom 1%
+
+    figure
+        vertical-align top
+        margin-top 5px
+        display inline-block
+        width 20%
+        margin-right 1%
+        borderRadius(10px)
+
+    .text
+        width 75%
+        display inline-block
+
+.video-wrapper
+    margin-top 30px
+    position relative
+    background-color rgb(211, 211, 211)
+
+    video
+        width 100%
+        height auto
+
+    .reviews
+        position absolute
+        bottom -50px
+        left 50%
+        margin-left -179px
+
+        .user
+            position relative
+            padding 0
+            margin 0 5px
+
+            .shade
+                border-radius 50%
+
+        .user:not(.center) img
+            -webkit-box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
+            -moz-box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
+            box-shadow: 0 5px 100px rgba(0, 0, 0, .5), 0 20px 30px rgba(0, 0, 0, .1)
+
+        .user img
+            width 100px
+
+        .user.center
+            margin-bottom -10px
+            img
+                width 120px
+
+.stats
+    background-color rgb(211, 211, 211)
+
+    ul
+        padding 12% 0
+
+        .counter
+            position relative
+            padding 0
+
+            h4
+                position absolute
+                bottom -60%
+                white-space nowrap
+                color bgBlue
+                font-size .025rem
+
+            &.center
+                margin 0 20%
+
+                h4
+                    margin-left -30%
+
+        .rhombus
+            background-color rgb(139, 139, 139)
+            width .1rem
+            height .1rem
+            borderRadius(8px)
+            -webkit-transform rotate(45deg)
+            -moz-transform rotate(45deg)
+            -ms-transform rotate(45deg)
+            -o-transform rotate(45deg)
+            transform rotate(45deg)
+
+        .amount
+            color rgb(105, 105, 105)
+            position absolute
+            top 30%
+            display block
+            width 100%
+            font-size .025rem
+            font-weight bold
+
+
+/**********************************************************/
+
+.modal-content
+    border-radius 0
+
+    .modal-header
+        background modalBlue
+        text-align center
+        color white
+
+    .modal-body
+        .brand
+            padding 7%
+            text-align center
+    .modal-footer
+        padding 7%
+        background modalGrey
+
+.social-buttons
+    .text
+        margin 10%
+        text-align: center
+    .btn
+        padding 3.5%
+        box-shadow 0
+    .fb
+        background-color btnFb
+        border 1px btnFb solid
+
+    .gplus
+        background-color btnGp
+        border 1px btnGp solid
+        margin-bottom 1.3%
+
+    .tw
+        margin-top 1.3%
+        background-color btnTw
+        border 1px btnTw solid
+        margin-bottom 1.3%
+
+    .in
+        margin-top 2%
+        background-color btnIn
+        border 1px btnIn solid
+
+.social-button
+    border-radius 0
+    width 100%
+
+@import media

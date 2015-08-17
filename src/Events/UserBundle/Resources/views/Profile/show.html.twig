@@ -1,0 +1,14 @@
+{% extends "FOSUserBundle::layout.html.twig" %}
+
+{% block fos_user_content %}
+
+    {% block page_styles %}
+        <link rel="stylesheet" href="{{ asset('public/css/user/user.css') }}"/>
+    {% endblock %}
+
+
+    {% block page_scripts %}
+        <script src="{{ asset('public/js/site.js') }}"></script>
+    {% endblock %}
+
+{% endblock fos_user_content %}

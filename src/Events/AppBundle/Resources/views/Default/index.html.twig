@@ -3,7 +3,9 @@
 {% block body %}
 
     {% block page_styles %}
+        <link rel="stylesheet" href="{{ asset('public/plugins/swiper/swiper.css') }}">
         <link rel="stylesheet" href="{{ asset('public/plugins/datepicker/bootstrap-datepicker.css') }}">
+        <link rel="stylesheet" href="{{ asset('public/css/home/home.css') }}"/>
     {% endblock %}
 
     <div class="swiper-container">
@@ -33,8 +35,9 @@
             <div class="search-bar">
                 <a href="#" class="date-picker"><span class="fa fa-calendar"></span></a>
                 <a href="#"><span class="fa fa-search"></span></a>
-                {#todo: line height not working on IE#}
-                <input type="search" id="searchMain">
+                {#todo: line height not working on IE, polyfill with height#}
+                <input type="search" id="searchMain" name="searchTerm">
+                <input type="hidden" id="date" name="date">
             </div>
             <div class="buttons">
                 <button class="upload">Sube tu evento</button>
@@ -51,13 +54,13 @@
                     <div class="first">
                         <h3>¿cómo funciona?</h3>
                         <ul class="list-inline">
-                            <li id="go_second" class="item">
+                            <li id="go_second" class="item appear" data-from="left">
                                 <img src="{{ asset('public/img/3/organize.png') }}"/>
 
                                 <p>sube un evento</p>
                             </li>
-                            <li class="middle"></li>
-                            <li id="go_third" class="item">
+                            <li class="middle appear" data-from="bottom"></li>
+                            <li id="go_third" class="item appear" data-from="right">
                                 <img src="{{ asset('public/img/3/attend.png') }}"/>
 
                                 <p>asiste a un evento</p>
@@ -172,7 +175,7 @@
 
                             <p class="text-muted">
                                 <small>26/07/2015</small>
-                                </span>
+                            </p>
                         </div>
                         <div class="capacity pull-right">
                             <p class="text-center">30</p>
@@ -253,7 +256,7 @@
         </div>
 
         <div class="row">
-            <div class="col-xs-12 col-lg-8 done">
+            <div class="col-xs-12 col-lg-8 done appear" data-from="bottom">
                 <h3 class="hidden-lg text-uppercase text-center">eventos finalizados</h3>
 
                 <ul class="list-inline">
@@ -265,7 +268,6 @@
 
                         <div class="top top-pelicula">
                             <div class="type pull-left">
-                                {#todo: get all activity icons#}
                                 <span class="fa fa-film"></span>
                                 <span class="text-uppercase">aventura</span>
                             </div>
@@ -281,7 +283,7 @@
 
                                 <p class="text-muted">
                                     <small>26/07/2015</small>
-                                    </span>
+                                </p>
                             </div>
                             <div class="capacity pull-right">
                                 <p class="text-center text-uppercase">
@@ -316,7 +318,6 @@
 
                         <div class="top top-pelicula">
                             <div class="type pull-left">
-                                {#todo: get all activity icons#}
                                 <span class="fa fa-film"></span>
                                 <span class="text-uppercase">aventura</span>
                             </div>
@@ -332,7 +333,7 @@
 
                                 <p class="text-muted">
                                     <small>26/07/2015</small>
-                                    </span>
+                                </p>
                             </div>
                             <div class="capacity pull-right">
                                 <p class="text-center text-uppercase">
@@ -366,7 +367,6 @@
 
                         <div class="top top-pelicula">
                             <div class="type pull-left">
-                                {#todo: get all activity icons#}
                                 <span class="fa fa-film"></span>
                                 <span class="text-uppercase">aventura</span>
                             </div>
@@ -382,7 +382,7 @@
 
                                 <p class="text-muted">
                                     <small>26/07/2015</small>
-                                    </span>
+                                </p>
                             </div>
                             <div class="capacity pull-right">
                                 <p class="text-center text-uppercase">
@@ -418,7 +418,7 @@
 
 
             </div>
-            <div class="col-lg-4 hidden-xs hidden-sm hidden-md comments">
+            <div class="col-lg-4 hidden-xs hidden-sm hidden-md comments appear" data-from="right">
                 <h3 class="text-uppercase"><span class="fa fa-2x fa-comments-o"></span>últimos comentarios</h3>
 
                 <div class="comment">
@@ -474,10 +474,109 @@
         </div>
 
         <div class="row video-wrapper">
-            <video src="{{ asset('public/video/demo.mp4') }}" controls preload>
-                WASAAA I'm sorry; your browser doesn't support HTML5 video.
+
+            {#todo: use a third-party video player#}
+            <video controls preload="auto">
+                {#todo: use ogg (vorbis) and then mp4 (h.264)#}
+                <source src="{{ asset('public/video/demo.mp4') }}">
+                <h5 class="text-center">I'm sorry; your browser doesn't support HTML5 video.</h5>
+
+                <h5 class="text-center">You can download the video <a
+                            href="{{ asset('public/video/demo.mp4') }}">here</a>.</h5>
             </video>
+
+            <div class="reviews visible-lg">
+                <ul class="list-inline">
+                    <li class="user">
+                        <span class="shade"></span>
+                        <img src="{{ asset('anonymous.png') }}" alt="" class="img-responsive img-circle">
+                    </li>
+                    <li class="user center">
+                        <img src="{{ asset('anonymous.png') }}" alt="" class="img-responsive img-circle">
+                    </li>
+                    <li class="user">
+                        <span class="shade"></span>
+                        <img src="{{ asset('anonymous.png') }}" alt="" class="img-responsive img-circle">
+                    </li>
+                </ul>
+            </div>
         </div>
+
+        <div class="row stats">
+            <ul class="list-inline text-center appear" data-from="bottom">
+                <li class="counter">
+                    <div class="rhombus"></div>
+                    <span class="amount" data-to="7364">7364</span>
+                    <h4 class="text-uppercase">asistentes</h4>
+                </li>
+
+                <li class="counter center">
+                    <div class="rhombus"></div>
+                    <span class="amount" data-to="3526">3526</span>
+                    <h4 class="text-uppercase">eventos organizados</h4>
+                </li>
+
+                {# todo: shadow or path ? #}
+                <li class="counter">
+                    <div class="rhombus"></div>
+                    <span class="amount" data-to="877">877</span>
+                    <h4 class="text-uppercase">comentarios</h4>
+                </li>
+            </ul>
+        </div>
+
+        <div class="row social text-center">
+            <ul class="list-inline">
+                <li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-youtube"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>
+            </ul>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-3 col-md-push-9 text-uppercase text-center">
+                    <h3 class="visible-xs visible-sm">necesita ayuda</h3>
+
+                    <div class="square"></div>
+
+                    <h4 class="visible-xs visible-sm">pague seguro pendiente</h4>
+                    <h4 class="visible-md visible-lg">pago seguro</h4>
+                    <img src="{{ asset('public/img/9/paypal.png') }}" alt="">
+                    <img src="{{ asset('public/img/9/cards.png') }}" alt="">
+                </div>
+                <div class="col-md-9 col-md-pull-3 words">
+                    <div class="col-md-4">
+                        <a href="#"><p>Quiénes somos</p></a>
+                        <a href="#"><p>Prensa</p></a>
+                        <a href="#"><p>Contacto</p></a>
+                        <a href="#"><p>Blog</p></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><p>Acerca de</p></a>
+                        <a href="#"><p>Política privacidad</p></a>
+                        <a href="#"><p>Aviso legal</p></a>
+                        <a href="#"><p>Condiciones uso</p></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><p>Atención cliente</p></a>
+                        <a href="#"><p>Chat online</p></a>
+                        <a href="#"><p>Preguntas frecuentes</p></a>
+                        <a href="#"><p>Sube un evento</p></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <footer class="row">
+            <p class="text-center">
+                <small>Copyright Belvi 2015 Todos los Derechos Reservados</small>
+            </p>
+        </footer>
     </div>
 
 
@@ -487,6 +586,7 @@
 {% block page_scripts %}
     <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
     <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
+    <script src="{{ asset('public/plugins/countTo/jquery.countTo.js') }}"></script>
     <script src="{{ asset('public/js/site.js') }}"></script>
 {% endblock %}
 
