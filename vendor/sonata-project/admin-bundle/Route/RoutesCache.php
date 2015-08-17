@@ -1,7 +1,6 @@
 <?php
-
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata project.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -23,7 +22,7 @@ class RoutesCache
     protected $cacheFolder;
 
     /**
-     * @var bool
+     * @var boolean
      */
     protected $debug;
 
@@ -41,7 +40,6 @@ class RoutesCache
      * @param AdminInterface $admin
      *
      * @return mixed
-     *
      * @throws \RuntimeException
      */
     public function load(AdminInterface $admin)

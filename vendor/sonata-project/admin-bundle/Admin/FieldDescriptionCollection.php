@@ -1,15 +1,16 @@
 <?php
-
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
  */
-
 namespace Sonata\AdminBundle\Admin;
+
+use Sonata\AdminBundle\Admin\FieldDescriptionInterface;
 
 class FieldDescriptionCollection implements \ArrayAccess, \Countable
 {
@@ -17,6 +18,8 @@ class FieldDescriptionCollection implements \ArrayAccess, \Countable
 
     /**
      * @param \Sonata\AdminBundle\Admin\FieldDescriptionInterface $fieldDescription
+     *
+     * @return void
      */
     public function add(FieldDescriptionInterface $fieldDescription)
     {
@@ -59,6 +62,8 @@ class FieldDescriptionCollection implements \ArrayAccess, \Countable
 
     /**
      * @param string $name
+     *
+     * @return void
      */
     public function remove($name)
     {

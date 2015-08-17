@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata project.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,9 +11,9 @@
 
 namespace Sonata\AdminBundle\Security\Handler;
 
-use Sonata\AdminBundle\Admin\AdminInterface;
-use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
 use Symfony\Component\Security\Core\SecurityContextInterface;
+use Symfony\Component\Security\Core\Exception\AuthenticationCredentialsNotFoundException;
+use Sonata\AdminBundle\Admin\AdminInterface;
 
 class RoleSecurityHandler implements SecurityHandlerInterface
 {
@@ -59,7 +59,7 @@ class RoleSecurityHandler implements SecurityHandlerInterface
      */
     public function getBaseRole(AdminInterface $admin)
     {
-        return 'ROLE_'.str_replace('.', '_', strtoupper($admin->getCode())).'_%s';
+        return 'ROLE_' . str_replace('.', '_', strtoupper($admin->getCode())) . '_%s';
     }
 
     /**

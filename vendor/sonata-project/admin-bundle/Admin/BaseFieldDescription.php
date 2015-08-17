@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,11 +11,13 @@
 
 namespace Sonata\AdminBundle\Admin;
 
+use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Exception\NoValueException;
+use Symfony\Component\DependencyInjection\Container;
 
 /**
  * A FieldDescription hold the information about a field. A typical
- * admin instance contains different collections of fields.
+ * admin instance contains different collections of fields
  *
  * - form: used by the form
  * - list: used by the list
@@ -64,12 +66,12 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
     protected $name;
 
     /**
-     * @var string|int the type
+     * @var string|integer the type
      */
     protected $type;
 
     /**
-     * @var string|int the original mapping type
+     * @var string|integer the original mapping type
      */
     protected $mappingType;
 
@@ -147,7 +149,7 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
         $this->name = $name;
 
         if (!$this->getFieldName()) {
-            $this->setFieldName(substr(strrchr('.'.$name, '.'), 1));
+            $this->setFieldName(substr(strrchr('.' . $name, '.'), 1));
         }
     }
 
@@ -291,10 +293,10 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
     }
 
     /**
-     * set the association admin instance (only used if the field is linked to an Admin).
+     * set the association admin instance (only used if the field is linked to an Admin)
      *
      * @param \Sonata\AdminBundle\Admin\AdminInterface $associationAdmin the associated admin
-     *                                                                   {@inheritdoc}
+     * {@inheritdoc}
      */
     public function setAssociationAdmin(AdminInterface $associationAdmin)
     {
@@ -336,8 +338,8 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
         if ($this->getOption('parameters')) {
             $parameters = $this->getOption('parameters');
         }
-        $getters[] = 'get'.$camelizedFieldName;
-        $getters[] = 'is'.$camelizedFieldName;
+        $getters[] = 'get' . $camelizedFieldName;
+        $getters[] = 'is' . $camelizedFieldName;
 
         foreach ($getters as $getter) {
             if (method_exists($object, $getter)) {
@@ -409,7 +411,7 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
     }
 
     /**
-     * Camelize a string.
+     * Camelize a string
      *
      * @static
      *
@@ -420,12 +422,12 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
     public static function camelize($property)
     {
         return preg_replace_callback('/(^|[_. ])+(.)/', function ($match) {
-            return ('.' === $match[1] ? '_' : '').strtoupper($match[2]);
+            return ('.' === $match[1] ? '_' : '') . strtoupper($match[2]);
         }, $property);
     }
 
     /**
-     * Defines the help message.
+     * Defines the help message
      *
      * @param string $help
      */
@@ -479,6 +481,6 @@ abstract class BaseFieldDescription implements FieldDescriptionInterface
      */
     public function getTranslationDomain()
     {
-        return $this->getOption('translation_domain') ?: $this->getAdmin()->getTranslationDomain();
+        return $this->getOption('translation_domain') ? : $this->getAdmin()->getTranslationDomain();
     }
 }

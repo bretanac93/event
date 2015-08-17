@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata project.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -20,12 +20,12 @@ interface SecurityHandlerInterface
      * @param string|array                             $attributes
      * @param null                                     $object
      *
-     * @return bool
+     * @return boolean
      */
     public function isGranted(AdminInterface $admin, $attributes, $object = null);
 
     /**
-     * Get a sprintf template to get the role.
+     * Get a sprintf template to get the role
      *
      * @param \Sonata\AdminBundle\Admin\AdminInterface $admin
      *
@@ -39,18 +39,22 @@ interface SecurityHandlerInterface
     public function buildSecurityInformation(AdminInterface $admin);
 
     /**
-     * Create object security, fe. make the current user owner of the object.
+     * Create object security, fe. make the current user owner of the object
      *
      * @param \Sonata\AdminBundle\Admin\AdminInterface $admin
      * @param mixed                                    $object
+     *
+     * @return void
      */
     public function createObjectSecurity(AdminInterface $admin, $object);
 
     /**
-     * Remove object security.
+     * Remove object security
      *
      * @param \Sonata\AdminBundle\Admin\AdminInterface $admin
      * @param mixed                                    $object
+     *
+     * @return void
      */
     public function deleteObjectSecurity(AdminInterface $admin, $object);
 }

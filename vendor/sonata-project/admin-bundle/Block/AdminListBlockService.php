@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata project.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,17 +11,21 @@
 
 namespace Sonata\AdminBundle\Block;
 
-use Sonata\AdminBundle\Admin\Pool;
+use Sonata\BlockBundle\Block\BlockContextInterface;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
+
 use Sonata\AdminBundle\Form\FormMapper;
 use Sonata\AdminBundle\Validator\ErrorElement;
-use Sonata\BlockBundle\Block\BaseBlockService;
-use Sonata\BlockBundle\Block\BlockContextInterface;
+use Sonata\AdminBundle\Admin\Pool;
+
 use Sonata\BlockBundle\Model\BlockInterface;
-use Symfony\Bundle\FrameworkBundle\Templating\EngineInterface;
-use Symfony\Component\HttpFoundation\Response;
+use Sonata\BlockBundle\Block\BaseBlockService;
+use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
+ *
  * @author     Thomas Rabaix <thomas.rabaix@sonata-project.org>
  */
 class AdminListBlockService extends BaseBlockService
@@ -60,7 +64,7 @@ class AdminListBlockService extends BaseBlockService
             'block'         => $blockContext->getBlock(),
             'settings'      => $settings,
             'admin_pool'    => $this->pool,
-            'groups'        => $visibleGroups,
+            'groups'        => $visibleGroups
         ), $response);
     }
 
@@ -77,6 +81,7 @@ class AdminListBlockService extends BaseBlockService
      */
     public function buildEditForm(FormMapper $formMapper, BlockInterface $block)
     {
+
     }
 
     /**
@@ -93,11 +98,11 @@ class AdminListBlockService extends BaseBlockService
     public function setDefaultSettings(OptionsResolverInterface $resolver)
     {
         $resolver->setDefaults(array(
-            'groups' => false,
+            'groups' => false
         ));
 
         $resolver->setAllowedTypes(array(
-            'groups' => array('bool', 'array'),
+            'groups' => array('bool', 'array')
         ));
     }
 }

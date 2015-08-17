@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -20,12 +20,14 @@ interface FilterInterface
     const CONDITION_AND = 'AND';
 
     /**
-     * Apply the filter to the QueryBuilder instance.
+     * Apply the filter to the QueryBuilder instance
      *
      * @param ProxyQueryInterface $queryBuilder
      * @param string              $alias
      * @param string              $field
      * @param string              $value
+     *
+     * @return void
      */
     public function filter(ProxyQueryInterface $queryBuilder, $alias, $field, $value);
 
@@ -36,21 +38,21 @@ interface FilterInterface
     public function apply($query, $value);
 
     /**
-     * Returns the filter name.
+     * Returns the filter name
      *
      * @return string
      */
     public function getName();
 
     /**
-     * Returns the filter form name.
+     * Returns the filter form name
      *
      * @return string
      */
     public function getFormName();
 
     /**
-     * Returns the label name.
+     * Returns the label name
      *
      * @return string|bool
      */
@@ -83,6 +85,8 @@ interface FilterInterface
     /**
      * @param string $name
      * @param array  $options
+     *
+     * @return void
      */
     public function initialize($name, array $options = array());
 
@@ -117,21 +121,21 @@ interface FilterInterface
     public function getFieldType();
 
     /**
-     * Returns the main widget used to render the filter.
+     * Returns the main widget used to render the filter
      *
      * @return array
      */
     public function getRenderSettings();
 
     /**
-     * Returns true if filter is active.
+     * Returns true if filter is active
      *
-     * @return bool
+     * @return boolean
      */
     public function isActive();
 
     /**
-     * Set the condition to use with the left side of the query : OR or AND.
+     * Set the condition to use with the left side of the query : OR or AND
      *
      * @param string $condition
      */

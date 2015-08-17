@@ -60,7 +60,6 @@ class Method extends ConfigurationAnnotation
      * Returns the annotation alias name.
      *
      * @return string
-     *
      * @see ConfigurationInterface
      */
     public function getAliasName()
@@ -69,10 +68,9 @@ class Method extends ConfigurationAnnotation
     }
 
     /**
-     * Only one method directive is allowed.
+     * Only one method directive is allowed
      *
      * @return bool
-     *
      * @see ConfigurationInterface
      */
     public function allowArray()

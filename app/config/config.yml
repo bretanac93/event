@@ -99,23 +99,7 @@ fos_user:
     registration:
       form:
         type: events_user_registration
-fos_elastica:
-    clients:
-        default: { host: localhost, port: 9200 }
-    serializer: ~
-    indexes:
-        app:
-            types:
-                user:
-                    serializer:
-                        groups: [elastica, Default]
-                    mappings:
-                        username: ~
-                        email:    ~
-                    persistence:
-                        driver: orm
-                        model: Events\UserBundle\Entity\User
-                        provider: ~
-                        listener:
-                            immediate: ~
-                        finder: ~
+gos_web_socket:
+    server:
+        port: 8080        #The port the socket server will listen on
+        host: 127.0.0.1   #The host ip to bind to

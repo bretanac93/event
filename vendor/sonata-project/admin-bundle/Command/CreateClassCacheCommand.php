@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -12,12 +12,14 @@
 namespace Sonata\AdminBundle\Command;
 
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
-use Symfony\Component\ClassLoader\ClassCollectionLoader;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Output\Output;
+use Symfony\Component\ClassLoader\ClassCollectionLoader;
 
 class CreateClassCacheCommand extends ContainerAwareCommand
 {
+
     /**
      * {@inheritDoc}
      */
@@ -43,7 +45,7 @@ class CreateClassCacheCommand extends ContainerAwareCommand
         $name = 'classes';
         $extension = '.php';
 
-        $output->write('<info>Writing cache file ...</info>');
+        $output->write("<info>Writing cache file ...</info>");
         ClassCollectionLoader::load(
             include($classmap),
             $kernel->getCacheDir(),
@@ -53,6 +55,6 @@ class CreateClassCacheCommand extends ContainerAwareCommand
             $extension
         );
 
-        $output->writeln(' done!');
+        $output->writeln(" done!");
     }
 }

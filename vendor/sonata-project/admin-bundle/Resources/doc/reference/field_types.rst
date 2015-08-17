@@ -142,7 +142,7 @@ Parameters:
     $listMapper->add('content', 'html', array('strip' => true));
 
     // Output for value `<p><strong>Creating a Template for the Field</strong> and form</p>`:
-    // `Creating a Template for...`
+    // `Créer un Template pour...`
     $listMapper->add('content', 'html', array('truncate' => true));
 
     // Output for value `<p><strong>Creating a Template for the Field</strong> and form</p>`:

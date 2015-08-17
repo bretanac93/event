@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,6 +11,7 @@
 
 namespace Sonata\AdminBundle\Export;
 
+use Symfony\Component\HttpFoundation\StreamedResponse;
 use Sonata\CoreBundle\Exporter\Exporter as BaseExporter;
 
 /**

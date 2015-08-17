@@ -1,6 +1,6 @@
 /app/cache/*
-/app/config/parameters.yml
 !app/cache/.gitkeep
+app/config/parameters.yml
 /app/logs/*
 !app/logs/.gitkeep
 /app/phpunit.xml
@@ -8,4 +8,3 @@
 /web/uploads/profile
 .idea
 web/public/video
-composer.phar

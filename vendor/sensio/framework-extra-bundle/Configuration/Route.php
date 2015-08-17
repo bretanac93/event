@@ -23,10 +23,6 @@ class Route extends BaseRoute
 
     public function setService($service)
     {
-        // avoid a BC notice in case of @Route(service="") with sf ^2.7
-        if (null === $this->getPath()) {
-            $this->setPath('');
-        }
         $this->service = $service;
     }
 
@@ -36,10 +32,9 @@ class Route extends BaseRoute
     }
 
     /**
-     * Multiple route annotations are allowed.
+     * Multiple route annotations are allowed
      *
      * @return bool
-     *
      * @see ConfigurationInterface
      */
     public function allowArray()

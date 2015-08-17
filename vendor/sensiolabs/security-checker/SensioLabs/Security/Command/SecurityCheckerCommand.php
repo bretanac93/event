@@ -3,7 +3,7 @@
 /*
  * This file is part of the SensioLabs Security Checker.
  *
- * (c) Fabien Potencier
+ * (c) 2013 Fabien Potencier
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
@@ -41,10 +41,10 @@ class SecurityCheckerCommand extends Command
         $this
             ->setName('security:check')
             ->setDefinition(array(
-                new InputArgument('lockfile', InputArgument::OPTIONAL, 'The path to the composer.lock file', 'composer.lock'),
+                new InputArgument('lock', InputArgument::OPTIONAL, 'The path to the composer.lock file', 'composer.lock'),
                 new InputOption('format', '', InputOption::VALUE_REQUIRED, 'The output format', 'text'),
                 new InputOption('end-point', '', InputOption::VALUE_REQUIRED, 'The security checker server URL'),
-                new InputOption('timeout', '', InputOption::VALUE_REQUIRED, 'The HTTP timeout in seconds'),
+                new InputOption('timeout', '', InputOption::VALUE_REQUIRED, 'The HTTP timeout'),
             ))
             ->setDescription('Checks security issues in your project dependencies')
             ->setHelp(<<<EOF
@@ -72,15 +72,15 @@ EOF
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         if ($endPoint = $input->getOption('end-point')) {
-            $this->checker->getCrawler()->setEndPoint($endPoint);
+            $this->checker->setEndPoint($endPoint);
         }
 
         if ($timeout = $input->getOption('timeout')) {
-            $this->checker->getCrawler()->setTimeout($timeout);
+            $this->checker->setTimeout($timeout);
         }
 
         try {
-            $vulnerabilities = $this->checker->check($input->getArgument('lockfile'));
+            $vulnerabilities = $this->checker->check($input->getArgument('lock'));
         } catch (ExceptionInterface $e) {
             $output->writeln($this->getHelperSet()->get('formatter')->formatBlock($e->getMessage(), 'error', true));
 
@@ -99,7 +99,7 @@ EOF
                 $formatter = new TextFormatter($this->getHelperSet()->get('formatter'));
         }
 
-        $formatter->displayResults($output, $input->getArgument('lockfile'), $vulnerabilities);
+        $formatter->displayResults($output, $input->getArgument('lock'), $vulnerabilities);
 
         if ($this->checker->getLastVulnerabilityCount() > 0) {
             return 1;

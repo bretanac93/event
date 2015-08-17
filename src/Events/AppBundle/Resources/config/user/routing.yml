@@ -36,6 +36,3 @@ app_user_notifications_delete:
     path:     /notification_delete
     defaults: { _controller: AppBundle:Default:deleteNotifications }
     methods:  POST
-app_search:
-    path:     /search
-    defaults: { _controller: AppBundle:Default:search }

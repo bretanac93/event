@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -12,9 +12,11 @@
 namespace Sonata\AdminBundle\Tests\Admin;
 
 use Sonata\AdminBundle\Admin\Admin;
+use Sonata\AdminBundle\Model\ModelManagerInterface;
 
 class BaseAdminModelManager_Admin extends Admin
 {
+
 }
 
 class BaseAdminModelManagerTest extends \PHPUnit_Framework_TestCase
@@ -42,7 +44,7 @@ class BaseAdminModelManagerTest extends \PHPUnit_Framework_TestCase
     public function testObject()
     {
         $modelManager = $this->getMock('Sonata\AdminBundle\Model\ModelManagerInterface');
-        $modelManager->expects($this->once())->method('find')->will($this->returnCallback(function ($class, $id) {
+        $modelManager->expects($this->once())->method('find')->will($this->returnCallback(function($class, $id) {
             if ($class != 'class') {
                 throw new \RuntimeException('Invalid class argument');
             }
@@ -60,7 +62,7 @@ class BaseAdminModelManagerTest extends \PHPUnit_Framework_TestCase
     public function testCreateQuery()
     {
         $modelManager = $this->getMock('Sonata\AdminBundle\Model\ModelManagerInterface');
-        $modelManager->expects($this->once())->method('createQuery')->will($this->returnCallback(function ($class) {
+        $modelManager->expects($this->once())->method('createQuery')->will($this->returnCallback(function($class) {
             if ($class != 'class') {
                 throw new \RuntimeException('Invalid class argument');
             }

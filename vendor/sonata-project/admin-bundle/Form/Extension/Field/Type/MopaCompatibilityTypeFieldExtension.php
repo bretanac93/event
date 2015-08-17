@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -18,9 +18,11 @@ use Symfony\Component\OptionsResolver\OptionsResolverInterface;
 
 /**
  * This class is built to allow AdminInterface to work properly
- * if the MopaBootstrapBundle is not installed.
+ * if the MopaBootstrapBundle is not installed
  *
  * Class MopaCompatibilityTypeFieldExtension
+ *
+ * @package Sonata\AdminBundle\Form\Extension\Field\Type
  */
 class MopaCompatibilityTypeFieldExtension extends AbstractTypeExtension
 {

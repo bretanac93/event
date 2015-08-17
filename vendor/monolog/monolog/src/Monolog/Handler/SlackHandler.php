@@ -219,7 +219,6 @@ class SlackHandler extends SocketHandler
         if ($this->iconEmoji) {
             $dataArray['icon_emoji'] = ":{$this->iconEmoji}:";
         }
-
         return $dataArray;
     }
 

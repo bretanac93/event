@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,10 +11,12 @@
 
 namespace Sonata\AdminBundle\Command;
 
-use Sonata\AdminBundle\Util\AdminAclManipulatorInterface;
 use Symfony\Bundle\FrameworkBundle\Command\ContainerAwareCommand;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Output\Output;
+
+use Sonata\AdminBundle\Util\AdminAclManipulatorInterface;
 
 class SetupAclCommand extends ContainerAwareCommand
 {
@@ -35,6 +37,7 @@ class SetupAclCommand extends ContainerAwareCommand
         $output->writeln('Starting ACL AdminBundle configuration');
 
         foreach ($this->getContainer()->get('sonata.admin.pool')->getAdminServiceIds() as $id) {
+
             try {
                 $admin = $this->getContainer()->get($id);
             } catch (\Exception $e) {

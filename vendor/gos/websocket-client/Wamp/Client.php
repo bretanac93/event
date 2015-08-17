@@ -365,12 +365,4 @@ class Client
 
         return base64_encode(substr($tmp, 0, $length));
     }
-    
-    /**
-     * @return bool
-     */
-    public function isConnected()
-    {
-        return $this->connected;
-    }
 }

@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,9 +11,10 @@
 
 namespace Sonata\AdminBundle\Tests\Command;
 
-use Sonata\AdminBundle\Command\CreateClassCacheCommand;
 use Symfony\Component\Console\Application;
 use Symfony\Component\Console\Tester\CommandTester;
+use Sonata\AdminBundle\Command\CreateClassCacheCommand;
+use Symfony\Component\HttpKernel\KernelInterface;
 
 /**
  * @author Andrej Hudec <pulzarraider@gmail.com>
@@ -60,12 +61,12 @@ class CreateClassCacheCommandTest extends \PHPUnit_Framework_TestCase
 
         $container->expects($this->any())
                 ->method('get')
-                ->will($this->returnCallback(function ($id) use ($kernel) {
+                ->will($this->returnCallback(function($id) use ($kernel) {
                     if ($id == 'kernel') {
                         return $kernel;
                     }
 
-                    return;
+                    return null;
                 }));
 
         $command->setContainer($container);

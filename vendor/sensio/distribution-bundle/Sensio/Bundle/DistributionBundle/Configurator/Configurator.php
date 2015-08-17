@@ -50,7 +50,7 @@ class Configurator
 
     /**
      * @param StepInterface $step
-     * @param int           $priority
+     * @param int $priority
      */
     public function addStep(StepInterface $step, $priority = 0)
     {
@@ -63,7 +63,7 @@ class Configurator
     }
 
     /**
-     * @param int $index
+     * @param integer $index
      *
      * @return StepInterface
      */
@@ -92,7 +92,7 @@ class Configurator
 
     /**
      * Sort routers by priority.
-     * The highest priority number is the highest priority (reverse sorting).
+     * The highest priority number is the highest priority (reverse sorting)
      *
      * @return StepInterface[]
      */
@@ -117,7 +117,7 @@ class Configurator
     }
 
     /**
-     * @return int
+     * @return integer
      */
     public function getStepCount()
     {
@@ -169,7 +169,7 @@ class Configurator
      *
      * @return string
      */
-    public function render($expanded = 10)
+    public function render($expanded = 0)
     {
         return Yaml::dump(array('parameters' => $this->parameters), $expanded);
     }
@@ -181,7 +181,7 @@ class Configurator
      *
      * @return int
      */
-    public function write($expanded = 10)
+    public function write($expanded = 0)
     {
         $filename = $this->isFileWritable() ? $this->filename : $this->getCacheFilename();
 
@@ -217,7 +217,7 @@ class Configurator
     }
 
     /**
-     * getCacheFilename.
+     * getCacheFilename
      *
      * @return string
      */

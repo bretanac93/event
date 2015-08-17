@@ -33,13 +33,13 @@ When adding a form group to your edit/create form, you may specify some options 
 - ``description``: to complete
 - ``translation_domain``: to complete
 
-To specify options, do as follows:
+To specify options, do as follow:
 
 .. code-block:: php
 
     <?php
 
-    class MyAdmin extends Admin
+    MyAdmin extends Admin
     {
         # ...
 

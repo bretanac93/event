@@ -2,12 +2,10 @@ build
 phpunit.xml
 Resources/doc/_build/*
 nbproject
-.idea
 coverage
 composer.lock
 /vendor
 composer.phar
-.php_cs.cache
 
 # clean up some non bower ready package
 Resources/public/vendor/AdminLTE/ajax

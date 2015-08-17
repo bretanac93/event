@@ -1,7 +1,7 @@
 <?php
 
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
@@ -11,14 +11,17 @@
 
 namespace Sonata\AdminBundle\Builder;
 
-use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Admin\FieldDescriptionInterface;
+use Sonata\AdminBundle\Admin\AdminInterface;
 
 interface BuilderInterface
 {
     /**
+     *
      * @param \Sonata\AdminBundle\Admin\AdminInterface            $admin
      * @param \Sonata\AdminBundle\Admin\FieldDescriptionInterface $fieldDescription
+     *
+     * @return void
      */
     public function fixFieldDescription(AdminInterface $admin, FieldDescriptionInterface $fieldDescription);
 }

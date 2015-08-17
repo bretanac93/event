@@ -122,20 +122,12 @@ class DisconnectedMetadataFactory
         if (class_exists($all[0]->name)) {
             $r = new \ReflectionClass($all[0]->name);
             $path = $this->getBasePathForClass($r->getName(), $r->getNamespaceName(), dirname($r->getFilename()));
-            $ns = $r->getNamespaceName();
-
-        } elseif ($path) {
-            // Get namespace by removing the last component of the FQCN
-            $nsParts = explode('\\', $all[0]->name);
-            array_pop($nsParts);
-            $ns = implode('\\', $nsParts);
-
-        } else {
+        } elseif (!$path) {
             throw new \RuntimeException(sprintf('Unable to determine where to save the "%s" class (use the --path option).', $all[0]->name));
         }
 
         $metadata->setPath($path);
-        $metadata->setNamespace($ns);
+        $metadata->setNamespace(isset($r) ? $r->getNamespaceName() : $all[0]->name);
     }
 
     /**

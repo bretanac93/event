@@ -155,7 +155,7 @@ class ParamConverter extends ConfigurationAnnotation
     }
 
     /**
-     * Set explicit converter name.
+     * Set explicit converter name
      *
      * @param string $converter
      */
@@ -168,7 +168,6 @@ class ParamConverter extends ConfigurationAnnotation
      * Returns the annotation alias name.
      *
      * @return string
-     *
      * @see ConfigurationInterface
      */
     public function getAliasName()
@@ -177,10 +176,9 @@ class ParamConverter extends ConfigurationAnnotation
     }
 
     /**
-     * Multiple ParamConverters are allowed.
+     * Multiple ParamConverters are allowed
      *
      * @return bool
-     *
      * @see ConfigurationInterface
      */
     public function allowArray()

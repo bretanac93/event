@@ -106,9 +106,7 @@ class Profile
     }
 
     /**
-     * @param User $user
-     * @return $this
-     * @internal param $User $
+     * @param User $
      */
     public function setUser(User $user)
     {

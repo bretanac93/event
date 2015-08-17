@@ -1,23 +1,24 @@
 <?php
-
 /*
- * This file is part of the Sonata Project package.
+ * This file is part of the Sonata package.
  *
  * (c) Thomas Rabaix <thomas.rabaix@sonata-project.org>
  *
  * For the full copyright and license information, please view the LICENSE
  * file that was distributed with this source code.
+ *
  */
-
 namespace Sonata\AdminBundle\Datagrid;
 
 use Sonata\AdminBundle\Admin\AdminInterface;
 use Sonata\AdminBundle\Admin\FieldDescriptionInterface;
+use Sonata\AdminBundle\Datagrid\DatagridInterface;
 use Sonata\AdminBundle\Builder\DatagridBuilderInterface;
 use Sonata\AdminBundle\Mapper\BaseMapper;
 
 /**
- * This class is use to simulate the Form API.
+ * This class is use to simulate the Form API
+ *
  */
 class DatagridMapper extends BaseMapper
 {
@@ -91,7 +92,7 @@ class DatagridMapper extends BaseMapper
     /**
      * @param string $key
      *
-     * @return bool
+     * @return boolean
      */
     public function has($key)
     {
