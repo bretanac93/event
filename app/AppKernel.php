@@ -19,7 +19,7 @@ class AppKernel extends Kernel
             new Events\AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new \Events\UserBundle\UserBundle(),
-            new FOS\ElasticaBundle\FOSElasticaBundle()
+            // new FOS\ElasticaBundle\FOSElasticaBundle()
 //            new HWI\Bundle\OAuthBundle\HWIOAuthBundle()
         );
 
