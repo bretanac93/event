@@ -6,10 +6,11 @@
 
 {% block fos_user_content %}
 
-    <div class="bgimg text-center">
+    <div class="bgimg text-center" style="background-image: url({{ asset('public/img/beach.png') }})">
         <div class="main">
-            <img src="{{ asset('anonymous.png') }}" alt="">
-            <h3>Julieta Fuentes</h3>
+            <img src="{{ asset('public/img/user.png') }}" alt="">
+
+            <h2>Julieta Fuentes</h2>
             <ul class="list-inline">
                 <li><span class="fa fa-star"></span></li>
                 <li><span class="fa fa-star"></span></li>
@@ -18,9 +19,65 @@
                 <li><span class="fa fa-star"></span></li>
             </ul>
             <p id="val">1.500 valoraciones</p>
+
             <p class="text-uppercase">particular</p>
+
             <p>Usuario desde 20/5/2015</p>
         </div>
+    </div>
+
+    <div class="container-fluid visible-xs" id="mobile">
+        <div class="row followers">
+
+            <ul class="nav nav-tabs text-uppercase text-center">
+                <li class="active"><a href="#following" data-toggle="tab">sigo</a></li>
+                <li><a href="#followers" data-toggle="tab">me siguen</a></li>
+            </ul>
+
+            <div class="tab-content col-xs-12">
+                <div class="tab-pane fade in active" id="following">
+                    <ul class="list-inline">
+                        <li class="fuser">
+                            <input type="checkbox">
+                            <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                            <p class="name">Sarah</p>
+
+                            <p class="lastname">Contreras</p>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <h2>Información</h2>
+
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+                            atque, dolor eaque ex
+                            nobis obcaecati? Blanditiis eligendi enim est eveniet, fugit ipsam, maxime nulla, obcaecati
+                            perspiciatis quas quod suscipit temporibus.</p>
+
+                        <a href="#" class="text-right">más ...</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="followers">me siguen</div>
+            </div>
+
+        </div>
+
+        <div class="row map striped">
+            <div class="col-xs-12">
+                <h3>Centro Parque Costazul</h3>
+                <h4>Av. Luisa Cáseres de Arismendi, Calle 2, Pampatar. Centro Parqu</h4>
+                <img class="img-responsive" src="{{ asset('public/img/map.png') }}" alt="">
+            </div>
+        </div>
+
+        <div class="row collapsed striped">
+
+        </div>
+    </div>
+
+    <div class="container-fluid hidden-xs">
+
     </div>
 
 {% endblock fos_user_content %}

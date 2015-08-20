@@ -3,7 +3,6 @@
 .bgimg
     position relative
     height 550px
-    background-image url("../../img/beach.png")
     background-position center
     background-size cover
 
@@ -14,10 +13,17 @@
         margin-top 150px
         font-size larger
 
+        img
+            width 150px
+            height auto
+            borderRadius(10px)
+            margin-bottom 15px
+            shadow(0, 2px, 5px, rgba(0, 0, 0, .3))
+
         *
             margin 3px 0
 
-        h3, p
+        h2, p
             color white
 
         p#val
@@ -26,3 +32,81 @@
         ul
             color bgBlue
 
+#mobile
+    background-color rgb(211, 211, 211)
+    *
+        background-color white
+    p
+        background-color transparent
+
+    & > .row
+        shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
+
+.followers
+
+    .nav
+        li
+            width 50%
+            font-weight bold
+            font-size large
+            a, a:hover, a:focus
+                border none
+                border-radius 0
+                margin-right 0
+        li.active > a
+            color bgBlue
+        li:not(.active) > a
+            color rgb(132, 132, 132)
+            background-color rgb(172, 172, 172) !important
+
+    .tab-pane
+        ul
+            overflow-x auto
+            overflow-y hidden
+            white-space nowrap
+            margin 15px 0
+
+        .fuser
+            position relative
+
+            input
+                position absolute
+                top 10px
+                right 10px
+
+            img
+                width 130px
+                height auto
+
+            p
+                position absolute
+                right 15px
+                font-size larger
+                color white
+                text-shadow -1px 1px 0 black
+                &.name
+                    bottom 10px
+                &.lastname
+                    bottom -8px
+
+        .info
+            color rgb(125, 125, 125)
+            margin-top 10px
+
+            p
+                line-height 1.7em
+
+            a
+                color bgBlue
+                display block
+                text-decoration none
+                margin-bottom 15px
+
+.striped
+    margin-top 25px
+
+.map
+    padding-bottom 20px
+
+    h3
+        font-weight bold

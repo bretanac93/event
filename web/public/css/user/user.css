@@ -145,7 +145,6 @@ footer p {
 .bgimg {
   position: relative;
   height: 550px;
-  background-image: url("../../img/beach.png");
   background-position: center;
   background-size: cover;
 }
@@ -157,10 +156,21 @@ footer p {
   margin-top: 150px;
   font-size: larger;
 }
+.bgimg .main img {
+  width: 150px;
+  height: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
 .bgimg .main * {
   margin: 3px 0;
 }
-.bgimg .main h3,
+.bgimg .main h2,
 .bgimg .main p {
   color: #fff;
 }
@@ -169,4 +179,90 @@ footer p {
 }
 .bgimg .main ul {
   color: #007eb1;
+}
+#mobile {
+  background-color: #d3d3d3;
+}
+#mobile * {
+  background-color: #fff;
+}
+#mobile p {
+  background-color: transparent;
+}
+#mobile > .row {
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+.followers .nav li {
+  width: 50%;
+  font-weight: bold;
+  font-size: large;
+}
+.followers .nav li a,
+.followers .nav li a:hover,
+.followers .nav li a:focus {
+  border: none;
+  border-radius: 0;
+  margin-right: 0;
+}
+.followers .nav li.active > a {
+  color: #007eb1;
+}
+.followers .nav li:not(.active) > a {
+  color: #848484;
+  background-color: #acacac !important;
+}
+.followers .tab-pane ul {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin: 15px 0;
+}
+.followers .tab-pane .fuser {
+  position: relative;
+}
+.followers .tab-pane .fuser input {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.followers .tab-pane .fuser img {
+  width: 130px;
+  height: auto;
+}
+.followers .tab-pane .fuser p {
+  position: absolute;
+  right: 15px;
+  font-size: larger;
+  color: #fff;
+  text-shadow: -1px 1px 0 #000;
+}
+.followers .tab-pane .fuser p.name {
+  bottom: 10px;
+}
+.followers .tab-pane .fuser p.lastname {
+  bottom: -8px;
+}
+.followers .tab-pane .info {
+  color: #7d7d7d;
+  margin-top: 10px;
+}
+.followers .tab-pane .info p {
+  line-height: 1.7em;
+}
+.followers .tab-pane .info a {
+  color: #007eb1;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+.striped {
+  margin-top: 25px;
+}
+.map {
+  padding-bottom: 20px;
+}
+.map h3 {
+  font-weight: bold;
 }
