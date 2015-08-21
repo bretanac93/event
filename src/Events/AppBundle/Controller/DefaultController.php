@@ -35,8 +35,5 @@ class DefaultController extends Controller
 
     public function searchAction()
     {
-        $finder = $this->get('fos_elastica.finder.app.user');
-        $results = $finder->find('potete');
-        print_r($results);
     }
 }

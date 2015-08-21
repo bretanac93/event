@@ -70,7 +70,19 @@
                         <a class="btn btn-info social-button gplus" href="#"><span class="icon fa fa-google-plus"></span><span class="text">Registrate con <b>Google+</b></span></a>
                         <a class="btn btn-info social-button fb" href="#"><span class="icon fa fa-facebook"></span><span class="text">Registrate con <b>Facebook</b></span></a>
                         <a class="btn btn-info social-button tw" href="#"><span class="icon fa fa-twitter"></span><span class="text">Registrate con <b>Twitter</b></span></a>
-                        <a class="btn btn-info social-button in" href="#"><span class="text">Registrarse</span></a>
+                        <a class="btn btn-info social-button in" id="register-show" href="#"><span class="text">Registrarse</span></a>
+                    </div>
+                    <div class="row form-register">
+                        <form action="{{ path('fos_user_security_check') }}" method="post">
+                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+                            <input type="text" name="_username" id="user" placeholder="Usuario">
+                            <input type="text" name="email" id="email" placeholder="Correo electrónico">
+                            <input type="password" name="password" id="password" placeholder="Contraseña">
+                            <input type="password" name="password2" id="password2" placeholder="Confirmar Contraseña">
+                            <input type="checkbox" name="terms" id="terms">
+                            <label for="terms">Acepto las <a href="#">Condiciones de uso.</a></label>
+                            <input type="submit" value="Registro">
+                        </form>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -153,6 +165,7 @@
             <script src="{{ asset('public/js/jquery.js') }}"></script>
             <script src="{{ asset('public/js/bootstrap.js') }}"></script>
             <script src="{{ asset('public/plugins/appear/jquery.appear.js') }}"></script>
+            <script src="{{ asset('public/js/account.form.js') }}"></script>
         {% endblock %}
 
         {% block page_scripts %}
