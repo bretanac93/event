@@ -5,7 +5,10 @@
 body {
   font-family: "Arial";
 }
+a:focus,
+a:active,
 a:hover {
+  outline: none;
   text-decoration: none !important;
 }
 .topbar {

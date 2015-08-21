@@ -5,7 +5,10 @@
 body {
   font-family: "Arial";
 }
+a:focus,
+a:active,
 a:hover {
+  outline: none;
   text-decoration: none !important;
 }
 .topbar {
@@ -265,4 +268,66 @@ footer p {
 }
 .map h3 {
   font-weight: bold;
+}
+.collapsed {
+  padding-top: 10px;
+}
+.collapsed .panel,
+.collapsed .panel-body {
+  border: none !important;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.collapsed .panel-heading {
+  padding: 6px 15px;
+}
+.collapsed .panel-title {
+  padding-bottom: 2px;
+  font-size: x-large;
+  color: #7d7d7d;
+  border-bottom: 1px solid #ece9e7;
+}
+.collapsed .open .panel-title {
+  border-bottom: none !important;
+  color: #007eb1 !important;
+}
+.collapsed .panel-group .panel + .panel {
+  margin-top: 0;
+}
+.collapsed a[data-toggle="collapse"] > span.fa {
+  background-color: #b1b1b1 !important;
+  color: #fff;
+  border-radius: 4px;
+  width: 26px;
+  height: 27px;
+  text-align: center;
+  font-size: larger;
+  margin-top: -6px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.collapsed a[aria-expanded="true"] > span.fa {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.social * {
+  background-color: transparent !important;
+}
+.social h4 {
+  font-weight: bold;
+}
+.social a {
+  color: #68696d !important;
+}
+.social a:hover,
+.social a:active {
+  color: #007eb1 !important;
 }
