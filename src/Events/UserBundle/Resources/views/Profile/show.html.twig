@@ -1,14 +1,233 @@
 {% extends "FOSUserBundle::layout.html.twig" %}
 
+{% block page_styles %}
+    <link rel="stylesheet" href="{{ asset('public/css/user/user.css') }}"/>
+{% endblock %}
+
 {% block fos_user_content %}
 
-    {% block page_styles %}
-        <link rel="stylesheet" href="{{ asset('public/css/user/user.css') }}"/>
-    {% endblock %}
+    <div class="bgimg text-center" style="background-image: url({{ asset('public/img/beach.png') }})">
+        <div class="main">
+            <img src="{{ asset('public/img/user.png') }}" alt="">
 
+            <h2>Julieta Fuentes</h2>
+            <ul class="list-inline">
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+                <li><span class="fa fa-star"></span></li>
+            </ul>
+            <p id="val">1.500 valoraciones</p>
 
-    {% block page_scripts %}
-        <script src="{{ asset('public/js/site.js') }}"></script>
-    {% endblock %}
+            <p class="text-uppercase">particular</p>
+
+            <p>Usuario desde 20/5/2015</p>
+        </div>
+    </div>
+
+    <div class="container-fluid visible-xs" id="mobile">
+        <div class="row followers">
+
+            <ul class="nav nav-tabs text-uppercase text-center">
+                <li class="active"><a href="#following" data-toggle="tab">sigo</a></li>
+                <li><a href="#followers" data-toggle="tab">me siguen</a></li>
+            </ul>
+
+            <div class="tab-content col-xs-12">
+                <div class="tab-pane fade in active" id="following">
+                    <ul class="list-inline">
+                        <li class="fuser">
+                            <input type="checkbox">
+                            <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                            <p class="name">Sarah</p>
+
+                            <p class="lastname">Contreras</p>
+                        </li>
+                    </ul>
+
+                    <div class="info">
+                        <h2>Información</h2>
+
+                        <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium
+                            atque, dolor eaque ex
+                            nobis obcaecati? Blanditiis eligendi enim est eveniet, fugit ipsam, maxime nulla, obcaecati
+                            perspiciatis quas quod suscipit temporibus.</p>
+
+                        <a href="#" class="text-right">más ...</a>
+                    </div>
+                </div>
+                <div class="tab-pane" id="followers">me siguen</div>
+            </div>
+
+        </div>
+
+        <div class="row map striped">
+            <div class="col-xs-12">
+                <h3>Centro Parque Costazul</h3>
+                <h4>Av. Luisa Cáseres de Arismendi, Calle 2, Pampatar. Centro Parqu</h4>
+                <img class="img-responsive" src="{{ asset('public/img/map.png') }}" alt="">
+            </div>
+        </div>
+
+        <div class="row collapsed striped">
+            <div class="panel-group" id="accordion">
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                Actividad
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseOne" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">
+                                Eventos Subidos
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseTwo" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">
+                                Eventos Organizados
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseThree" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">
+                                Eventos Asistidos
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFour" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive">
+                                Opiniones Enviadas
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseFive" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+                <div class="panel panel-default">
+                    <div class="panel-heading">
+                        <h4 class="panel-title">
+                            <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix">
+                                Opiniones Recibidas
+                                <span class="fa fa-angle-down pull-right"></span>
+                            </a>
+                        </h4>
+                    </div>
+                    <div id="collapseSix" class="panel-collapse collapse">
+                        <div class="panel-body">
+                            Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad
+                            squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa
+                            nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid
+                            single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft
+                            beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice
+                            lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you
+                            probably haven't heard of them accusamus labore sustainable VHS.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row social striped text-center">
+            <h4 class="text-uppercase">redes sociales</h4>
+            <ul class="list-inline">
+                <li><a href="#"><span class="fa fa-3x fa-twitter"></span></a></li>
+                <li><a href="#"><span class="fa fa-3x fa-facebook"></span></a></li>
+                <li><a href="#"><span class="fa fa-3x fa-google-plus"></span></a></li>
+                <li><a href="#"><span class="fa fa-3x fa-pinterest"></span></a></li>
+                <li><a href="#"><span class="fa fa-3x fa-instagram"></span></a></li>
+                <li><a href="#"><span class="fa fa-3x fa-flickr"></span></a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="container-fluid hidden-xs">
+
+    </div>
 
 {% endblock fos_user_content %}
+
+{% block page_scripts %}
+    <script src="{{ asset('public/js/user/user.js') }}"></script>
+    <script>
+        $(function () {
+            Events.init();
+            UserPage.init();
+        })
+    </script>
+{% endblock %}
+

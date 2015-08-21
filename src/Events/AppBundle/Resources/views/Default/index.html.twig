@@ -485,6 +485,7 @@
                             href="{{ asset('public/video/demo.mp4') }}">here</a>.</h5>
             </video>
 
+            {#todo: hide while playing, check the view description#}
             <div class="reviews visible-lg">
                 <ul class="list-inline">
                     <li class="user">
@@ -537,7 +538,7 @@
             </ul>
         </div>
 
-        <div class="row">
+        <div class="row last">
             <div class="col-md-12">
                 <div class="col-md-3 col-md-push-9 text-uppercase text-center">
                     <h3 class="visible-xs visible-sm">necesita ayuda</h3>
@@ -587,6 +588,12 @@
     <script src="{{ asset('public/plugins/swiper/swiper.js') }}"></script>
     <script src="{{ asset('public/plugins/datepicker/bootstrap-datepicker.js') }}"></script>
     <script src="{{ asset('public/plugins/countTo/jquery.countTo.js') }}"></script>
-    <script src="{{ asset('public/js/site.js') }}"></script>
+    <script src="{{ asset('public/js/home/home.js') }}"></script>
+    <script>
+        $(function () {
+            Events.init();
+            HomePage.init();
+        });
+    </script>
 {% endblock %}
 

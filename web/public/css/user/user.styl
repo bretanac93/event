@@ -1,1 +1,183 @@
 @import "../base"
+
+.bgimg
+    position relative
+    height 550px
+    background-position center
+    background-size cover
+
+    .main
+        width 100%
+        position absolute
+        center(100%)
+        margin-top 150px
+        font-size larger
+
+        img
+            width 150px
+            height auto
+            borderRadius(10px)
+            margin-bottom 15px
+            shadow(0, 2px, 5px, rgba(0, 0, 0, .3))
+
+        *
+            margin 3px 0
+
+        h2, p
+            color white
+
+        p#val
+            color rgb(80, 83, 83)
+
+        ul
+            color bgBlue
+
+#mobile
+    background-color rgb(211, 211, 211)
+    *
+        background-color white
+    p
+        background-color transparent
+
+    & > .row
+        shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
+
+.followers
+
+    .nav
+        li
+            width 50%
+            font-weight bold
+            font-size large
+            a, a:hover, a:focus
+                border none
+                border-radius 0
+                margin-right 0
+        li.active > a
+            color bgBlue
+        li:not(.active) > a
+            color rgb(132, 132, 132)
+            background-color rgb(172, 172, 172) !important
+
+    .tab-pane
+        ul
+            overflow-x auto
+            overflow-y hidden
+            white-space nowrap
+            margin 15px 0
+
+        .fuser
+            position relative
+
+            input
+                position absolute
+                top 10px
+                right 10px
+
+            img
+                width 130px
+                height auto
+
+            p
+                position absolute
+                right 15px
+                font-size larger
+                color white
+                text-shadow -1px 1px 0 black
+                &.name
+                    bottom 10px
+                &.lastname
+                    bottom -8px
+
+        .info
+            color rgb(125, 125, 125)
+            margin-top 10px
+
+            p
+                line-height 1.7em
+
+            a
+                color bgBlue
+                display block
+                text-decoration none
+                margin-bottom 15px
+
+.striped
+    margin-top 25px
+
+.map
+    padding-bottom 20px
+
+    h3
+        font-weight bold
+
+.collapsed
+    padding-top 10px
+    .panel, .panel-body
+        border none !important
+        border-radius 0
+        -webkit-box-shadow: none
+        -moz-box-shadow: none
+        box-shadow: none
+
+
+    .panel-heading
+        padding 6px 15px
+
+    .panel-title
+        padding-bottom 2px
+        font-size x-large
+        color rgb(125, 125, 125)
+        border-bottom 1px solid rgb(236, 233, 231)
+
+    .open .panel-title
+        border-bottom none !important
+        color bgBlue !important
+
+    .panel-group .panel + .panel
+        margin-top 0
+
+    a[data-toggle="collapse"] > span.fa
+        background-color rgb(177, 177, 177) !important
+        color white
+        border-radius 4px
+        width 26px
+        height 27px
+        text-align center
+        font-size larger
+        margin-top -6px
+        transition(.3s, linear)
+
+    a[aria-expanded="true"]
+        
+        //.back
+        //    opacity 1
+
+        & > span.fa
+            -webkit-transform: rotate(180deg)
+            -moz-transform: rotate(180deg)
+            -ms-transform: rotate(180deg)
+            -o-transform: rotate(180deg)
+            transform: rotate(180deg)
+            
+    //
+    //.back
+    //    transition(.3s, linear)
+    //    opacity 0
+    //    color rgb(53,53,53) !important
+    //    font-weight bold
+    //    font-size 13px
+    //    padding-top 8px
+
+.social
+    *
+        background-color transparent !important
+
+    h4
+        font-weight bold
+
+    a
+        color rgb(104, 105, 109) !important
+
+    a:hover, a:active
+        color bgBlue !important

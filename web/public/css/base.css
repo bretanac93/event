@@ -5,7 +5,10 @@
 body {
   font-family: "Arial";
 }
+a:focus,
+a:active,
 a:hover {
+  outline: none;
   text-decoration: none !important;
 }
 .topbar {
@@ -107,21 +110,21 @@ a:hover {
   color: #fff;
   text-decoration: none;
 }
-div.row:last-of-type {
+.last {
   color: #007eb1;
   margin: 30px 0;
 }
-div.row:last-of-type .words .col-md-4 {
+.last .words .col-md-4 {
   padding-left: 5%;
 }
-div.row:last-of-type .words p {
+.last .words p {
   color: #9c9c9c;
   font-size: larger;
 }
-div.row:last-of-type .words > div:not(:last-of-type) {
+.last .words > div:not(:last-of-type) {
   border-right: 3px solid #8ebdd2;
 }
-div.row:last-of-type .square {
+.last .square {
   width: 240px;
   height: 80px;
   background-color: #99cb50;
@@ -136,4 +139,9 @@ footer p {
   margin: 0;
   padding: 10px 0;
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  span.hs {
+    display: none;
+  }
 }

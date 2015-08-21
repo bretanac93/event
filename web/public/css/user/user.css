@@ -5,7 +5,10 @@
 body {
   font-family: "Arial";
 }
+a:focus,
+a:active,
 a:hover {
+  outline: none;
   text-decoration: none !important;
 }
 .topbar {
@@ -107,21 +110,21 @@ a:hover {
   color: #fff;
   text-decoration: none;
 }
-div.row:last-of-type {
+.last {
   color: #007eb1;
   margin: 30px 0;
 }
-div.row:last-of-type .words .col-md-4 {
+.last .words .col-md-4 {
   padding-left: 5%;
 }
-div.row:last-of-type .words p {
+.last .words p {
   color: #9c9c9c;
   font-size: larger;
 }
-div.row:last-of-type .words > div:not(:last-of-type) {
+.last .words > div:not(:last-of-type) {
   border-right: 3px solid #8ebdd2;
 }
-div.row:last-of-type .square {
+.last .square {
   width: 240px;
   height: 80px;
   background-color: #99cb50;
@@ -136,4 +139,195 @@ footer p {
   margin: 0;
   padding: 10px 0;
   color: #fff;
+}
+@media screen and (max-width: 768px) {
+  span.hs {
+    display: none;
+  }
+}
+.bgimg {
+  position: relative;
+  height: 550px;
+  background-position: center;
+  background-size: cover;
+}
+.bgimg .main {
+  width: 100%;
+  position: absolute;
+  margin-left: -50%;
+  left: 50%;
+  margin-top: 150px;
+  font-size: larger;
+}
+.bgimg .main img {
+  width: 150px;
+  height: auto;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  margin-bottom: 15px;
+  -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+.bgimg .main * {
+  margin: 3px 0;
+}
+.bgimg .main h2,
+.bgimg .main p {
+  color: #fff;
+}
+.bgimg .main p#val {
+  color: #505353;
+}
+.bgimg .main ul {
+  color: #007eb1;
+}
+#mobile {
+  background-color: #d3d3d3;
+}
+#mobile * {
+  background-color: #fff;
+}
+#mobile p {
+  background-color: transparent;
+}
+#mobile > .row {
+  -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+  box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
+}
+.followers .nav li {
+  width: 50%;
+  font-weight: bold;
+  font-size: large;
+}
+.followers .nav li a,
+.followers .nav li a:hover,
+.followers .nav li a:focus {
+  border: none;
+  border-radius: 0;
+  margin-right: 0;
+}
+.followers .nav li.active > a {
+  color: #007eb1;
+}
+.followers .nav li:not(.active) > a {
+  color: #848484;
+  background-color: #acacac !important;
+}
+.followers .tab-pane ul {
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  margin: 15px 0;
+}
+.followers .tab-pane .fuser {
+  position: relative;
+}
+.followers .tab-pane .fuser input {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+.followers .tab-pane .fuser img {
+  width: 130px;
+  height: auto;
+}
+.followers .tab-pane .fuser p {
+  position: absolute;
+  right: 15px;
+  font-size: larger;
+  color: #fff;
+  text-shadow: -1px 1px 0 #000;
+}
+.followers .tab-pane .fuser p.name {
+  bottom: 10px;
+}
+.followers .tab-pane .fuser p.lastname {
+  bottom: -8px;
+}
+.followers .tab-pane .info {
+  color: #7d7d7d;
+  margin-top: 10px;
+}
+.followers .tab-pane .info p {
+  line-height: 1.7em;
+}
+.followers .tab-pane .info a {
+  color: #007eb1;
+  display: block;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+.striped {
+  margin-top: 25px;
+}
+.map {
+  padding-bottom: 20px;
+}
+.map h3 {
+  font-weight: bold;
+}
+.collapsed {
+  padding-top: 10px;
+}
+.collapsed .panel,
+.collapsed .panel-body {
+  border: none !important;
+  border-radius: 0;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+}
+.collapsed .panel-heading {
+  padding: 6px 15px;
+}
+.collapsed .panel-title {
+  padding-bottom: 2px;
+  font-size: x-large;
+  color: #7d7d7d;
+  border-bottom: 1px solid #ece9e7;
+}
+.collapsed .open .panel-title {
+  border-bottom: none !important;
+  color: #007eb1 !important;
+}
+.collapsed .panel-group .panel + .panel {
+  margin-top: 0;
+}
+.collapsed a[data-toggle="collapse"] > span.fa {
+  background-color: #b1b1b1 !important;
+  color: #fff;
+  border-radius: 4px;
+  width: 26px;
+  height: 27px;
+  text-align: center;
+  font-size: larger;
+  margin-top: -6px;
+  -webkit-transition: all 0.3s linear;
+  -moz-transition: all 0.3s linear;
+  -ms-transition: all 0.3s linear;
+  -o-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+}
+.collapsed a[aria-expanded="true"] > span.fa {
+  -webkit-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.social * {
+  background-color: transparent !important;
+}
+.social h4 {
+  font-weight: bold;
+}
+.social a {
+  color: #68696d !important;
+}
+.social a:hover,
+.social a:active {
+  color: #007eb1 !important;
 }
