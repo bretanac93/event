@@ -67,9 +67,13 @@
                         <h3>Logotipo</h3>
                     </div>
                     <div class="row social-buttons">
-                        <a class="btn btn-info social-button gplus" href="#"><span class="icon fa fa-google-plus"></span><span class="text">Registrate con <b>Google+</b></span></a>
-                        <a class="btn btn-info social-button fb" href="#"><span class="icon fa fa-facebook"></span><span class="text">Registrate con <b>Facebook</b></span></a>
-                        <a class="btn btn-info social-button tw" href="#"><span class="icon fa fa-twitter"></span><span class="text">Registrate con <b>Twitter</b></span></a>
+                        <a class="btn btn-info social-button gplus" href="#"><span
+                                    class="icon fa fa-google-plus"></span><span
+                                    class="text">Registrate con <b>Google+</b></span></a>
+                        <a class="btn btn-info social-button fb" href="#"><span class="icon fa fa-facebook"></span><span
+                                    class="text">Registrate con <b>Facebook</b></span></a>
+                        <a class="btn btn-info social-button tw" href="#"><span class="icon fa fa-twitter"></span><span
+                                    class="text">Registrate con <b>Twitter</b></span></a>
                         <a class="btn btn-info social-button in" id="register-show" href="#"><span class="text">Registrarse</span></a>
                     </div>
                     <div class="row form-register">
@@ -151,13 +155,159 @@
                 </a>
             </div>
         </div>
-        <!-- /morphsearch-content -->
         <span class="morphsearch-close"></span>
     </div>
-    <!-- /morphsearch -->
     <div class="overlay"></div>
 
-    {% block body %}{% endblock %}
+    {% block body %}
+
+        {% block footer %}
+            <div class="row social text-center">
+                <ul class="list-inline">
+                    <li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-youtube"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>
+                    <li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>
+                </ul>
+            </div>
+
+            <footer class="row">
+                <div class="col-xs-12 visible-xs">
+                    <div class="col-xs-4">
+                        <a href="#" class="square fblue">
+                            <span class="fa fa-2x fa-building"></span>
+
+                            <p>¿Quiénes somos?</p>
+                        </a>
+                        <a href="#" class="square fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>
+
+                            <p>Sube un evento</p>
+                        </a>
+                        <a href="#" class="square flyellow"><span class="fa fa-2x fa-phone"></span>
+
+                            <p>Atención al cliente</p>
+                        </a>
+                        <a href="#" class="square flgreen2"><span class="fa fa-2x fa-microphone"></span>
+
+                            <p>Prensa</p>
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#" class="square fyellow"><span class="fa fa-2x fa-book"></span>
+
+                            <p>Acerca de</p>
+                        </a>
+                        <a href="#" class="square forange"><span class="fa fa-2x fa-quote-right"></span>
+
+                            <p>Blog</p>
+                        </a>
+                        <a href="#" class="square florange"><span class="fa fa-2x fa-file-text-o"></span>
+
+                            <p>Condiciones de uso</p>
+                        </a>
+                        <a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>
+
+                            <p>Contacto</p>
+                        </a>
+                    </div>
+                    <div class="col-xs-4">
+                        <a href="#" class="square fpurple"><span class="fa fa-2x  fa-legal"></span>
+
+                            <p>Aviso legal</p>
+                        </a>
+                        <a href="#" class="square fred"><span class="fa  fa-2x fa-question-circle"></span>
+
+                            <p>Preguntas frecuentes</p>
+                        </a>
+                        <a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>
+
+                            <p>Política de privacidad</p>
+                        </a>
+                        <a href="#" class="square flpurple"><span class="fa fa-2x  fa-comment"></span>
+
+                            <p>Chat online</p>
+                        </a>
+                    </div>
+                </div>
+
+
+                <div class="col-sm-12 hidden-xs">
+                    <div class="col-sm-4">
+                        <a href="#" class="square fblue">
+                            <span class="fa fa-2x fa-building"></span>
+
+                            <p>¿Quiénes somos?</p>
+                        </a>
+                        <a href="#" class="square mid fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>
+
+                            <p>Sube un evento</p>
+                        </a>
+                        <a href="#" class="square mid flyellow"><span class="fa fa-2x fa-phone"></span>
+
+                            <p>Atención al cliente</p>
+                        </a>
+                    </div>
+                    <div class="col-sm-4">
+                        <div class="col-sm-6">
+                            <a href="#" class="square mid flgreen2"><span class="fa fa-2x fa-microphone"></span>
+
+                                <p>Prensa</p>
+                            </a>
+                            <a href="#" class="square mid fyellow"><span class="fa fa-2x fa-book"></span>
+
+                                <p>Acerca de</p>
+                            </a>
+                            <a href="#" class="square mid forange"><span class="fa fa-2x fa-quote-right"></span>
+
+                                <p>Blog</p>
+                            </a>
+                        </div>
+                        <div class="col-sm-6">
+                            <a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>
+
+                                <p>Contacto</p>
+                            </a>
+                            <a href="#" class="square mid fpurple"><span class="fa fa-2x  fa-legal"></span>
+
+                                <p>Aviso legal</p>
+                            </a>
+                        </div>
+                        <div class="col-sm-12">
+                            <a href="#" class="square mid florange"><span class="fa fa-2x fa-file-text-o"></span>
+
+                                <p>Condiciones de uso</p>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="col-sm-4">
+                        <a href="#" class="square mid flpurple"><span class="fa fa-2x  fa-comment"></span>
+
+                            <p>Chat online</p>
+                        </a>
+                        <a href="#" class="square mid fred"><span class="fa  fa-2x fa-question-circle"></span>
+
+                            <p>Preguntas frecuentes</p>
+                        </a>
+                        <a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>
+
+                            <p>Política de privacidad</p>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-xs-12 last">
+                    <p>Copyright Maracaibo 2015 Todos los Derechos Reservados</p>
+                </div>
+            </footer>
+
+        {% endblock %}
+
+
+    {% endblock %}
+
+
 
     {% block scripts %}
 

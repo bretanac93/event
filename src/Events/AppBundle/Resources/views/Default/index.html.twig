@@ -33,6 +33,7 @@
 
         <form action="">
             <div class="search-bar">
+                {#todo: append to the search bar ?#}
                 <a href="#" class="date-picker"><span class="fa fa-calendar"></span></a>
                 <a href="#"><span class="fa fa-search"></span></a>
                 {#todo: line height not working on IE, polyfill with height#}
@@ -526,58 +527,10 @@
             </ul>
         </div>
 
-        <div class="row social text-center">
-            <ul class="list-inline">
-                <li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-youtube"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>
-                <li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>
-            </ul>
-        </div>
+        {% block footer %}
+            {{ parent() }}
+        {% endblock %}
 
-        <div class="row last">
-            <div class="col-md-12">
-                <div class="col-md-3 col-md-push-9 text-uppercase text-center">
-                    <h3 class="visible-xs visible-sm">necesita ayuda</h3>
-
-                    <div class="square"></div>
-
-                    <h4 class="visible-xs visible-sm">pague seguro pendiente</h4>
-                    <h4 class="visible-md visible-lg">pago seguro</h4>
-                    <img src="{{ asset('public/img/9/paypal.png') }}" alt="">
-                    <img src="{{ asset('public/img/9/cards.png') }}" alt="">
-                </div>
-                <div class="col-md-9 col-md-pull-3 words">
-                    <div class="col-md-4">
-                        <a href="#"><p>Quiénes somos</p></a>
-                        <a href="#"><p>Prensa</p></a>
-                        <a href="#"><p>Contacto</p></a>
-                        <a href="#"><p>Blog</p></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#"><p>Acerca de</p></a>
-                        <a href="#"><p>Política privacidad</p></a>
-                        <a href="#"><p>Aviso legal</p></a>
-                        <a href="#"><p>Condiciones uso</p></a>
-                    </div>
-                    <div class="col-md-4">
-                        <a href="#"><p>Atención cliente</p></a>
-                        <a href="#"><p>Chat online</p></a>
-                        <a href="#"><p>Preguntas frecuentes</p></a>
-                        <a href="#"><p>Sube un evento</p></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <footer class="row">
-            <p class="text-center">
-                <small>Copyright Belvi 2015 Todos los Derechos Reservados</small>
-            </p>
-        </footer>
     </div>
 
 
