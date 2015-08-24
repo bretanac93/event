@@ -12,9 +12,9 @@ var UserPage = (function () {
             $parent.toggleClass('open');
 
             if ($who.hasClass('in'))
-                $parent.siblings('.panel').fadeIn('fast');
+                $parent.siblings('.panel').delay(500).fadeIn('fast');
             else
-                $parent.siblings('.panel').fadeOut('fast');
+                $parent.siblings('.panel').delay(500).fadeOut('fast');
         });
     };
 

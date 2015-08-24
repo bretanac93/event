@@ -32,15 +32,17 @@
         ul
             color bgBlue
 
-#mobile
+.container-fluid
     background-color rgb(211, 211, 211)
-    *
-        background-color white
-    p
-        background-color transparent
 
-    & > .row
-        shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
+    #mobile
+        *
+            background-color white
+        p
+            background-color transparent
+
+        & > .row
+            shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
 
 .followers
 
@@ -120,13 +122,12 @@
         -moz-box-shadow: none
         box-shadow: none
 
-
     .panel-heading
         padding 6px 15px
 
     .panel-title
         padding-bottom 2px
-        font-size x-large
+        font-size 20px
         color rgb(125, 125, 125)
         border-bottom 1px solid rgb(236, 233, 231)
 
@@ -149,9 +150,9 @@
         transition(.3s, linear)
 
     a[aria-expanded="true"]
-        
-        //.back
-        //    opacity 1
+
+        .back
+            opacity 1
 
         & > span.fa
             -webkit-transform: rotate(180deg)
@@ -160,14 +161,125 @@
             -o-transform: rotate(180deg)
             transform: rotate(180deg)
 
-    //
-    //.back
-    //    transition(.3s, linear)
-    //    opacity 0
-    //    color rgb(53,53,53) !important
-    //    font-weight bold
-    //    font-size 13px
-    //    padding-top 8px
+
+.back
+    transition(.3s, linear)
+    opacity 0
+    float right
+    color rgb(53,53,53) !important
+    font-weight bold
+    font-size 13px
+    padding-top 8px
+
+.panel-body[class*=event] > .generic > img
+    border-radius 0 !important
+
+.opinion
+    .body
+        font-size 20px !important
+        padding-top 0 !important
+
+        .left
+            font-weight bold
+            font-size larger !important
+            margin-top -10px
+
+        .content
+            padding-top 0 !important
+
+        & > a
+            background-color rgb(62, 62, 62) !important
+            padding 0 15px
+            borderRadius(15px)
+            color rgb(130, 128, 129)
+
+.generic
+    padding-bottom 10px
+
+    img, .left, .right
+        display inline-block
+    img
+        width 90px
+        height 90px
+        borderRadius(10px)
+        float left
+        margin-right 10px
+
+    .body
+        padding-top 10px
+        font-size 13px
+        //todo: what to do with very small screen, img should dissapear
+        width 75%
+        float left
+        display inline-block
+
+        p
+            margin-bottom 0
+
+        &:not(:last-of-type)
+            border-bottom 1px solid rgb(236, 233, 231)
+
+        .left, .left a
+            color rgb(76, 78, 80)
+
+        .right
+            span:first-child
+                margin-right 20px
+            .status.on:before,
+            .status.off:before
+                color white
+                padding 3px 8px
+                text-transform uppercase
+                font-size smaller
+
+            .status.on:before
+                content 'activo'
+                background-color rgb(50, 176, 227)
+
+            .status.off:before
+                content 'finalizado'
+                background-color red
+
+        .right, .content
+            color rgb(177, 177, 177)
+
+        .content
+            padding-top 5px
+            text-align justify
+            strong
+                font-style italic
+
+.ratings
+    margin-top 25px
+
+    .rating
+        padding-bottom 10px
+
+        & > span
+            padding-left 10%
+            color rgb(130, 128, 129)
+            font-weight bolder
+
+        ul
+            display inline-block
+            float right
+            padding-right 10%
+            color rgb(50, 176, 227)
+            margin-bottom 0
+
+        &:last-of-type
+            margin-bottom 100px
+
+.cert
+    p
+        font-weight bolder
+        font-size 16px
+
+
+    img
+        width 80%
+        margin-bottom 40px
+
 
 .social-user
     *
