@@ -161,12 +161,11 @@
             -o-transform: rotate(180deg)
             transform: rotate(180deg)
 
-
 .back
     transition(.3s, linear)
     opacity 0
     float right
-    color rgb(53,53,53) !important
+    color rgb(53, 53, 53) !important
     font-weight bold
     font-size 13px
     padding-top 8px
@@ -191,10 +190,16 @@
             background-color rgb(62, 62, 62) !important
             padding 0 15px
             borderRadius(15px)
-            color rgb(130, 128, 129)
+            color textGrey
 
 .generic
-    padding-bottom 10px
+    padding-bottom 15px
+    margin-bottom 10px
+    display block
+    overflow hidden
+
+    &:not(:last-of-type)
+        border-bottom 1px solid rgba(236, 233, 231, .8)
 
     img, .left, .right
         display inline-block
@@ -204,6 +209,9 @@
         borderRadius(10px)
         float left
         margin-right 10px
+
+    small
+        color rgb(178, 178, 178)
 
     .body
         padding-top 10px
@@ -257,7 +265,7 @@
 
         & > span
             padding-left 10%
-            color rgb(130, 128, 129)
+            color textGrey
             font-weight bolder
 
         ul
@@ -275,11 +283,9 @@
         font-weight bolder
         font-size 16px
 
-
     img
         width 80%
         margin-bottom 40px
-
 
 .social-user
     *
@@ -293,3 +299,91 @@
 
     a:hover, a:active
         color bgBlue !important
+
+aside
+    padding 15px
+    color textGrey
+
+    .row
+        background-color white
+        borderRadius(4px)
+        margin 0
+        shadow(0, 2px, 2px, rgba(0, 0, 0, .2))
+
+        &:not(:last-of-type)
+            margin-bottom 10px
+
+    .aside-container
+        padding 10px
+
+    .arrow
+        border-top 1px solid lighten(textGrey, 70%)
+        text-align center
+        cursor pointer
+        padding-top 5px
+        padding-bottom 10px
+
+        span
+            color lighten(textGrey, 50%)
+            -webkit-transform: rotate(90deg)
+            -moz-transform: rotate(90deg)
+            -ms-transform: rotate(90deg)
+            -o-transform: rotate(90deg)
+            transform: rotate(90deg)
+
+    .ratings
+        margin 0 !important
+        padding 15px
+
+        li
+            padding-right 0
+
+        span, ul
+            padding-left 0 !important
+            padding-right 0 !important
+
+        .rating
+            & > span
+                font-weight initial !important
+
+            &:last-child
+                margin-bottom 30px
+
+    .cert p
+        font-weight inherit
+        font-size inherit
+
+#desktop
+    margin-top -43px
+    padding 0
+
+    .nav
+        border-bottom none
+        li
+            padding-right 30px
+        li a, li a:hover, li a:focus
+            padding 10px 0
+            background-color transparent
+            border none
+            outline none
+            borderRadius(0 !important)
+            text-transform uppercase
+            color white
+
+        li.active a
+            border-bottom 4px solid rgb(0, 127, 180)
+
+    .tab-content
+        background-color white !important
+        overflow-y auto
+
+        .tab-container
+            padding 25px
+            overflow-y auto
+
+    .generic
+        *
+            font-size large
+
+        small
+            font-size .7em

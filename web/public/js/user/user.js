@@ -18,9 +18,14 @@ var UserPage = (function () {
         });
     };
 
+    var setLayout = function () {
+        $('#desktop .tab-content').height( $('aside').height() + 32 );
+    };
+
     return {
         init: function () {
             initPanels();
+            setLayout();
         }
     }
 })();

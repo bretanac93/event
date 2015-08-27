@@ -446,7 +446,13 @@ footer .square p {
   color: #828081;
 }
 .generic {
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+  margin-bottom: 10px;
+  display: block;
+  overflow: hidden;
+}
+.generic:not(:last-of-type) {
+  border-bottom: 1px solid rgba(236,233,231,0.8);
 }
 .generic img,
 .generic .left,
@@ -461,6 +467,9 @@ footer .square p {
   border-radius: 10px;
   float: left;
   margin-right: 10px;
+}
+.generic small {
+  color: #b2b2b2;
 }
 .generic .body {
   padding-top: 10px;
@@ -549,4 +558,101 @@ footer .square p {
 .social-user a:hover,
 .social-user a:active {
   color: #007eb1 !important;
+}
+aside {
+  padding: 15px;
+  color: #828081;
+}
+aside .row {
+  background-color: #fff;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  border-radius: 4px;
+  margin: 0;
+  -webkit-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+  box-shadow: 0 2px 2px rgba(0,0,0,0.2);
+}
+aside .row:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+aside .aside-container {
+  padding: 10px;
+}
+aside .arrow {
+  border-top: 1px solid #dad9d9;
+  text-align: center;
+  cursor: pointer;
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+aside .arrow span {
+  color: #c0bfc0;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  transform: rotate(90deg);
+}
+aside .ratings {
+  margin: 0 !important;
+  padding: 15px;
+}
+aside .ratings li {
+  padding-right: 0;
+}
+aside .ratings span,
+aside .ratings ul {
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+aside .ratings .rating > span {
+  font-weight: initial !important;
+}
+aside .ratings .rating:last-child {
+  margin-bottom: 30px;
+}
+aside .cert p {
+  font-weight: inherit;
+  font-size: inherit;
+}
+#desktop {
+  margin-top: -43px;
+  padding: 0;
+}
+#desktop .nav {
+  border-bottom: none;
+}
+#desktop .nav li {
+  padding-right: 30px;
+}
+#desktop .nav li a,
+#desktop .nav li a:hover,
+#desktop .nav li a:focus {
+  padding: 10px 0;
+  background-color: transparent;
+  border: none;
+  outline: none;
+  -webkit-border-radius: 0 !important;
+  -moz-border-radius: 0 !important;
+  border-radius: 0 !important;
+  text-transform: uppercase;
+  color: #fff;
+}
+#desktop .nav li.active a {
+  border-bottom: 4px solid #007fb4;
+}
+#desktop .tab-content {
+  background-color: #fff !important;
+  overflow-y: auto;
+}
+#desktop .tab-content .tab-container {
+  padding: 25px;
+  overflow-y: auto;
+}
+#desktop .generic * {
+  font-size: large;
+}
+#desktop .generic small {
+  font-size: 0.7em;
 }

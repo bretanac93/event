@@ -297,6 +297,31 @@
 
                                     </div>
                                 </div>
+
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><a href="#">Sara Contreras</a></p>
+                                        </div>
+
+                                        <div class="right pull-right">
+                                            <span>25/15/2015</span>
+                                            <span>4:30pm</span>
+                                        </div>
+
+                                        <p class="content">
+                                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus
+                                            doloremque, eius impedit minima modi nobis nostrum odit quaerat repellat.
+                                            Dolor dolore iste maiores nostrum obcaecati quam reprehenderit sit ut!
+                                        </p>
+
+                                        <a href="#" class="pull-right">leer más...</a>
+
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -363,7 +388,286 @@
             </div>
         </div>
 
+        <div class="hidden-xs">
+            <div class="row">
+                <aside class="col-sm-4 col-md-3">
+                    <div class="row">
+                        <div class="aside-container">
+                            <h5 class="text-uppercase">Información</h5>
 
+                            <p class="text-justify">Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                                Accusantium atque, dolor eaque ex nobis obcaecati? </br>
+                                Blanditiis eligendi enim est eveniet, fugit ipsam, maxime nulla,
+                                obcaecati
+                                perspiciatis quas quod suscipit temporibus.</p>
+                        </div>
+                        <div class="arrow">
+                            <span class="fa fa-play"></span>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="aside-container">
+                            <h5 class="pull-right text-uppercase">Madrid</h5>
+                            <img class="img-responsive" src="{{ asset('public/img/map.png') }}" alt="">
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="aside-container text-center">
+                            <h5 class="text-uppercase">preferencias</h5>
+                            <ul class="list-inline">
+                                <li><span class="fa fa-2x fa-anchor"></span></li>
+                                <li><span class="fa fa-2x fa-music"></span></li>
+                                <li><span class="fa fa-2x fa-video-camera"></span></li>
+                                <li><span class="fa fa-2x fa-beer"></span></li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="row social-user text-center">
+                        <h5 class="text-uppercase">redes sociales</h5>
+                        <ul class="list-inline">
+                            <li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>
+                            <li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>
+                            <li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>
+                            <li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>
+                            <li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>
+                            <li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>
+                        </ul>
+                    </div>
+
+                    <div class="row text-uppercase">
+                        <div class="ratings aside-container">
+                            <div class="rating"><span>puntualidad</span>
+                                <ul class="list-inline">
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                </ul>
+                            </div>
+                            <div class="rating"><span>trato</span>
+                                <ul class="list-inline">
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                </ul>
+                            </div>
+                            <div class="rating"><span>otros</span>
+                                <ul class="list-inline">
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                </ul>
+                            </div>
+                            <div class="rating"><span>general</span>
+                                <ul class="list-inline">
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                    <li><span class="fa fa-star"></span></li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="cert text-center">
+                            <p class="text-uppercase">certificaciones y medallas</p>
+                            {#todo: use a font-icon or single image#}
+                            <img src="{{ asset('public/img/medals.png') }}" alt="">
+                        </div>
+                    </div>
+                </aside>
+                <div class="col-sm-8 col-md-9" id="desktop">
+                    <!-- Nav tabs -->
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#activities" data-toggle="tab">actividad</a></li>
+                        <li><a href="#events" data-toggle="tab">eventos</a></li>
+                        <li><a href="#reviews" data-toggle="tab">opiniones</a></li>
+                        <li><a href="#followrs" data-toggle="tab">seguidores</a></li>
+                    </ul>
+
+                    <!-- Tab panes -->
+                    <div class="tab-content">
+                        <div class="tab-pane active fade in" id="activities">
+                            <div class="tab-container">
+                                <div class="generic">
+
+                                    <div class="pic">
+                                        <img src="{{ asset('public/img/user.png') }}" alt="">
+                                    </div>
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                                <div class="generic">
+
+                                    <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                    <div class="body">
+                                        <div class="left">
+                                            <p><strong>Sara Contreras</strong></p>
+                                        </div>
+
+                                        <p>
+                                            <small>25/15/2015</small>
+                                            <small>4:30pm</small>
+                                        </p>
+
+                                        <p class="content">
+                                            Ha creado un evento <strong>Fiesta Vaquera</strong>
+                                        </p>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="tab-pane" id="events">...</div>
+                        <div class="tab-pane" id="reviews">...</div>
+                        <div class="tab-pane" id="followrs">...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
         {% block footer %}
             {{ parent() }}
