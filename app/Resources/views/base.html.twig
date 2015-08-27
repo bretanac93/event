@@ -78,7 +78,7 @@
                     </div>
                     <div class="row form-register">
                         <form action="{{ path('fos_user_security_check') }}" method="post">
-                            <input type="hidden" name="_csrf_token" value="{{ csrf_token }}">
+                            {# <input type="hidden" name="_csrf_token" value="{{ csrf_token }}"> #}
                             <input type="text" name="_username" id="user" placeholder="Usuario">
                             <input type="text" name="email" id="email" placeholder="Correo electrónico">
                             <input type="password" name="password" id="password" placeholder="Contraseña">
