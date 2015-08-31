@@ -113,7 +113,7 @@
 nav
     background-color bgBlue
     color white
-    height 200px
+    height 250px
     position relative
     padding-bottom 10px
     overflow-x auto
@@ -127,19 +127,29 @@ nav
     left 0
     bottom 0
 
+    h3
+        margin 30px 0
+
+    .item img
+        margin-bottom 10px
+
     a
         color white
         text-decoration none
         display inline-block
+
+.second, .third
+    .item img
+        margin-bottom 20px
 
 .first
     display block
 
     .middle
         position absolute
-        top 70px
+        top 100px
         width 2px
-        height 75px
+        height 80px
         background-color lightblue
         padding 0
 
@@ -216,7 +226,7 @@ nav
         top 0
         left 0
         width 100%
-        padding 1% 2% 2%
+        padding 2% 2% 3%
         color white
 
     .middle
@@ -228,6 +238,7 @@ nav
         text-shadow 2px 2px 2px black
         font-stretch ultra-condensed
         font-size larger
+        opacity 1
 
     .bottom
         padding 0 4%
@@ -318,7 +329,7 @@ nav
         transition(.25s)
 
 .event.active
-    .top
+    .top, .middle
         opacity 0
 
     .shade, .left-bar, .bottom-bar
@@ -354,7 +365,7 @@ nav
 .palm-trees
     font-family homemade-apple
     background-color bgGrey
-    padding 2% 0
+    padding 4% 0
     color rgb(128, 128, 128)
     position relative
     overflow hidden
@@ -450,13 +461,16 @@ nav
     width 100%
     margin-bottom 1%
 
+
     figure
         vertical-align top
         margin-top 5px
         display inline-block
         width 20%
         margin-right 1%
-        borderRadius(10px)
+        img
+            borderRadius(10px)
+            width 90%
 
     .text
         width 75%
@@ -573,7 +587,6 @@ nav
         background-color btnFb
         border 1px btnFb solid
 
-
     .gplus
         background-color btnGp
         border 1px btnGp solid
@@ -595,6 +608,5 @@ nav
 .social-button
     border-radius 0
     width 100%
-
 
 @import media

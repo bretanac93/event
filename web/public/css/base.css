@@ -5,6 +5,7 @@
 body {
   font-family: "Arial";
 }
+a,
 a:focus,
 a:active,
 a:hover {
@@ -110,118 +111,35 @@ a:hover {
   color: #fff;
   text-decoration: none;
 }
-.fblue {
-  background-color: #b4eaf7;
+div.row:last-of-type {
+  color: #007eb1;
+  margin: 30px 0;
 }
-.fblue span {
-  color: #66d5ef;
+div.row:last-of-type .words .col-md-4 {
+  padding-left: 5%;
 }
-.fyellow {
-  background-color: #f3efb8;
+div.row:last-of-type .words p {
+  color: #9c9c9c;
+  font-size: larger;
 }
-.fyellow span {
-  color: #e7df72;
+div.row:last-of-type .words > div:not(:last-of-type) {
+  border-right: 3px solid #8ebdd2;
 }
-.fpurple {
-  background-color: #d3b6e5;
-}
-.fpurple span {
-  color: #bd92d8;
-}
-.fgreen {
-  background-color: #c4df9b;
-}
-.fgreen span {
-  color: #89bf38;
-}
-.forange {
-  background-color: #ffc45a;
-}
-.forange span {
-  color: #ff8901;
-}
-.fred {
-  background-color: #ff9e8f;
-}
-.fred span {
-  color: #ff6250;
-}
-.flyellow {
-  background-color: #f0eec9;
-}
-.flyellow span {
-  color: #ffdd93;
-}
-.florange {
-  background-color: #ffd9a6;
-}
-.florange span {
-  color: #ffb552;
-}
-.flgreen {
-  background-color: #99e7d9;
-}
-.flgreen span {
-  color: #34cfb3;
-}
-.flgreen2 {
-  background-color: #adeade;
-}
-.flgreen2 span {
-  color: #5cd5bd;
-}
-.flpink {
-  background-color: #f4e9ea;
-}
-.flpink span {
-  color: #e9bfd5;
-}
-.flpurple {
-  background-color: #ddd3e8;
-}
-.flpurple span {
-  color: #bba7d1;
+div.row:last-of-type .square {
+  width: 240px;
+  height: 80px;
+  background-color: #99cb50;
+  position: relative;
+  left: 50%;
+  margin-left: -120px;
 }
 footer {
-  color: #616161;
+  background-color: #696969;
 }
-footer [class^=col-] {
-  padding: 0;
-}
-footer .mid {
-  height: 0.1666666667rem !important;
-}
-footer .square {
-  display: block;
-  position: relative;
-  font-size: larger;
-  height: 0.3333333333rem;
-  border: 1px solid #fff;
-}
-footer .square .fa,
-footer .square p {
-  position: absolute;
-}
-footer .square .fa {
-  top: 10px;
-  right: 10px;
-}
-footer .square p {
-  bottom: 10px;
-  left: 10px;
+footer p {
   margin: 0;
-  line-height: 1em;
-  color: #676a6b;
-  font-stretch: semi-condensed;
-  letter-spacing: 1px;
-}
-.last {
-  background-color: #50595e;
+  padding: 10px 0;
   color: #fff;
-  text-align: center;
-}
-.last p {
-  padding: 10px;
 }
 @media screen and (max-width: 768px) {
   span.hs {

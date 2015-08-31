@@ -5,6 +5,7 @@
 body {
   font-family: "Arial";
 }
+a,
 a:focus,
 a:active,
 a:hover {
@@ -110,118 +111,35 @@ a:hover {
   color: #fff;
   text-decoration: none;
 }
-.fblue {
-  background-color: #b4eaf7;
+div.row:last-of-type {
+  color: #007eb1;
+  margin: 30px 0;
 }
-.fblue span {
-  color: #66d5ef;
+div.row:last-of-type .words .col-md-4 {
+  padding-left: 5%;
 }
-.fyellow {
-  background-color: #f3efb8;
+div.row:last-of-type .words p {
+  color: #9c9c9c;
+  font-size: larger;
 }
-.fyellow span {
-  color: #e7df72;
+div.row:last-of-type .words > div:not(:last-of-type) {
+  border-right: 3px solid #8ebdd2;
 }
-.fpurple {
-  background-color: #d3b6e5;
-}
-.fpurple span {
-  color: #bd92d8;
-}
-.fgreen {
-  background-color: #c4df9b;
-}
-.fgreen span {
-  color: #89bf38;
-}
-.forange {
-  background-color: #ffc45a;
-}
-.forange span {
-  color: #ff8901;
-}
-.fred {
-  background-color: #ff9e8f;
-}
-.fred span {
-  color: #ff6250;
-}
-.flyellow {
-  background-color: #f0eec9;
-}
-.flyellow span {
-  color: #ffdd93;
-}
-.florange {
-  background-color: #ffd9a6;
-}
-.florange span {
-  color: #ffb552;
-}
-.flgreen {
-  background-color: #99e7d9;
-}
-.flgreen span {
-  color: #34cfb3;
-}
-.flgreen2 {
-  background-color: #adeade;
-}
-.flgreen2 span {
-  color: #5cd5bd;
-}
-.flpink {
-  background-color: #f4e9ea;
-}
-.flpink span {
-  color: #e9bfd5;
-}
-.flpurple {
-  background-color: #ddd3e8;
-}
-.flpurple span {
-  color: #bba7d1;
+div.row:last-of-type .square {
+  width: 240px;
+  height: 80px;
+  background-color: #99cb50;
+  position: relative;
+  left: 50%;
+  margin-left: -120px;
 }
 footer {
-  color: #616161;
+  background-color: #696969;
 }
-footer [class^=col-] {
-  padding: 0;
-}
-footer .mid {
-  height: 0.1666666667rem !important;
-}
-footer .square {
-  display: block;
-  position: relative;
-  font-size: larger;
-  height: 0.3333333333rem;
-  border: 1px solid #fff;
-}
-footer .square .fa,
-footer .square p {
-  position: absolute;
-}
-footer .square .fa {
-  top: 10px;
-  right: 10px;
-}
-footer .square p {
-  bottom: 10px;
-  left: 10px;
+footer p {
   margin: 0;
-  line-height: 1em;
-  color: #676a6b;
-  font-stretch: semi-condensed;
-  letter-spacing: 1px;
-}
-.last {
-  background-color: #50595e;
+  padding: 10px 0;
   color: #fff;
-  text-align: center;
-}
-.last p {
-  padding: 10px;
 }
 @media screen and (max-width: 768px) {
   span.hs {
@@ -355,7 +273,7 @@ footer .square p {
 nav {
   background-color: #007eb1;
   color: #fff;
-  height: 200px;
+  height: 250px;
   position: relative;
   padding-bottom: 10px;
   overflow-x: auto;
@@ -371,6 +289,16 @@ nav {
   left: 0;
   bottom: 0;
 }
+.first h3,
+.second h3,
+.third h3 {
+  margin: 30px 0;
+}
+.first .item img,
+.second .item img,
+.third .item img {
+  margin-bottom: 10px;
+}
 .first a,
 .second a,
 .third a {
@@ -378,14 +306,18 @@ nav {
   text-decoration: none;
   display: inline-block;
 }
+.second .item img,
+.third .item img {
+  margin-bottom: 20px;
+}
 .first {
   display: block;
 }
 .first .middle {
   position: absolute;
-  top: 70px;
+  top: 100px;
   width: 2px;
-  height: 75px;
+  height: 80px;
   background-color: #add8e6;
   padding: 0;
 }
@@ -519,7 +451,7 @@ nav {
   top: 0;
   left: 0;
   width: 100%;
-  padding: 1% 2% 2%;
+  padding: 2% 2% 3%;
   color: #fff;
 }
 .event .middle {
@@ -531,6 +463,7 @@ nav {
   text-shadow: 2px 2px 2px #000;
   font-stretch: ultra-condensed;
   font-size: larger;
+  opacity: 1;
 }
 .event .bottom {
   padding: 0 4%;
@@ -629,7 +562,8 @@ nav {
   -o-transition: all 0.25s ease;
   transition: all 0.25s ease;
 }
-.event.active .top {
+.event.active .top,
+.event.active .middle {
   opacity: 0;
 }
 .event.active .shade,
@@ -665,7 +599,7 @@ nav {
 .palm-trees {
   font-family: homemade-apple;
   background-color: #ededed;
-  padding: 2% 0;
+  padding: 4% 0;
   color: #808080;
   position: relative;
   overflow: hidden;
@@ -766,9 +700,12 @@ nav {
   display: inline-block;
   width: 20%;
   margin-right: 1%;
+}
+.comment figure img {
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
   border-radius: 10px;
+  width: 90%;
 }
 .comment .text {
   width: 75%;
@@ -921,6 +858,9 @@ nav {
   }
 }
 @media screen and (max-width: 992px) {
+  .event:nth-child(4) ~ .event {
+    display: none;
+  }
   .words {
     text-align: center;
     margin-top: 30px;

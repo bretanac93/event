@@ -19,7 +19,18 @@ var UserPage = (function () {
     };
 
     var setLayout = function () {
-        $('#desktop .tab-content').height( $('aside').height() + 32 );
+
+        var aside = $('aside').height();
+
+        $('#desktop .tab-content')
+            .height(aside + 32);
+
+        $('#desktop .tab-container')
+            .height(aside - 50)
+            .perfectScrollbar({
+                maxScrollbarLength: 40,
+                wheelSpeed: 0.2
+            });
     };
 
     return {
