@@ -1,3 +1,10 @@
-authentication_handler:
-  class:    Events\UserBundle\Handler\AuthenticationHandler
-  arguments: [@router, @security.context, @fos_user.user_manager, @service_container]
+#authentication_handler:
+#  class:    Events\UserBundle\Handler\AuthenticationHandler
+#  arguments: [@router, @security.context, @fos_user.user_manager, @service_container]
+
+services:
+    user.admin.user:
+        class: Events\UserBundle\Admin\UserAdmin
+        arguments: [~, Events\UserBundle\Entity\User, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: User, label: User}
