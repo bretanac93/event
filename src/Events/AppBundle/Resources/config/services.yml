@@ -5,3 +5,9 @@ services:
     app_utils:
         class: "%app_utils.class%"
         arguments: [@doctrine.orm.entity_manager]
+
+    app.admin.event:
+        class: Events\AppBundle\Admin\EventAdmin
+        arguments: [~, Events\AppBundle\Entity\Event, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Event, label: Event}
