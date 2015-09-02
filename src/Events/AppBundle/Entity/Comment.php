@@ -94,7 +94,17 @@ class Comment
         return $this->created;
     }
 
-    public function setUser(User $user)
+    public function getEvents()
+    {
+        return $this->events;
+    }
+
+    public function getUsers()
+    {
+        return $this->users;
+    }
+
+    public function setUsers(User $user)
     {
         $this->users = $user;
 
@@ -106,5 +116,10 @@ class Comment
         $this->events = $event;
 
         return $this;
+    }
+
+    public function __toString()
+    {
+        return $this->getContent();
     }
 }
