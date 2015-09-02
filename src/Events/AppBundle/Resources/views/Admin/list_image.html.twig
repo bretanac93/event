@@ -1,0 +1,11 @@
+{% extends 'SonataAdminBundle:CRUD:base_list_field.html.twig' %}
+{% block field %}
+    <div>
+
+        {% if object != null %}
+            <img src="{{ asset( object) }}" width="100" height="100">
+        {% else %}
+            <span>No picture</span>
+        {% endif %}
+    </div>
+{% endblock %}

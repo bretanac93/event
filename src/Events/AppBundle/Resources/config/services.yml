@@ -17,3 +17,9 @@ services:
         arguments: [~, Events\AppBundle\Entity\Comment, SonataAdminBundle:CRUD]
         tags:
             - {name: sonata.admin, manager_type: orm, group: Comment, label: Comment}
+
+    app.admin.image_upload:
+        class: Events\AppBundle\Admin\ImageUploadAdmin
+        arguments: [~, Events\AppBundle\Entity\ImageUpload, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ImageUpload}
