@@ -19,6 +19,11 @@ class AppKernel extends Kernel
             new Events\AppBundle\AppBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new \Events\UserBundle\UserBundle(),
+            new Sonata\BlockBundle\SonataBlockBundle(),
+            new Sonata\AdminBundle\SonataAdminBundle(),
+            new \Sonata\CoreBundle\SonataCoreBundle(),
+            new Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle(),
+            new Knp\Bundle\MenuBundle\KnpMenuBundle()
             // new FOS\ElasticaBundle\FOSElasticaBundle()
 //            new HWI\Bundle\OAuthBundle\HWIOAuthBundle()
         );

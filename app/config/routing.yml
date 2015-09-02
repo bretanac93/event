@@ -8,3 +8,12 @@ fos_user:
 oauth:
     resource: "@AppBundle/Resources/config/oauth/routing.yml"
     prefix:  /oauth
+
+sonata:
+    resource: '@SonataAdminBundle/Resources/config/routing/sonata_admin.xml'
+    prefix: /admin
+
+_sonata_admin:
+    resource: .
+    type: sonata_admin
+    prefix: /admin
