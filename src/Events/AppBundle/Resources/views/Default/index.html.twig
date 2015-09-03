@@ -71,83 +71,89 @@
                     </div>
                     <div class="second">
                         <h3>asiste a un evento</h3>
-                        <ul class="list-inline">
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/ticket.png') }}"/>
 
-                                    <p>saca tu entrada</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/share.png') }}"/>
+                        <div class="list-wrapper">
+                            <ul class="list-inline">
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/ticket.png') }}"/>
 
-                                    <p>comparte con tus amigos</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/happy.png') }}"/>
+                                        <p>saca tu entrada</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/share.png') }}"/>
 
-                                    <p>pásalo genial</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/chat.png') }}"/>
+                                        <p>comparte con tus amigos</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/happy.png') }}"/>
 
-                                    <p>cuéntanos como te fue</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/save_money.png') }}"/>
+                                        <p>pásalo genial</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/chat.png') }}"/>
 
-                                    <p>tiempo y dinero</p>
-                                </a>
-                            </li>
-                        </ul>
+                                        <p>cuéntanos como te fue</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/save_money.png') }}"/>
+
+                                        <p>tiempo y dinero</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                     <div class="third">
                         <h3>sube un evento</h3>
-                        <ul class="list-inline">
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/create.png') }}"/>
 
-                                    <p>crea un evento</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/publish.png') }}"/>
+                        <div class="list-wrapper">
+                            <ul class="list-inline">
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/create.png') }}"/>
 
-                                    <p>publica y comparte</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/make.png') }}"/>
+                                        <p>crea un evento</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/publish.png') }}"/>
 
-                                    <p>realiza el evento</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/chat_white.png') }}"/>
+                                        <p>publica y comparte</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/make.png') }}"/>
 
-                                    <p>cuentanos tu experiencia</p>
-                                </a>
-                            </li>
-                            <li class="item">
-                                <a href="#">
-                                    <img src="{{ asset('public/img/3/bag.png') }}"/>
+                                        <p>realiza el evento</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/chat_white.png') }}"/>
 
-                                    <p>obtén ingresos extras</p>
-                                </a>
-                            </li>
-                        </ul>
+                                        <p>cuentanos tu experiencia</p>
+                                    </a>
+                                </li>
+                                <li class="item">
+                                    <a href="#">
+                                        <img src="{{ asset('public/img/3/bag.png') }}"/>
+
+                                        <p>obtén ingresos extras</p>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
                     </div>
                 </nav>
             </header>
@@ -1637,7 +1643,7 @@
         <div class="row video-wrapper">
 
             {#todo: add autoplay for production mode#}
-            <video  preload="auto">
+            <video preload="auto">
                 {#todo: use ogg (vorbis) and then mp4 (h.264) and add mime type#}
                 <source src="{{ asset('public/video/demo.mp4') }}">
                 <h5 class="text-center">I'm sorry; your browser doesn't support HTML5 video.</h5>

@@ -58,7 +58,7 @@ var HomePage = (function () {
 
             function toggleNavMobile(ev) {
                 if (hasParentClass(ev.target, 'navg')) return;
-                var active = $('nav').find('div:not(.first):isBlock');
+                var active = $('nav > div:not(.first):isBlock');
                 if (active.length === 0) return;
                 $(active[0]).fadeOut(100);
                 $('.first').fadeIn(100);
