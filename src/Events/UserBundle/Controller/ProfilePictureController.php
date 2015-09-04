@@ -24,7 +24,7 @@ class ProfilePictureController extends Controller
 
         $form = $this->createFormBuilder($profilePic)
             ->add('file')
-            ->add('submit', 'submit', array('attr' => array('value'=>"Submit")))
+            ->add('submit', 'submit', array('attr' => array('value'=>"Upload")))
             ->getForm();
 
         $form->handleRequest($request);
@@ -32,9 +32,15 @@ class ProfilePictureController extends Controller
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
 
+            $repo_img = $em->getRepository('UserBundle:ProfilePic')->findOneBy(array('user' => $userLogged));
+
+            if ($repo_img != null) {
+                $em->remove($repo_img);
+                $em->flush();
+            }
+
             $em->persist($profilePic);
             $em->flush();
-            //TODO: Need to override the fos_user_profile to show the profile picture as well.
             return $this->redirectToRoute('fos_user_profile_show');
         }
 

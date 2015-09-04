@@ -1,3 +1,4 @@
+{% set user = app.user %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -36,11 +37,21 @@
 </head>
 <body>
     <div class="topbar">
-        <a href="#" class="pull-right" id="profile">
-            <img src="{{ asset('anonymous.png') }}"/>
-            <span class="hs">Mi Perfil</span>
-            <span class="caret-down"></span>
-        </a>
+        {% if app.user %}
+            <a href="#" class="pull-right" id="profile">
+
+                {% if user.profilepic %}
+                    <img src="{{ user.profilepic }}"/>
+                {% else %}
+                    <img src="{{ asset('anonymous.png') }}"/>
+                {% endif %}
+
+                <span class="hs">Mi Perfil</span>
+                <span class="caret-down"></span>
+            </a>
+        {% else %}
+            <a data-toggle="modal" href="#rlogin-modal" class="pull-right"><i class="glyphicon glyphicon-user"></i> Acceso</a>
+        {% endif %}
 
         <a href="#" class="pull-right">
             <span class="fa fa-plus"></span>
@@ -51,7 +62,7 @@
             <span class="fa fa-search"></span>
             <span class="hs">Busca tu Evento</span>
         </a>
-        <a data-toggle="modal" href="#rlogin-modal" class="pull-right">Launch demo modal</a>
+
     </div>
 
     <div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
@@ -90,7 +101,6 @@
                     </div>
                 </div>
                 <div class="modal-footer">
-
                 </div>
             </div>
         </div>
@@ -99,12 +109,21 @@
     <div id="morphsearch" class="morphsearch">
         <div class="morphsearch-content">
             <div class="dummy-column text-center">
-                <img class="img-circle img-responsive" src="{{ asset('anonymous.png') }}" alt="">
+                {% if not user %}
+                    <img src="{{ asset('anonymous.png') }}"/>
+                {% else %}
+                    <img src="{{ user.profilepic }}" class="img-circle" />
+                {% endif %}
 
-                <h2 id="username">Julieta Fuentes</h2>
+
+                {% if user %}
+                    <h2 id="username">{{ user.profiledetails }}</h2>
+                {% else %}
+                    <h2>You shouldn't be watching this.</h2>
+                {% endif %}
             </div>
             <div class="dummy-column">
-                <a class="dummy-media-object" href="#">
+                <a class="dummy-media-object" href="{{ url('fos_user_profile_show') }}">
                     <h3>
                         <span class="fa fa-user"></span>
                         Mi Perfil
@@ -147,7 +166,7 @@
                         Finanzas
                     </h3>
                 </a>
-                <a class="dummy-media-object" href="#">
+                <a class="dummy-media-object" href="{{ url('fos_user_security_logout') }}">
                     <h3 id="exit">
                         <span class="fa fa-sign-out"></span>
                         Salir

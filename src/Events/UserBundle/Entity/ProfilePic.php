@@ -3,6 +3,7 @@
 namespace Events\UserBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\DependencyInjection\Container;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -11,7 +12,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table()
  * @ORM\HasLifecycleCallbacks
- * @ORM\Entity(repositoryClass="Events\AppBundle\Entity\ProfilePicRepository")
+ * @ORM\Entity(repositoryClass="Events\UserBundle\Entity\ProfilePicRepository")
  */
 class ProfilePic
 {
@@ -74,6 +75,8 @@ class ProfilePic
 
     public function getAbsolutePath()
     {
+        $c = new Container();
+        $host = $c->get('request')->getBaseUrl();
         return null === $this->path
             ? null
             : $this->getUploadRootDir() . '/' . $this->path;
@@ -103,7 +106,7 @@ class ProfilePic
     public function preUpload()
     {
         if (null !== $this->getFile()) {
-            $filename = sha1(uniqid(mt_rand(), true));
+            $filename = $this->user->getUsername().'_profile_picture';
             $this->path = $filename . '.' . $this->getFile()->guessExtension();
         }
     }
@@ -153,8 +156,13 @@ class ProfilePic
         return $this;
     }
 
+    public function setPath($path)
+    {
+        $this->path = $path;
+    }
+
     public function __toString()
     {
-        return $this->getUploadDir().'/'.$this->path;
+        return '/uploads/profile/' . $this->path;
     }
 }
