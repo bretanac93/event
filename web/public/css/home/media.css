@@ -17,22 +17,6 @@
   .event:nth-child(4) ~ .event {
     display: none;
   }
-  .words {
-    text-align: center;
-    margin-top: 30px;
-  }
-  .words p,
-  .words .col-md-4 {
-    display: inline-block;
-  }
-  .words p {
-    margin-right: 30px;
-    color: bgBlue !important;
-    font-size: x-large !important;
-  }
-  .words > div:not(:last-of-type) {
-    border-right: none !important;
-  }
 }
 @media screen and (max-width: 768px) {
   .events .event {
@@ -131,9 +115,6 @@
   }
   .counter.center h4 {
     margin-left: -40% !important;
-  }
-  .social li {
-    padding: 0 1% !important;
   }
 }
 @media screen and (min-width: 1200px) {

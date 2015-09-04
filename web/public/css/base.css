@@ -97,35 +97,32 @@ a:hover {
 [data-from=left] {
   left: -60px;
 }
-.social {
+.social-blue {
   background-color: #007eb1;
+  padding-top: 10px;
 }
-.social ul {
-  margin: 0;
-  padding: 10px 0;
-}
-.social ul li {
-  padding: 0 2%;
-}
-.social ul li a {
-  color: #fff;
-  text-decoration: none;
-}
-div.row:last-of-type {
+.social-blue span i:last-child {
   color: #007eb1;
-  margin: 30px 0;
 }
-div.row:last-of-type .words .col-md-4 {
+.social-blue a {
+  color: #fff;
+}
+.last {
+  color: #007eb1;
+  padding: 30px 0 20px;
+  background-color: #fff;
+}
+.last .words .col-md-4 {
   padding-left: 5%;
 }
-div.row:last-of-type .words p {
+.last .words p {
   color: #9c9c9c;
   font-size: larger;
 }
-div.row:last-of-type .words > div:not(:last-of-type) {
+.last .words > div:not(:last-of-type) {
   border-right: 3px solid #8ebdd2;
 }
-div.row:last-of-type .square {
+.last .square {
   width: 240px;
   height: 80px;
   background-color: #99cb50;
@@ -140,6 +137,24 @@ footer p {
   margin: 0;
   padding: 10px 0;
   color: #fff;
+}
+@media screen and (max-width: 992px) {
+  .words {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .words p,
+  .words .col-md-4 {
+    display: inline-block;
+  }
+  .words p {
+    margin-right: 30px;
+    color: #007eb1 !important;
+    font-size: x-large !important;
+  }
+  .words > div:not(:last-of-type) {
+    border-right: none !important;
+  }
 }
 @media screen and (max-width: 768px) {
   span.hs {

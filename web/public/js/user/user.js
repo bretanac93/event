@@ -23,7 +23,7 @@ var UserPage = (function () {
         var aside = $('aside').height();
 
         $('#desktop .tab-content')
-            .height(aside + 32);
+            .height(aside + 30);
 
         $('#desktop .tab-container')
             .height(aside - 50)

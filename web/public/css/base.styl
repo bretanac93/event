@@ -1,7 +1,6 @@
 @font-face
     font-family: 'homemade-apple';
     src url(../fonts/HomemadeApple.ttf) format('truetype')
-    
 
 bgBlue = rgb(0, 126, 177)
 bgGreen = rgb(21, 172, 163)
@@ -130,20 +129,21 @@ a, a:focus, a:active, a:hover
 [data-from=left]
     left -60px
 
-.social
+.social-blue
     background-color bgBlue
-    ul
-        margin 0
-        padding 10px 0
-        li
-            padding 0 2%
-            a
-                color white
-                text-decoration none
+    padding-top 10px
 
-div.row:last-of-type
+    span
+        i:last-child
+            color bgBlue
+
+    a
+        color white
+
+.last
     color bgBlue
-    margin 30px 0
+    padding 30px 0 20px
+    background-color white
 
     .words
         .col-md-4
@@ -270,6 +270,19 @@ footer
 //
 //    p
 //        padding 10px
+
+@media screen and (max-width 992px)
+    .words
+        text-align center
+        margin-top 30px
+        p, .col-md-4
+            display inline-block
+        p
+            margin-right 30px
+            color bgBlue !important
+            font-size x-large !important
+        & > div:not(:last-of-type)
+            border-right none !important
 
 @media screen and (max-width 768px)
     span.hs
