@@ -870,8 +870,13 @@ nav {
   text-align: center;
 }
 .modal-content .modal-footer {
-  padding: 7%;
+  padding: 4%;
   background: #d3d3d3;
+}
+.modal-content .modal-footer .footer-option {
+  color: #a0a0a0;
+  text-align: center;
+  font-size: 1.1em;
 }
 .social-buttons .text {
   margin: 10%;
