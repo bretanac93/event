@@ -34,7 +34,6 @@
 
 .container-fluid
 
-
     #mobile
         *
             background-color white
@@ -53,7 +52,7 @@
             font-size large
             a, a:hover, a:focus
                 border none
-                border-radius 0
+                borderRadius(0)
                 margin-right 0
         li.active > a
             color bgBlue
@@ -117,7 +116,7 @@
     padding-top 10px
     .panel, .panel-body
         border none !important
-        border-radius 0
+        borderRadius(0)
         -webkit-box-shadow: none
         -moz-box-shadow: none
         box-shadow: none
@@ -141,7 +140,7 @@
     a[data-toggle="collapse"] > span.fa
         background-color rgb(177, 177, 177) !important
         color white
-        border-radius 4px
+        borderRadius(4px)
         width 26px
         height 27px
         text-align center
@@ -171,7 +170,7 @@
     padding-top 8px
 
 .panel-body[class*=event] > .generic > img
-    border-radius 0 !important
+    borderRadius(0 !important)
 
 .opinion
     .body
@@ -198,7 +197,7 @@
     display block
     overflow hidden
 
-    &:not(:last-of-type)
+    &:not(:last-child)
         border-bottom 1px solid rgba(236, 233, 231, .8)
 
     img, .left, .right
@@ -218,7 +217,7 @@
         padding-top 10px
         font-size 13px
         //todo: what to do with very small screen, img should dissapear
-        width 75%
+        width calc(100% - 101px)
         float left
         display inline-block
 
@@ -359,21 +358,44 @@ aside
     margin-top -43px
     padding 0
 
-    & > .nav
+    .nav
         border-bottom none
+
+        li
+            a, a:hover, a:focus
+                padding 10px 15px
+                background-color transparent
+                border none
+                outline none
+                borderRadius(0 !important)
+                text-transform uppercase
+
+    & > .nav
         li
             padding-right 30px
-        li a, li a:hover, li a:focus
-            padding 10px 0
-            background-color transparent
-            border none
-            outline none
-            borderRadius(0 !important)
-            text-transform uppercase
-            color white
+
+            a, li a:hover, li a:focus
+                color white
 
         li.active a
             border-bottom 4px solid rgb(0, 127, 180)
+
+    .inner
+        .nav
+            li a
+                padding 0 15px
+                color rgb(76, 78, 80)
+                font-weight bolder
+                line-height .9em
+
+            li.active a
+                color bgBlue
+
+            li:not(:last-child) a
+                border-right 1px solid rgb(76, 78, 80) !important
+
+        .tab-pane
+            padding 40px 0 !important
 
     .tab-content
         background-color white !important
@@ -383,6 +405,30 @@ aside
 
         .tab-container
             position relative
+
+    #events
+        .generic
+            width 98%
+            margin 0 -10px
+            padding-bottom 0
+            img
+                width 200px
+                height 150px
+                borderRadius(0 !important)
+
+        .body
+            width calc(100% - 220px)
+            padding-left 20px
+
+            .content
+                font-size small
+
+            .right
+                span:first-child
+                    margin-right 0
+            .status.on:before,
+            .status.off:before
+                padding 3px 20px
 
     .generic
         *

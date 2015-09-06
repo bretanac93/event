@@ -662,19 +662,48 @@
                                 </div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="events">
-                            <ul class="nav nav-tabs">
-                                <li class="active"><a href="#home" data-toggle="tab">Home</a></li>
-                                <li><a href="#profile" data-toggle="tab">Profile</a></li>
-                                <li><a href="#messages" data-toggle="tab">Messages</a></li>
-                                <li><a href="#settings" data-toggle="tab">Settings</a></li>
+                        <div class="tab-pane inner" id="events">
+                            <ul class="nav nav-tabs pull-right">
+                                <li class="active"><a href="#up" data-toggle="tab">subidos</a></li>
+                                <li><a href="#org" data-toggle="tab">organizados</a></li>
+                                <li><a href="#ass" data-toggle="tab">asistidos</a></li>
                             </ul>
 
                             <div class="tab-content">
-                                <div class="tab-pane fade in active" id="home">...</div>
-                                <div class="tab-pane fade" id="profile">...</div>
-                                <div class="tab-pane fade" id="messages">...</div>
-                                <div class="tab-pane fade" id="settings">...</div>
+                                <div class="tab-pane fade in active" id="up">
+                                    <div class="tab-container">
+                                        <div class="generic">
+
+                                            <img src="{{ asset('public/img/event.png') }}" alt="">
+
+                                            <div class="body">
+                                                <div class="left">
+                                                    <p><a href="#">EVENTO Fiesta Playera</a></p>
+                                                </div>
+
+                                                <div class="right pull-right">
+                                                    <span>25/15/2015</span>
+
+                                                </div>
+
+                                                <p class="content">
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquid
+                                                    ipsum labore nobis odio odit quia repellat voluptatem. Consequuntur,
+                                                    cumque dolore eligendi enim hic iste molestias, nam necessitatibus
+                                                    perspiciatis praesentium vitae? eligendi enim hic iste molestias,
+                                                    nam necessitatibus perspiciatis praesentium vitae?
+                                                </p>
+
+                                                <div class="right pull-right">
+                                                    <span class="status on"></span>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="org">...</div>
+                                <div class="tab-pane fade" id="ass">...</div>
                             </div>
                         </div>
                         <div class="tab-pane" id="reviews">...</div>

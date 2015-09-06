@@ -28,6 +28,7 @@ var UserPage = (function () {
         $('#desktop .tab-container')
             .height(aside - 50)
             .perfectScrollbar({
+                wheelPropagation: true,
                 maxScrollbarLength: 40,
                 wheelSpeed: 0.2
             });
@@ -37,6 +38,7 @@ var UserPage = (function () {
         init: function () {
             initPanels();
             setLayout();
+            $(window).resize(setLayout);
         }
     }
 })();
