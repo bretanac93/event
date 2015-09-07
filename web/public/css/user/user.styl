@@ -35,11 +35,6 @@
 .container-fluid
 
     #mobile
-        *
-            background-color white
-        p
-            background-color transparent
-
         & > .row
             shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
 
@@ -197,8 +192,13 @@
     display block
     overflow hidden
 
-    &:not(:last-child)
-        border-bottom 1px solid rgba(236, 233, 231, .8)
+    &:after
+        content ""
+        height 2px
+        background linear-gradient(to right,rgba(240,237,236,1),rgba(0,0,0,0) 95%)
+        display block
+        clear both
+
 
     img, .left, .right
         display inline-block
@@ -215,6 +215,7 @@
 
     .body
         padding-top 10px
+        padding-bottom 10px
         font-size 13px
         //todo: what to do with very small screen, img should dissapear
         width calc(100% - 101px)
@@ -223,9 +224,6 @@
 
         p
             margin-bottom 0
-
-        &:not(:last-of-type)
-            border-bottom 1px solid rgb(236, 233, 231)
 
         .left, .left a
             color rgb(76, 78, 80)
@@ -256,6 +254,7 @@
             text-align justify
             strong
                 font-style italic
+
 
 .ratings
     margin-top 25px
@@ -397,6 +396,14 @@ aside
         .tab-pane
             padding 40px 0 !important
 
+        .generic
+            width 98%
+            margin 0 -10px
+            padding-bottom 0
+
+            .content
+                font-size small
+
     .tab-content
         background-color white !important
 
@@ -408,9 +415,7 @@ aside
 
     #events
         .generic
-            width 98%
-            margin 0 -10px
-            padding-bottom 0
+
             img
                 width 200px
                 height 150px
@@ -420,15 +425,27 @@ aside
             width calc(100% - 220px)
             padding-left 20px
 
-            .content
-                font-size small
-
             .right
                 span:first-child
                     margin-right 0
             .status.on:before,
             .status.off:before
                 padding 3px 20px
+
+    #reviews
+        .generic
+            margin inherit
+            .right > span,
+            .body > a:last-child
+                font-size small
+
+            .body
+                margin-bottom 15px
+                & > a:last-child
+                    color textGrey
+                    background-color rgb(62, 62, 62)
+                    borderRadius(15px)
+                    padding 2px 15px
 
     .generic
         *

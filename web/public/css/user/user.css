@@ -204,12 +204,6 @@ footer p {
 .bgimg .main ul {
   color: #007eb1;
 }
-.container-fluid #mobile * {
-  background-color: #fff;
-}
-.container-fluid #mobile p {
-  background-color: transparent;
-}
 .container-fluid #mobile > .row {
   -webkit-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
   -moz-box-shadow: 1px 1px 5px rgba(0,0,0,0.4);
@@ -389,8 +383,12 @@ footer p {
   display: block;
   overflow: hidden;
 }
-.generic:not(:last-child) {
-  border-bottom: 1px solid rgba(236,233,231,0.8);
+.generic:after {
+  content: "";
+  height: 2px;
+  background: linear-gradient(to right, #f0edec, rgba(0,0,0,0) 95%);
+  display: block;
+  clear: both;
 }
 .generic img,
 .generic .left,
@@ -411,6 +409,7 @@ footer p {
 }
 .generic .body {
   padding-top: 10px;
+  padding-bottom: 10px;
   font-size: 13px;
   width: calc(100% - 101px);
   float: left;
@@ -418,9 +417,6 @@ footer p {
 }
 .generic .body p {
   margin-bottom: 0;
-}
-.generic .body:not(:last-of-type) {
-  border-bottom: 1px solid #ece9e7;
 }
 .generic .body .left,
 .generic .body .left a {
@@ -600,6 +596,14 @@ aside .cert p {
 #desktop .inner .tab-pane {
   padding: 40px 0 !important;
 }
+#desktop .inner .generic {
+  width: 98%;
+  margin: 0 -10px;
+  padding-bottom: 0;
+}
+#desktop .inner .generic .content {
+  font-size: small;
+}
 #desktop .tab-content {
   background-color: #fff !important;
 }
@@ -608,11 +612,6 @@ aside .cert p {
 }
 #desktop .tab-content .tab-container {
   position: relative;
-}
-#desktop #events .generic {
-  width: 98%;
-  margin: 0 -10px;
-  padding-bottom: 0;
 }
 #desktop #events .generic img {
   width: 200px;
@@ -625,15 +624,30 @@ aside .cert p {
   width: calc(100% - 220px);
   padding-left: 20px;
 }
-#desktop #events .body .content {
-  font-size: small;
-}
 #desktop #events .body .right span:first-child {
   margin-right: 0;
 }
 #desktop #events .body .status.on:before,
 #desktop #events .body .status.off:before {
   padding: 3px 20px;
+}
+#desktop #reviews .generic {
+  margin: inherit;
+}
+#desktop #reviews .generic .right > span,
+#desktop #reviews .generic .body > a:last-child {
+  font-size: small;
+}
+#desktop #reviews .generic .body {
+  margin-bottom: 15px;
+}
+#desktop #reviews .generic .body > a:last-child {
+  color: #828081;
+  background-color: #3e3e3e;
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  padding: 2px 15px;
 }
 #desktop .generic * {
   font-size: large;
