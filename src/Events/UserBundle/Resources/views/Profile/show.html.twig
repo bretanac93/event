@@ -40,6 +40,7 @@
                     <div class="tab-pane fade in active" id="following">
                         <ul class="list-inline">
                             <li class="fuser">
+                                {# todo: use again desktop generic checkbox #}
                                 <input type="checkbox">
                                 <img src="{{ asset('public/img/user.png') }}" alt="">
 
@@ -732,9 +733,12 @@
                                                 </div>
 
                                                 <p class="content">
-                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam delectus
-                                                    doloremque, eius impedit minima modi nobis nostrum odit quaerat repellat.
-                                                    Dolor dolore iste maiores nostrum obcaecati quam reprehenderit sit ut!
+                                                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam
+                                                    delectus
+                                                    doloremque, eius impedit minima modi nobis nostrum odit quaerat
+                                                    repellat.
+                                                    Dolor dolore iste maiores nostrum obcaecati quam reprehenderit sit
+                                                    ut!
                                                 </p>
 
                                                 <a href="#" class="pull-right">leer más...</a>
@@ -746,7 +750,47 @@
                                 <div class="tab-pane fade" id="op-re">...</div>
                             </div>
                         </div>
-                        <div class="tab-pane" id="followrs">...</div>
+                        <div class="tab-pane inner" id="followrs">
+                            <ul class="nav nav-tabs pull-right">
+                                <li class="active"><a href="#follow" data-toggle="tab">sigue</a></li>
+                                <li><a href="#followed" data-toggle="tab">le siguen</a></li>
+                            </ul>
+
+                            <div class="tab-content">
+                                <div class="tab-pane fade in active" id="follow">
+                                    <div class="tab-container">
+                                        <div class="generic">
+
+                                            <img src="{{ asset('public/img/user.png') }}" alt="">
+
+                                            <div class="body">
+                                                <div class="left">
+                                                    <p><a href="#">Sara Contreras</a></p>
+                                                </div>
+
+                                                <ul class="list-inline">
+                                                    <li>324 Eventos</li>
+                                                    <li>5362 Siguiendo</li>
+                                                    <li>7200 Seguidores</li>
+                                                </ul>
+
+                                                <div class="check">
+                                                    <input type="checkbox" id="fw">
+                                                    <label for="fw">
+                                                        <span>
+                                                            <span></span>
+                                                        </span>
+                                                    </label>
+                                                </div>
+
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="tab-pane fade" id="followed">
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>

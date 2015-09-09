@@ -35,6 +35,10 @@
 .container-fluid
 
     #mobile
+        *
+            background-color white
+        p
+            background-color transparent
         & > .row
             shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
 
@@ -191,14 +195,14 @@
     margin-bottom 10px
     display block
     overflow hidden
+    position relative
 
     &:after
         content ""
         height 2px
-        background linear-gradient(to right,rgba(240,237,236,1),rgba(0,0,0,0) 95%)
+        background linear-gradient(to right, rgba(240, 237, 236, 1), rgba(0, 0, 0, 0) 95%)
         display block
         clear both
-
 
     img, .left, .right
         display inline-block
@@ -254,7 +258,6 @@
             text-align justify
             strong
                 font-style italic
-
 
 .ratings
     margin-top 25px
@@ -383,12 +386,12 @@ aside
         .nav
             li a
                 padding 0 15px
-                color rgb(76, 78, 80)
+                color rgb(150, 151, 152)
                 font-weight bolder
                 line-height .9em
 
             li.active a
-                color bgBlue
+                color lighten(bgBlue, 10%)
 
             li:not(:last-child) a
                 border-right 1px solid rgb(76, 78, 80) !important
@@ -398,7 +401,6 @@ aside
 
         .generic
             width 98%
-            margin 0 -10px
             padding-bottom 0
 
             .content
@@ -446,6 +448,50 @@ aside
                     background-color rgb(62, 62, 62)
                     borderRadius(15px)
                     padding 2px 15px
+
+    #follow
+        .generic
+            ul
+                padding-top 10px
+                li
+                    font-size smaller
+                    margin-right 2%
+                    color lighten(bgBlue, 10%)
+
+            .body
+                margin-bottom 15px
+
+            .check
+                position absolute
+                right 30px
+                top 30px
+
+            input[type=checkbox]
+                display none
+
+                & + label span
+                    display inline-block
+                    width 30px
+                    height 30px
+                    background-color bgBlue
+                    borderRadius(5px)
+
+                    span
+                        opacity 0
+                        transition(.2s)
+                        width 10px
+                        height 16px
+                        border 4px solid #fff
+                        border-radius 0
+                        transform rotate(45deg)
+                        margin 5px 10px
+                        border-top-color transparent
+                        border-top-style hidden
+                        border-left-color transparent
+                        border-left-style hidden
+
+                &:checked + label span span
+                    opacity 1
 
     .generic
         *
