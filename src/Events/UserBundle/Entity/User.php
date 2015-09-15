@@ -98,7 +98,7 @@ class User extends BaseUser
     /**
      * @return Profile
      */
-    public function getDetails()
+    public function getProfileDetails()
     {
         return $this->profile_details;
     }
@@ -222,5 +222,10 @@ class User extends BaseUser
     public function __toString()
     {
         return $this->getUsername();
+    }
+
+    public function getFullName()
+    {
+        return $this->getProfileDetails();
     }
 }

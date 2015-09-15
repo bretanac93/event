@@ -1,12 +1,12 @@
 # This file is auto-generated during the composer install
 parameters:
     database_host: 127.0.0.1
-    database_port: 5432
-    database_name: events
+    database_port: null
+    database_name: event
     database_user: postgres
     database_password: 123
-    mailer_transport: gmail
+    mailer_transport: smtp
     mailer_host: null
-    mailer_user: mail4devpurp
-    mailer_password: cesar123456
+    mailer_user: null
+    mailer_password: null
     secret: bf49853e39f65e8bb2966bdc66e1001ccbc9ac9d

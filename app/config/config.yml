@@ -2,7 +2,7 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-#    - { resource: @UserBundle/Resources/config/services.yml }
+    - { resource: @UserBundle/Resources/config/services.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -119,3 +119,21 @@ fos_user:
 #                         listener:
 #                             immediate: ~
 #                         finder: ~
+sonata_block:
+    default_contexts: [cms]
+    blocks:
+        sonata.admin.block.admin_list:
+            contexts: [admin]
+
+        sonata.block.service.text: ~
+        sonata.block.service.action: ~
+        sonata.block.service.rss: ~
+
+sonata_admin:
+    title: 'Events'
+    templates:
+        layout: SonataAdminBundle::standard_layout.html.twig
+        ajax: SonataAdminBundle::ajax_layout.html.twig
+        list: SonataAdminBundle:CRUD:list.html.twig
+        show: SonataAdminBundle:CRUD:show.html.twig
+        edit: SonataAdminBundle:CRUD:edit.html.twig

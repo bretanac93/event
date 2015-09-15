@@ -425,4 +425,10 @@ class Event
     {
         return $this->followers;
     }
+
+    public function __toString()
+    {
+        return $this->getTitle();
+    }
+
 }

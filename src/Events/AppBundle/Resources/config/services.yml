@@ -5,3 +5,21 @@ services:
     app_utils:
         class: "%app_utils.class%"
         arguments: [@doctrine.orm.entity_manager]
+
+    app.admin.event:
+        class: Events\AppBundle\Admin\EventAdmin
+        arguments: [~, Events\AppBundle\Entity\Event, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Event, label: Event}
+
+    app.admin.comment:
+        class: Events\AppBundle\Admin\CommentAdmin
+        arguments: [~, Events\AppBundle\Entity\Comment, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: Comment, label: Comment}
+
+    app.admin.image_upload:
+        class: Events\AppBundle\Admin\ImageUploadAdmin
+        arguments: [~, Events\AppBundle\Entity\ImageUpload, SonataAdminBundle:CRUD]
+        tags:
+            - {name: sonata.admin, manager_type: orm, group: admin, label: ImageUpload}

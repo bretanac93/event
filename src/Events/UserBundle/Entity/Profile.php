@@ -2,6 +2,7 @@
 
 namespace Events\UserBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -31,7 +32,7 @@ class Profile
     /**
      * @var string
      *
-     * @ORM\Column(name="middle_name", type="string", length=255)
+     * @ORM\Column(name="middle_name", type="string", length=255, nullable=true)
      */
     private $middleName;
 
@@ -57,18 +58,79 @@ class Profile
     private $location;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="preferences", type="string", length=255)
-     */
+     * @ORM\ManyToMany(targetEntity="Events\UserBundle\Entity\Preference", inversedBy="users")
+     * @ORM\OrderBy({"name" = "ASC"})
+     * @ORM\JoinTable(name="users_preferences",
+     *  joinColumns={@ORM\JoinColumn(name="user_id", referencedColumnName="id")},
+     *  inverseJoinColumns={@ORM\JoinColumn(name="preference_id", referencedColumnName="id")}
+     * )
+    */
     private $preferences;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="social_accounts", type="string", length=255)
+     * @ORM\Column(name="facebook_account", type="string", length=255, nullable=true)
      */
-    private $socialAccounts;
+    private $facebookAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="twitter_account", type="string", length=255, nullable=true)
+     */
+    private $twitterAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="google_plus_account", type="string", length=255, nullable=true)
+     */
+    private $google_plusAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="microsoft_account", type="string", length=255, nullable=true)
+     */
+    private $microsoftAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="linked_in_account", type="string", length=255, nullable=true)
+     */
+    private $linkedInAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="youtube_account", type="string", length=255, nullable=true)
+     */
+    private $youtubeAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="instagram_account", type="string", length=255, nullable=true)
+     */
+    private $instagramAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="flickr_account", type="string", length=255, nullable=true)
+     */
+    private $flickrAccount;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="pinterest_account", type="string", length=255, nullable=true)
+     */
+    private $pinterestAccount;
+
+
 
     /**
      * @var string
@@ -96,6 +158,11 @@ class Profile
      * @ORM\JoinColumn(name="user_id", referencedColumnName="id")
      */
     private $user;
+
+    public function __construct()
+    {
+        $this->preferences = new ArrayCollection();
+    }
 
     /**
      * @return User
@@ -265,26 +332,191 @@ class Profile
     }
 
     /**
-     * Set socialAccounts
+     * Set facebookAccount
      *
-     * @param string $socialAccounts
+     * @param $facebookAccount
      * @return Profile
+     * @internal param $facebookAccounts
      */
-    public function setSocialAccounts($socialAccounts)
+    public function setFacebookAccount($facebookAccount)
     {
-        $this->socialAccounts = $socialAccounts;
+        $this->facebookAccount = $facebookAccount;
 
         return $this;
     }
 
     /**
-     * Get socialAccounts
+     * Get facebookAccount
      *
      * @return string
      */
-    public function getSocialAccounts()
+    public function getFacebookAccount()
     {
-        return $this->socialAccounts;
+        return $this->facebookAccount;
+    }
+
+
+    /**
+     * @param $twitterAccount
+     * @return $this
+     * @internal param $twitterAccounts
+     */
+    public function setTwitterAccount($twitterAccount)
+    {
+        $this->twitterAccount = $twitterAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getTwitterAccount()
+    {
+        return $this->twitterAccount;
+    }
+
+
+    /**
+     * @param $microsoftAccount
+     * @return $this
+     */
+    public function setMicrosoftAccount($microsoftAccount)
+    {
+        $this->microsoftAccount = $microsoftAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getMicrosoftAccount()
+    {
+        return $this->microsoftAccount;
+    }
+
+
+    /**
+     * @param $googleAccount
+     * @return $this
+     */
+    public function setGooglePlusAccount($googleAccount)
+    {
+        $this->google_plusAccount = $googleAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getGooglePlusAccount()
+    {
+        return $this->google_plusAccount;
+    }
+
+    /**
+     * @param $linkedInAccount
+     * @return $this
+     */
+    public function setLinkedInAccount($linkedInAccount)
+    {
+        $this->linkedInAccount = $linkedInAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getLinkedInAccount()
+    {
+        return $this->linkedInAccount;
+    }
+
+    /**
+     * @param $youtubeAccount
+     * @return $this
+     */
+    public function setYouTubeAccount($youtubeAccount)
+    {
+        $this->youtubeAccount = $youtubeAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getYouTubeAccount()
+    {
+        return $this->youtubeAccount;
+    }
+
+    /**
+     * @param $instagramAccount
+     * @return $this
+     */
+    public function setInstagramAccount($instagramAccount)
+    {
+        $this->instagramAccount = $instagramAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getInstagramAccount()
+    {
+        return $this->instagramAccount;
+    }
+
+    /**
+     * @param $flickrAccount
+     * @return $this
+     */
+    public function setFlickrAccount($flickrAccount)
+    {
+        $this->flickrAccount = $flickrAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getFlickrAccount()
+    {
+        return $this->flickrAccount;
+    }
+
+    /**
+     * @param $pinterestAccount
+     * @return $this
+     */
+    public function setPinterestAccount($pinterestAccount)
+    {
+        $this->pinterestAccount = $pinterestAccount;
+
+        return $this;
+    }
+
+
+    /**
+     * @return string
+     */
+    public function getPinterestAccount()
+    {
+        return $this->pinterestAccount;
     }
 
     /**
@@ -354,6 +586,18 @@ class Profile
     public function getCertifications()
     {
         return $this->certifications;
+    }
+
+    public function __toString()
+    {
+        $displayName = null;
+        if ($this->middleName == null) {
+            $displayName = $this->firstName.' '.$this->lastName;
+        }
+        else
+            $displayName = $this->firstName.' '.$this->middleName.' '.$this->lastName;
+
+        return $displayName;
     }
     //TODO: Check how can I use the X-Maps API
     //TODO: Make an entity to handle the certs, location, valuation_details, and the valuations in general (ManyToOne to all of these.)
