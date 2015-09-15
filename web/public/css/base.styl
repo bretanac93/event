@@ -45,7 +45,7 @@ transition(time, func = ease)
 body
     font-family "Arial"
 
-a:focus, a:active, a:hover
+a, a:focus, a:active, a:hover
     outline none
     text-decoration none !important
 
@@ -129,114 +129,160 @@ a:focus, a:active, a:hover
 [data-from=left]
     left -60px
 
-.social
+.social-blue
     background-color bgBlue
-    ul
-        margin 0
-        padding 10px 0
-        li
-            padding 0 2%
-            a
-                color white
-                text-decoration none
+    padding-top 10px
 
-.fblue
-    background-color rgb(180, 234, 247)
     span
-        color rgb(102, 213, 239)
+        i:last-child
+            color bgBlue
 
-.fyellow
-    background-color rgb(243, 239, 184)
-    span
-        color rgb(231, 223, 114)
-
-.fpurple
-    background-color rgb(211, 182, 229)
-    span
-        color rgb(189, 146, 216)
-
-.fgreen
-    background-color rgb(196, 223, 155)
-    span
-        color rgb(137, 191, 56)
-
-.forange
-    background-color rgb(255, 196, 90)
-    span
-        color rgb(255, 137, 1)
-
-.fred
-    background-color rgb(255, 158, 143)
-    span
-        color rgb(255, 98, 80)
-
-.flyellow
-    background-color rgb(240, 238, 201)
-    span
-        color rgb(255, 221, 147)
-
-.florange
-    background-color rgb(255, 217, 166)
-    span
-        color rgb(255, 181, 82)
-
-.flgreen
-    background-color rgb(153, 231, 217)
-    span
-        color rgb(52, 207, 179)
-
-.flgreen2
-    background-color rgb(173, 234, 222)
-    span
-        color rgb(92, 213, 189)
-
-.flpink
-    background-color rgb(244, 233, 234)
-    span
-        color rgb(233, 191, 213)
-
-.flpurple
-    background-color rgb(221, 211, 232)
-    span
-        color rgb(187, 167, 209)
-
-footer
-    color rgb(97, 97, 97)
-
-    [class^=col-]
-        padding 0
-
-    .mid
-        height .1666666667rem !important
-
-    .square
-        display block
-        position relative
-        font-size larger
-        height .3333333333rem
-        border 1px solid white
-
-        .fa, p
-            position absolute
-        .fa
-            top 10px
-            right 10px
-        p
-            bottom 10px
-            left 10px
-            margin 0
-            line-height 1em
-            color rgb(103, 106, 107)
-            font-stretch semi-condensed
-            letter-spacing 1px
+    a
+        color white
 
 .last
-    background-color rgb(80, 89, 94)
-    color white
-    text-align center
+    color bgBlue
+    padding 30px 0 20px
+    background-color white
+
+    .words
+        .col-md-4
+            padding-left 5%
+
+        p
+            color rgb(156, 156, 156)
+            font-size larger
+
+        & > div:not(:last-of-type)
+            border-right 3px solid rgb(142, 189, 210)
+
+    .square
+        width 240px
+        height 80px
+        background-color rgb(153, 203, 80)
+        position relative
+        left 50%
+        margin-left -120px
+
+footer
+    background-color rgb(105, 105, 105)
 
     p
-        padding 10px
+        margin 0
+        padding 10px 0
+        color white
+
+// todo: footer page
+//.fblue
+//    background-color rgb(180, 234, 247)
+//    span
+//        color rgb(102, 213, 239)
+//
+//.fyellow
+//    background-color rgb(243, 239, 184)
+//    span
+//        color rgb(231, 223, 114)
+//
+//.fpurple
+//    background-color rgb(211, 182, 229)
+//    span
+//        color rgb(189, 146, 216)
+//
+//.fgreen
+//    background-color rgb(196, 223, 155)
+//    span
+//        color rgb(137, 191, 56)
+//
+//.forange
+//    background-color rgb(255, 196, 90)
+//    span
+//        color rgb(255, 137, 1)
+//
+//.fred
+//    background-color rgb(255, 158, 143)
+//    span
+//        color rgb(255, 98, 80)
+//
+//.flyellow
+//    background-color rgb(240, 238, 201)
+//    span
+//        color rgb(255, 221, 147)
+//
+//.florange
+//    background-color rgb(255, 217, 166)
+//    span
+//        color rgb(255, 181, 82)
+//
+//.flgreen
+//    background-color rgb(153, 231, 217)
+//    span
+//        color rgb(52, 207, 179)
+//
+//.flgreen2
+//    background-color rgb(173, 234, 222)
+//    span
+//        color rgb(92, 213, 189)
+//
+//.flpink
+//    background-color rgb(244, 233, 234)
+//    span
+//        color rgb(233, 191, 213)
+//
+//.flpurple
+//    background-color rgb(221, 211, 232)
+//    span
+//        color rgb(187, 167, 209)
+//
+//footer
+//    color rgb(97, 97, 97)
+//
+//    [class^=col-]
+//        padding 0
+//
+//    .mid
+//        height .1666666667rem !important
+//
+//    .square
+//        display block
+//        position relative
+//        font-size larger
+//        height .3333333333rem
+//        border 1px solid white
+//
+//        .fa, p
+//            position absolute
+//        .fa
+//            top 10px
+//            right 10px
+//        p
+//            bottom 10px
+//            left 10px
+//            margin 0
+//            line-height 1em
+//            color rgb(103, 106, 107)
+//            font-stretch semi-condensed
+//            letter-spacing 1px
+//
+//.last
+//    background-color rgb(80, 89, 94)
+//    color white
+//    text-align center
+//
+//    p
+//        padding 10px
+
+@media screen and (max-width 992px)
+    .words
+        text-align center
+        margin-top 30px
+        p, .col-md-4
+            display inline-block
+        p
+            margin-right 30px
+            color bgBlue !important
+            font-size x-large !important
+        & > div:not(:last-of-type)
+            border-right none !important
 
 @media screen and (max-width 768px)
     span.hs

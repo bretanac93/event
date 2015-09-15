@@ -19,13 +19,26 @@ var UserPage = (function () {
     };
 
     var setLayout = function () {
-        $('#desktop .tab-content').height( $('aside').height() + 32 );
+
+        var aside = $('aside').height();
+
+        $('#desktop .tab-content')
+            .height(aside + 30);
+
+        $('#desktop .tab-container')
+            .height(aside - 50)
+            .perfectScrollbar({
+                wheelPropagation: true,
+                maxScrollbarLength: 40,
+                wheelSpeed: 0.2
+            });
     };
 
     return {
         init: function () {
             initPanels();
             setLayout();
+            $(window).resize(setLayout);
         }
     }
 })();

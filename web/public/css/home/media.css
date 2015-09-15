@@ -14,21 +14,8 @@
   }
 }
 @media screen and (max-width: 992px) {
-  .words {
-    text-align: center;
-    margin-top: 30px;
-  }
-  .words p,
-  .words .col-md-4 {
-    display: inline-block;
-  }
-  .words p {
-    margin-right: 30px;
-    color: bgBlue !important;
-    font-size: x-large !important;
-  }
-  .words > div:not(:last-of-type) {
-    border-right: none !important;
+  .event:nth-child(4) ~ .event {
+    display: none;
   }
 }
 @media screen and (max-width: 768px) {
@@ -58,7 +45,10 @@
 }
 @media screen and (max-width: 480px) {
   .first .item {
-    padding: 0 10px;
+    padding: 0 2%;
+  }
+  .first .item p {
+    font-size: 16px;
   }
 }
 @media screen and (max-width: 360px) {
@@ -125,9 +115,6 @@
   }
   .counter.center h4 {
     margin-left: -40% !important;
-  }
-  .social li {
-    padding: 0 1% !important;
   }
 }
 @media screen and (min-width: 1200px) {

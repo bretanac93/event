@@ -33,14 +33,12 @@
             color bgBlue
 
 .container-fluid
-    background-color rgb(211, 211, 211)
 
     #mobile
         *
             background-color white
         p
             background-color transparent
-
         & > .row
             shadow(1px, 1px, 5px, rgba(0, 0, 0, .4))
 
@@ -53,7 +51,7 @@
             font-size large
             a, a:hover, a:focus
                 border none
-                border-radius 0
+                borderRadius(0)
                 margin-right 0
         li.active > a
             color bgBlue
@@ -117,7 +115,7 @@
     padding-top 10px
     .panel, .panel-body
         border none !important
-        border-radius 0
+        borderRadius(0)
         -webkit-box-shadow: none
         -moz-box-shadow: none
         box-shadow: none
@@ -141,7 +139,7 @@
     a[data-toggle="collapse"] > span.fa
         background-color rgb(177, 177, 177) !important
         color white
-        border-radius 4px
+        borderRadius(4px)
         width 26px
         height 27px
         text-align center
@@ -171,7 +169,7 @@
     padding-top 8px
 
 .panel-body[class*=event] > .generic > img
-    border-radius 0 !important
+    borderRadius(0 !important)
 
 .opinion
     .body
@@ -197,12 +195,18 @@
     margin-bottom 10px
     display block
     overflow hidden
+    position relative
 
-    &:not(:last-of-type)
-        border-bottom 1px solid rgba(236, 233, 231, .8)
+    &:after
+        content ""
+        height 2px
+        background linear-gradient(to right, rgba(240, 237, 236, 1), rgba(0, 0, 0, 0) 95%)
+        display block
+        clear both
 
     img, .left, .right
         display inline-block
+
     img
         width 90px
         height 90px
@@ -215,17 +219,15 @@
 
     .body
         padding-top 10px
+        padding-bottom 10px
         font-size 13px
         //todo: what to do with very small screen, img should dissapear
-        width 75%
+        width calc(100% - 101px)
         float left
         display inline-block
 
         p
             margin-bottom 0
-
-        &:not(:last-of-type)
-            border-bottom 1px solid rgb(236, 233, 231)
 
         .left, .left a
             color rgb(76, 78, 80)
@@ -303,6 +305,7 @@
 aside
     padding 15px
     color textGrey
+    background-color rgb(211, 211, 211)
 
     .row
         background-color white
@@ -359,27 +362,137 @@ aside
 
     .nav
         border-bottom none
+
+        li
+            a, a:hover, a:focus
+                padding 10px 15px
+                background-color transparent
+                border none
+                outline none
+                borderRadius(0 !important)
+                text-transform uppercase
+
+    & > .nav
         li
             padding-right 30px
-        li a, li a:hover, li a:focus
-            padding 10px 0
-            background-color transparent
-            border none
-            outline none
-            borderRadius(0 !important)
-            text-transform uppercase
-            color white
+
+            a, li a:hover, li a:focus
+                color white
 
         li.active a
             border-bottom 4px solid rgb(0, 127, 180)
 
+    .inner
+        .nav
+            li a
+                padding 0 15px
+                color rgb(150, 151, 152)
+                font-weight bolder
+                line-height .9em
+
+            li.active a
+                color lighten(bgBlue, 10%)
+
+            li:not(:last-child) a
+                border-right 1px solid rgb(76, 78, 80) !important
+
+        .tab-pane
+            padding 40px 0 !important
+
+        .generic
+            width 98%
+            padding-bottom 0
+
+            .content
+                font-size small
+
     .tab-content
         background-color white !important
-        overflow-y auto
+
+        .tab-pane
+            padding 40px 25px
 
         .tab-container
-            padding 25px
-            overflow-y auto
+            position relative
+
+    #events
+        .generic
+
+            img
+                width 200px
+                height 150px
+                borderRadius(0 !important)
+
+        .body
+            width calc(100% - 220px)
+            padding-left 20px
+
+            .right
+                span:first-child
+                    margin-right 0
+            .status.on:before,
+            .status.off:before
+                padding 3px 20px
+
+    #reviews
+        .generic
+            margin inherit
+            .right > span,
+            .body > a:last-child
+                font-size small
+
+            .body
+                margin-bottom 15px
+                & > a:last-child
+                    color textGrey
+                    background-color rgb(62, 62, 62)
+                    borderRadius(15px)
+                    padding 2px 15px
+
+    #follow
+        .generic
+            ul
+                padding-top 10px
+                li
+                    font-size smaller
+                    margin-right 2%
+                    color lighten(bgBlue, 10%)
+
+            .body
+                margin-bottom 15px
+
+            .check
+                position absolute
+                right 30px
+                top 30px
+
+            input[type=checkbox]
+                display none
+
+                & + label span
+                    display inline-block
+                    width 30px
+                    height 30px
+                    background-color bgBlue
+                    borderRadius(5px)
+                    cursor pointer
+
+                    span
+                        opacity 0
+                        transition(.2s)
+                        width 10px
+                        height 16px
+                        border 4px solid #fff
+                        border-radius 0
+                        transform rotate(45deg)
+                        margin 5px 10px
+                        border-top-color transparent
+                        border-top-style hidden
+                        border-left-color transparent
+                        border-left-style hidden
+
+                &:checked + label span span
+                    opacity 1
 
     .generic
         *
@@ -387,3 +500,5 @@ aside
 
         small
             font-size .7em
+
+@import 'media'

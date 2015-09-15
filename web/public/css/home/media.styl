@@ -15,17 +15,8 @@
 
 
 @media screen and (max-width 992px)
-    .words
-        text-align center
-        margin-top 30px
-        p, .col-md-4
-            display inline-block
-        p
-            margin-right 30px
-            color bgBlue !important
-            font-size x-large !important
-        & > div:not(:last-of-type)
-            border-right none !important
+    .event:nth-child(4) ~ .event
+        display none
 
 @media screen and (max-width 768px)
     .search
@@ -57,7 +48,10 @@
 
 @media screen and (max-width 480px)
     .first .item
-        padding 0 10px
+        padding 0 2%
+
+        p
+            font-size 16px
 
 @media screen and (max-width 360px)
     h2
@@ -129,9 +123,6 @@
         &.center h4
             margin-left -40% !important
 
-    .social li
-        padding 0 1% !important
-
 @media screen and (min-width 1200px)
     .events
         .event.col-lg-3
@@ -145,7 +136,6 @@
 
     .second .item, .third .item
         padding 0 3%
-
 
     .counter
         h4
