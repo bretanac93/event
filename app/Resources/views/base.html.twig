@@ -37,436 +37,456 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}"/>
 </head>
 <body>
-    <div class="topbar">
-        {% if app.user %}
-            <a href="#" class="pull-right" id="profile">
+<div class="topbar">
+    {% if app.user %}
+        <a href="#" class="pull-right" id="profile">
 
-                {% if user.profilepic %}
-                    <img src="{{ user.profilepic }}"/>
-                {% else %}
-                    <img src="{{ asset('anonymous.png') }}"/>
-                {% endif %}
+            {% if user.profilepic %}
+                <img src="{{ user.profilepic }}"/>
+            {% else %}
+                <img src="{{ asset('anonymous.png') }}"/>
+            {% endif %}
 
-                <span class="hs">Mi Perfil</span>
-                <span class="caret-down"></span>
-            </a>
-        {% else %}
-            <a data-toggle="modal" href="#rlogin-modal" class="pull-right">
-                <span class="fa fa-user"></span>
-                <span class="hs">Acceso</span>
-            </a>
-        {% endif %}
-
-        <a href="#" class="pull-right">
-            <span class="fa fa-plus"></span>
-            <span class="hs">Sube un Evento</span>
+            <span class="hs">Mi Perfil</span>
+            <span class="caret-down"></span>
         </a>
-
-        <a href="#" class="pull-right" id="searchTop">
-            <span class="fa fa-search"></span>
-            <span class="hs">Busca tu Evento</span>
+    {% else %}
+        <a data-toggle="modal" href="#rlogin-modal" class="pull-right">
+            <span class="fa fa-user"></span>
+            <span class="hs">Acceso</span>
         </a>
+    {% endif %}
 
-    </div>
+    <a href="#" class="pull-right">
+        <span class="fa fa-plus"></span>
+        <span class="hs">Sube un Evento</span>
+    </a>
 
-        <div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-             aria-hidden="true">
-            <div class="modal-dialog">
-                <div class="modal-content">
-                    <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                        <h4 class="modal-title">Acceso</h4>
-                    </div>
-                    <div class="modal-body">
-                        <div class="row brand">
-                            <h3>Logotipo</h3>
-                        </div>
-                        <div class="row social-buttons">
-                            <a class="btn btn-info social-button gplus" href="#"><span
-                                        class="icon fa fa-google-plus"></span><span
-                                        class="text">Registrate con <b>Google+</b></span></a>
-                            <a class="btn btn-info social-button fb" href="#"><span class="icon fa fa-facebook"></span><span
-                                        class="text">Registrate con <b>Facebook</b></span></a>
-                            <a class="btn btn-info social-button tw" href="#"><span class="icon fa fa-twitter"></span><span
-                                        class="text">Registrate con <b>Twitter</b></span></a>
-                            <a class="btn btn-info social-button in register-show" href="#"><span class="text">Registrarse</span></a>
-                        </div>
-                        <div class="row register-form">
-                            <form action="{{ path('fos_user_security_check') }}" method="post">
-                                <input type="text" name="_username" id="user" placeholder="Usuario">
-                                <input type="text" name="email" id="email" placeholder="Correo electrónico">
-                                <input type="password" name="password" id="password" placeholder="Contraseña">
-                                <input type="password" name="password2" id="password2" placeholder="Confirmar Contraseña">
+    <a href="#" class="pull-right" id="searchTop">
+        <span class="fa fa-search"></span>
+        <span class="hs">Busca tu Evento</span>
+    </a>
+
+</div>
+
+<div class="modal fade" id="rlogin-modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+     aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Acceso</h4>
+            </div>
+            <div class="modal-body">
+                <div class="row brand">
+                    <h3>Logotipo</h3>
+                </div>
+                <div class="row social-buttons">
+                    <a class="btn btn-info social-button gplus" href="#"><span
+                                class="icon fa fa-google-plus"></span><span
+                                class="text">Registrate con <b>Google+</b></span></a>
+                    <a class="btn btn-info social-button fb" href="#"><span class="icon fa fa-facebook"></span><span
+                                class="text">Registrate con <b>Facebook</b></span></a>
+                    <a class="btn btn-info social-button tw" href="#"><span class="icon fa fa-twitter"></span><span
+                                class="text">Registrate con <b>Twitter</b></span></a>
+                    <a class="btn btn-info social-button in register-show" href="#"><span
+                                class="text">Registrarse</span></a>
+                </div>
+                <div class="row register-form">
+                    <div class="col-xs-10 col-col-sm-10 col-md-10 col-lg-10 form-container">
+                        <form action="{{ path('fos_user_security_check') }}" method="post">
+                            <div class="form-group">
+                                <input type="text" name="_username" id="user" placeholder="Usuario" class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <input type="text" name="email" id="email" placeholder="Correo electrónico"
+                                       class="form-control">
+                            </div>
+
+                            <div class="form-group"><input type="password" name="password" id="password"
+                                                           placeholder="Contraseña" class="form-control"></div>
+                            <div class="form-group"><input type="password" name="password2" id="password2"
+                                                           placeholder="Confirmar Contraseña" class="form-control"></div>
+
+                            <div class="form-group">
+                                <label>Ingresa tu localidad en el mapa</label>
+                                <img class="img-responsive" src="{{ asset('public/img/map-register.png') }}" alt="Map">
+                            </div>
+                            <div class="form-group">
                                 <input type="checkbox" name="terms" id="terms">
                                 <label for="terms">Acepto las <a href="#">Condiciones de uso.</a></label>
+                            </div>
+                            <div class="form-group">
                                 <input type="submit" value="Registro">
                                 <button type="button" class="back">Atrás</button>
-                            </form>
-                        </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
 
-                        <div class="row login-form" >
-                            <form action="{{ path("fos_user_security_check") }}" method="post">
-                                <div>
-                                    <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-                                    <input type="text" id="username" name="_username"  required="required"/>
-                                </div>
-                                <div>
-                                    <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-                                    <input type="password" id="password" name="_password" required="required"/>
-                                </div>
-                                <div>
-                                    <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
-                                    <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-                                </div>
-                                <div>
-                                    <input type="submit" id="_submit" name="_submit"
-                                           value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
-                                    <button type="button" class="back">Atrás</button>
-                                </div>
-                            </form>
+                <div class="row login-form">
+                    <form action="{{ path("fos_user_security_check") }}" method="post">
+                        <div>
+                            <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
+                            <input type="text" id="username" name="_username" required="required"/>
                         </div>
-                    </div>
-                    <div class="modal-footer">
-                        <div class="footer-option login-footer">
-                            ¿Ya tienes cuenta? <a href="#" class="login-show">ENTRAR</a>
+                        <div>
+                            <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
+                            <input type="password" id="password" name="_password" required="required"/>
                         </div>
-                        <div class="footer-option register-footer">
-                            ¿Eres nuevo? <a href="#" class="register-show">REGISTRATE</a>
+                        <div>
+                            <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                            <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
                         </div>
-                    </div>
+                        <div>
+                            <input type="submit" id="_submit" name="_submit"
+                                   value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
+                            <button type="button" class="back">Atrás</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <div class="footer-option login-footer">
+                    ¿Ya tienes cuenta? <a href="#" class="login-show">ENTRAR</a>
+                </div>
+                <div class="footer-option register-footer">
+                    ¿Eres nuevo? <a href="#" class="register-show">REGISTRATE</a>
                 </div>
             </div>
         </div>
-        <div id="morphsearch" class="morphsearch">
-            <div class="morphsearch-content">
-                <div class="dummy-column text-center">
-                    {% if not user %}
-                        <img src="{{ asset('anonymous.png') }}"/>
-                    {% else %}
-                        <img src="{{ user.profilepic }}" class="img-circle" />
-                    {% endif %}
+    </div>
+</div>
+<div id="morphsearch" class="morphsearch">
+    <div class="morphsearch-content">
+        <div class="dummy-column text-center">
+            {% if not user %}
+                <img src="{{ asset('anonymous.png') }}"/>
+            {% else %}
+                <img src="{{ user.profilepic }}" class="img-circle"/>
+            {% endif %}
 
 
-                    {% if user %}
-                        <h2 id="username">{{ user.profiledetails }}</h2>
-                    {% else %}
-                        <h2>You shouldn't be watching this.</h2>
-                    {% endif %}
-                </div>
-                <div class="dummy-column">
-                    <a class="dummy-media-object" href="{{ url('fos_user_profile_show') }}">
-                        <h3>
-                            <span class="fa fa-user"></span>
-                            Mi Perfil
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-users"></span>
-                            Amigos
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-ticket"></span>
-                            Mis tickets
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-map-marker"></span>
-                            Mis eventos
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-info-circle"></span>
-                            Notificaciones
-                            <span class="badge">5</span>
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-bookmark"></span>
-                            Gestión
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="#">
-                        <h3>
-                            <span class="fa fa-dollar"></span>
-                            Finanzas
-                        </h3>
-                    </a>
-                    <a class="dummy-media-object" href="{{ url('fos_user_security_logout') }}">
-                        <h3 id="exit">
-                            <span class="fa fa-sign-out"></span>
-                            Salir
-                        </h3>
-                    </a>
-                </div>
-            </div>
-            <span class="morphsearch-close"></span>
+            {% if user %}
+                <h2 id="username">{{ user.profiledetails }}</h2>
+            {% else %}
+                <h2>You shouldn't be watching this.</h2>
+            {% endif %}
         </div>
-        <div class="overlay"></div>
+        <div class="dummy-column">
+            <a class="dummy-media-object" href="{{ url('fos_user_profile_show') }}">
+                <h3>
+                    <span class="fa fa-user"></span>
+                    Mi Perfil
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-users"></span>
+                    Amigos
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-ticket"></span>
+                    Mis tickets
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-map-marker"></span>
+                    Mis eventos
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-info-circle"></span>
+                    Notificaciones
+                    <span class="badge">5</span>
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-bookmark"></span>
+                    Gestión
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="#">
+                <h3>
+                    <span class="fa fa-dollar"></span>
+                    Finanzas
+                </h3>
+            </a>
+            <a class="dummy-media-object" href="{{ url('fos_user_security_logout') }}">
+                <h3 id="exit">
+                    <span class="fa fa-sign-out"></span>
+                    Salir
+                </h3>
+            </a>
+        </div>
+    </div>
+    <span class="morphsearch-close"></span>
+</div>
+<div class="overlay"></div>
 
-    {% block body %}
+{% block body %}
 
-        {% block footer %}
+    {% block footer %}
 
-            <div class="row social-blue">
-                <ul class="list-inline text-center">
-                    <li>
-                        <a href="#">
+        <div class="row social-blue">
+            <ul class="list-inline text-center">
+                <li>
+                    <a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a>
-                    </li>
-                    <li><a href="#">
+                    </a>
+                </li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a></li>
-                    <li><a href="#">
+                    </a></li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-google-plus fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a></li>
-                    <li><a href="#">
+                    </a></li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-pinterest fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a></li>
-                    <li><a href="#">
+                    </a></li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-youtube fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a></li>
-                    <li><a href="#">
+                    </a></li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-instagram fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a></li>
-                    <li><a href="#">
+                    </a></li>
+                <li><a href="#">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-flickr fa-stack-1x fa-inverse"></i>
                                 </span>
-                        </a>
-                    </li>
-                </ul>
-            </div>
+                    </a>
+                </li>
+            </ul>
+        </div>
 
-            <div class="row last">
-                <div class="col-md-12">
-                    <div class="col-md-3 col-md-push-9 text-uppercase text-center">
-                        <h3 class="visible-xs visible-sm">necesita ayuda</h3>
+        <div class="row last">
+            <div class="col-md-12">
+                <div class="col-md-3 col-md-push-9 text-uppercase text-center">
+                    <h3 class="visible-xs visible-sm">necesita ayuda</h3>
 
-                        <div class="hidden-xs">
-                            <div class="square"></div>
+                    <div class="hidden-xs">
+                        <div class="square"></div>
 
-                            <h4 class="visible-xs visible-sm">pague seguro pendiente</h4>
-                            <h4 class="visible-md visible-lg">pago seguro</h4>
-                            <img src="{{ asset('public/img/9/paypal.png') }}" alt="">
-                            <img src="{{ asset('public/img/9/cards.png') }}" alt="">
-                        </div>
+                        <h4 class="visible-xs visible-sm">pague seguro pendiente</h4>
+                        <h4 class="visible-md visible-lg">pago seguro</h4>
+                        <img src="{{ asset('public/img/9/paypal.png') }}" alt="">
+                        <img src="{{ asset('public/img/9/cards.png') }}" alt="">
                     </div>
-                    <div class="col-md-9 col-md-pull-3 words">
-                        <div class="col-md-4">
-                            <a href="#"><p>Quiénes somos</p></a>
-                            <a href="#"><p>Prensa</p></a>
-                            <a href="#"><p>Contacto</p></a>
-                            <a href="#"><p>Blog</p></a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="#"><p>Acerca de</p></a>
-                            <a href="#"><p>Política privacidad</p></a>
-                            <a href="#"><p>Aviso legal</p></a>
-                            <a href="#"><p>Condiciones uso</p></a>
-                        </div>
-                        <div class="col-md-4">
-                            <a href="#"><p>Atención cliente</p></a>
-                            <a href="#"><p>Chat online</p></a>
-                            <a href="#"><p>Preguntas frecuentes</p></a>
-                            <a href="#"><p>Sube un evento</p></a>
-                        </div>
+                </div>
+                <div class="col-md-9 col-md-pull-3 words">
+                    <div class="col-md-4">
+                        <a href="#"><p>Quiénes somos</p></a>
+                        <a href="#"><p>Prensa</p></a>
+                        <a href="#"><p>Contacto</p></a>
+                        <a href="#"><p>Blog</p></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><p>Acerca de</p></a>
+                        <a href="#"><p>Política privacidad</p></a>
+                        <a href="#"><p>Aviso legal</p></a>
+                        <a href="#"><p>Condiciones uso</p></a>
+                    </div>
+                    <div class="col-md-4">
+                        <a href="#"><p>Atención cliente</p></a>
+                        <a href="#"><p>Chat online</p></a>
+                        <a href="#"><p>Preguntas frecuentes</p></a>
+                        <a href="#"><p>Sube un evento</p></a>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <footer class="row">
-                <p class="text-center">
-                    <small>Copyright Belvi 2015 Todos los Derechos Reservados</small>
-                </p>
-            </footer>
+        <footer class="row">
+            <p class="text-center">
+                <small>Copyright Belvi 2015 Todos los Derechos Reservados</small>
+            </p>
+        </footer>
 
-            {#<div class="row social text-center">#}
-            {#<ul class="list-inline">#}
-            {#<li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-youtube"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>#}
-            {#<li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>#}
-            {#</ul>#}
-            {#</div>#}
+        {#<div class="row social text-center">#}
+        {#<ul class="list-inline">#}
+        {#<li><a href="#"><span class="fa fa-2x fa-twitter"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-facebook"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-google-plus"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-pinterest"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-youtube"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-instagram"></span></a></li>#}
+        {#<li><a href="#"><span class="fa fa-2x fa-flickr"></span></a></li>#}
+        {#</ul>#}
+        {#</div>#}
 
-            {#<footer class="row">#}
-            {#<div class="col-xs-12 visible-xs">#}
-            {#<div class="col-xs-4">#}
-            {#<a href="#" class="square fblue">#}
-            {#<span class="fa fa-2x fa-building"></span>#}
+        {#<footer class="row">#}
+        {#<div class="col-xs-12 visible-xs">#}
+        {#<div class="col-xs-4">#}
+        {#<a href="#" class="square fblue">#}
+        {#<span class="fa fa-2x fa-building"></span>#}
 
-            {#<p>¿Quiénes somos?</p>#}
-            {#</a>#}
-            {#<a href="#" class="square fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>#}
+        {#<p>¿Quiénes somos?</p>#}
+        {#</a>#}
+        {#<a href="#" class="square fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>#}
 
-            {#<p>Sube un evento</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flyellow"><span class="fa fa-2x fa-phone"></span>#}
+        {#<p>Sube un evento</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flyellow"><span class="fa fa-2x fa-phone"></span>#}
 
-            {#<p>Atención al cliente</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flgreen2"><span class="fa fa-2x fa-microphone"></span>#}
+        {#<p>Atención al cliente</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flgreen2"><span class="fa fa-2x fa-microphone"></span>#}
 
-            {#<p>Prensa</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="col-xs-4">#}
-            {#<a href="#" class="square fyellow"><span class="fa fa-2x fa-book"></span>#}
+        {#<p>Prensa</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#<div class="col-xs-4">#}
+        {#<a href="#" class="square fyellow"><span class="fa fa-2x fa-book"></span>#}
 
-            {#<p>Acerca de</p>#}
-            {#</a>#}
-            {#<a href="#" class="square forange"><span class="fa fa-2x fa-quote-right"></span>#}
+        {#<p>Acerca de</p>#}
+        {#</a>#}
+        {#<a href="#" class="square forange"><span class="fa fa-2x fa-quote-right"></span>#}
 
-            {#<p>Blog</p>#}
-            {#</a>#}
-            {#<a href="#" class="square florange"><span class="fa fa-2x fa-file-text-o"></span>#}
+        {#<p>Blog</p>#}
+        {#</a>#}
+        {#<a href="#" class="square florange"><span class="fa fa-2x fa-file-text-o"></span>#}
 
-            {#<p>Condiciones de uso</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>#}
+        {#<p>Condiciones de uso</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>#}
 
-            {#<p>Contacto</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="col-xs-4">#}
-            {#<a href="#" class="square fpurple"><span class="fa fa-2x  fa-legal"></span>#}
+        {#<p>Contacto</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#<div class="col-xs-4">#}
+        {#<a href="#" class="square fpurple"><span class="fa fa-2x  fa-legal"></span>#}
 
-            {#<p>Aviso legal</p>#}
-            {#</a>#}
-            {#<a href="#" class="square fred"><span class="fa  fa-2x fa-question-circle"></span>#}
+        {#<p>Aviso legal</p>#}
+        {#</a>#}
+        {#<a href="#" class="square fred"><span class="fa  fa-2x fa-question-circle"></span>#}
 
-            {#<p>Preguntas frecuentes</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>#}
+        {#<p>Preguntas frecuentes</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>#}
 
-            {#<p>Política de privacidad</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flpurple"><span class="fa fa-2x  fa-comment"></span>#}
+        {#<p>Política de privacidad</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flpurple"><span class="fa fa-2x  fa-comment"></span>#}
 
-            {#<p>Chat online</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#</div>#}
+        {#<p>Chat online</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#</div>#}
 
 
-            {#<div class="col-sm-12 hidden-xs">#}
-            {#<div class="col-sm-4">#}
-            {#<a href="#" class="square fblue">#}
-            {#<span class="fa fa-2x fa-building"></span>#}
+        {#<div class="col-sm-12 hidden-xs">#}
+        {#<div class="col-sm-4">#}
+        {#<a href="#" class="square fblue">#}
+        {#<span class="fa fa-2x fa-building"></span>#}
 
-            {#<p>¿Quiénes somos?</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>#}
+        {#<p>¿Quiénes somos?</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid fgreen"><span class="fa fa-2x fa-arrow-circle-up"></span>#}
 
-            {#<p>Sube un evento</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid flyellow"><span class="fa fa-2x fa-phone"></span>#}
+        {#<p>Sube un evento</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid flyellow"><span class="fa fa-2x fa-phone"></span>#}
 
-            {#<p>Atención al cliente</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="col-sm-4">#}
-            {#<div class="col-sm-6">#}
-            {#<a href="#" class="square mid flgreen2"><span class="fa fa-2x fa-microphone"></span>#}
+        {#<p>Atención al cliente</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#<div class="col-sm-4">#}
+        {#<div class="col-sm-6">#}
+        {#<a href="#" class="square mid flgreen2"><span class="fa fa-2x fa-microphone"></span>#}
 
-            {#<p>Prensa</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid fyellow"><span class="fa fa-2x fa-book"></span>#}
+        {#<p>Prensa</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid fyellow"><span class="fa fa-2x fa-book"></span>#}
 
-            {#<p>Acerca de</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid forange"><span class="fa fa-2x fa-quote-right"></span>#}
+        {#<p>Acerca de</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid forange"><span class="fa fa-2x fa-quote-right"></span>#}
 
-            {#<p>Blog</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="col-sm-6">#}
-            {#<a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>#}
+        {#<p>Blog</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#<div class="col-sm-6">#}
+        {#<a href="#" class="square flpink"><span class="fa fa-2x fa-envelope"></span>#}
 
-            {#<p>Contacto</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid fpurple"><span class="fa fa-2x  fa-legal"></span>#}
+        {#<p>Contacto</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid fpurple"><span class="fa fa-2x  fa-legal"></span>#}
 
-            {#<p>Aviso legal</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#<div class="col-sm-12">#}
-            {#<a href="#" class="square mid florange"><span class="fa fa-2x fa-file-text-o"></span>#}
+        {#<p>Aviso legal</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#<div class="col-sm-12">#}
+        {#<a href="#" class="square mid florange"><span class="fa fa-2x fa-file-text-o"></span>#}
 
-            {#<p>Condiciones de uso</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#</div>#}
-            {#<div class="col-sm-4">#}
-            {#<a href="#" class="square mid flpurple"><span class="fa fa-2x  fa-comment"></span>#}
+        {#<p>Condiciones de uso</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-sm-4">#}
+        {#<a href="#" class="square mid flpurple"><span class="fa fa-2x  fa-comment"></span>#}
 
-            {#<p>Chat online</p>#}
-            {#</a>#}
-            {#<a href="#" class="square mid fred"><span class="fa  fa-2x fa-question-circle"></span>#}
+        {#<p>Chat online</p>#}
+        {#</a>#}
+        {#<a href="#" class="square mid fred"><span class="fa  fa-2x fa-question-circle"></span>#}
 
-            {#<p>Preguntas frecuentes</p>#}
-            {#</a>#}
-            {#<a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>#}
+        {#<p>Preguntas frecuentes</p>#}
+        {#</a>#}
+        {#<a href="#" class="square flgreen"><span class="fa fa-2x  fa-file-text"></span>#}
 
-            {#<p>Política de privacidad</p>#}
-            {#</a>#}
-            {#</div>#}
-            {#</div>#}
-            {#<div class="col-xs-12 last">#}
-            {#<p>Copyright Maracaibo 2015 Todos los Derechos Reservados</p>#}
-            {#</div>#}
-            {#</footer>#}
-
-        {% endblock %}
-
+        {#<p>Política de privacidad</p>#}
+        {#</a>#}
+        {#</div>#}
+        {#</div>#}
+        {#<div class="col-xs-12 last">#}
+        {#<p>Copyright Maracaibo 2015 Todos los Derechos Reservados</p>#}
+        {#</div>#}
+        {#</footer>#}
 
     {% endblock %}
 
 
+{% endblock %}
 
-    {% block scripts %}
 
-        {% block default_scripts %}
-            <script src="{{ asset('public/js/jquery.js') }}"></script>
-            <script src="{{ asset('public/js/bootstrap.js') }}"></script>
-            <script src="{{ asset('public/plugins/appear/jquery.appear.js') }}"></script>
-            <script src="{{ asset('public/js/account.form.js') }}"></script>
-            <script src="{{ asset('public/plugins/perfect-scrollbar/perfect-scrollbar.jquery.js') }}"></script>
-            <script src="{{ asset('public/js/base.js') }}"></script>
-        {% endblock %}
 
-        {% block page_scripts %}
-        {% endblock %}
+{% block scripts %}
 
+    {% block default_scripts %}
+        <script src="{{ asset('public/js/jquery.js') }}"></script>
+        <script src="{{ asset('public/js/bootstrap.js') }}"></script>
+        <script src="{{ asset('public/plugins/appear/jquery.appear.js') }}"></script>
+        <script src="{{ asset('public/js/account.form.js') }}"></script>
+        <script src="{{ asset('public/plugins/perfect-scrollbar/perfect-scrollbar.jquery.js') }}"></script>
+        <script src="{{ asset('public/js/base.js') }}"></script>
     {% endblock %}
+
+    {% block page_scripts %}
+    {% endblock %}
+
+{% endblock %}
 </body>
 </html>

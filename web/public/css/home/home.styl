@@ -561,6 +561,9 @@ nav
 
 /**********************************************************/
 
+.form-container
+    margin-left 7.8%
+
 .modal-content
     border-radius 0
 
@@ -574,6 +577,15 @@ nav
         .brand
             padding 7%
             text-align center
+        .register-form
+            form
+                .form-group
+                    input[type="checkbox"]
+                        borderRadius(50%)
+                    .form-control
+                        borderRadius(0)
+                        border 1px solid modalFormGrey
+
     .modal-footer
         padding 4%
         background modalGrey
@@ -612,9 +624,9 @@ nav
         background-color btnIn
         border 1px btnIn solid
 
-
 .social-button
     border-radius 0
     width 100%
+
 
 @import media

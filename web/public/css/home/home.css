@@ -811,6 +811,9 @@ nav .list-wrapper {
   font-weight: bold;
 }
 /**********************************************************/
+.form-container {
+  margin-left: 7.8%;
+}
 .modal-content {
   border-radius: 0;
 }
@@ -822,6 +825,17 @@ nav .list-wrapper {
 .modal-content .modal-body .brand {
   padding: 7%;
   text-align: center;
+}
+.modal-content .modal-body .register-form form .form-group input[type="checkbox"] {
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+}
+.modal-content .modal-body .register-form form .form-group .form-control {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+  border: 1px solid #a4a9ac;
 }
 .modal-content .modal-footer {
   padding: 4%;
