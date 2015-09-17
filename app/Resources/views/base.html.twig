@@ -96,7 +96,8 @@
                     <div class="col-xs-10 col-col-sm-10 col-md-10 col-lg-10 form-container">
                         <form action="{{ path('fos_user_security_check') }}" method="post">
                             <div class="form-group">
-                                <input type="text" name="_username" id="user" placeholder="Usuario" class="form-control">
+                                <input type="text" name="_username" id="user" placeholder="Usuario"
+                                       class="form-control">
                             </div>
                             <div class="form-group">
                                 <input type="text" name="email" id="email" placeholder="Correo electrónico"
@@ -106,7 +107,8 @@
                             <div class="form-group"><input type="password" name="password" id="password"
                                                            placeholder="Contraseña" class="form-control"></div>
                             <div class="form-group"><input type="password" name="password2" id="password2"
-                                                           placeholder="Confirmar Contraseña" class="form-control"></div>
+                                                           placeholder="Confirmar Contraseña" class="form-control">
+                            </div>
 
                             <div class="form-group">
                                 <label>Ingresa tu localidad en el mapa</label>
@@ -117,33 +119,65 @@
                                 <label for="terms">Acepto las <a href="#">Condiciones de uso.</a></label>
                             </div>
                             <div class="form-group">
-                                <input type="submit" value="Registro">
-                                <button type="button" class="back">Atrás</button>
+                                <input type="submit" class="btn btn-lg btn-primary btn-block" value="Registro">
+                                <button type="button" class="btn btn-lg btn-success btn-block back">Atrás</button>
                             </div>
                         </form>
                     </div>
                 </div>
 
                 <div class="row login-form">
-                    <form action="{{ path("fos_user_security_check") }}" method="post">
-                        <div>
-                            <label for="username">{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}</label>
-                            <input type="text" id="username" name="_username" required="required"/>
+                    <div class="col-xs-10 col-col-sm-10 col-md-10 col-lg-10 form-container">
+                        <form action="{{ path("fos_user_security_check") }}" method="post">
+                            <div class="form-group">
+                                <input class="form-control" type="text" id="username" name="_username"
+                                       placeholder="{{ 'security.login.username'|trans({}, 'FOSUserBundle') }}"
+                                       required="required"/>
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" type="password" id="password" name="_password"
+                                       placeholder="{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}"
+                                       required="required"/>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="remember_div">
+                                <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
+                                <label for="remember_me">Recuérdeme</label>
+                            </div>
+                            <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6" id="forgot_div">
+                                <a href="#">¿Olvidó su contraseña?</a>
+                            </div>
+                            <div class="form-group">
+                                <input class="btn btn-lg btn-primary btn-block" type="submit" id="_submit" name="_submit"
+                                       value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
+                            </div>
+                        </form>
+                        <hr/>
+
+                        <div class="row social-login">
+                            <div class="form-container">
+                                <h3>Acceda con:</h3>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="#" class="btn btn-lg btn-block btn-fb">
+                                        <i class="fa fa-facebook"></i>
+                                        <span> Facebook</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="#" class="btn btn-lg btn-block btn-tw">
+                                        <i class="fa fa-twitter"></i>
+                                        <span> Twitter</span>
+                                    </a>
+                                </div>
+                                <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                                    <a href="#" class="btn btn-lg btn-block btn-gp">
+                                        <i class="fa fa-google-plus"></i>
+                                        <span> Google+</span>
+                                    </a>
+                                </div>
+                            </div>
                         </div>
-                        <div>
-                            <label for="password">{{ 'security.login.password'|trans({}, 'FOSUserBundle') }}</label>
-                            <input type="password" id="password" name="_password" required="required"/>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="remember_me" name="_remember_me" value="on"/>
-                            <label for="remember_me">{{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}</label>
-                        </div>
-                        <div>
-                            <input type="submit" id="_submit" name="_submit"
-                                   value="{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}"/>
-                            <button type="button" class="back">Atrás</button>
-                        </div>
-                    </form>
+
+                    </div>
                 </div>
             </div>
             <div class="modal-footer">

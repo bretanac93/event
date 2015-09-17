@@ -560,6 +560,24 @@ nav
 
 
 /**********************************************************/
+.btn
+    borderRadius(0)
+.btn-fb
+    background-color: btnFb
+    border 1px solid btnFb
+    color white
+    &:hover
+        background-color btnFb
+.btn-tw
+    background-color btnTw
+    border 1px solid btnTw
+    color white
+.btn-gp
+    background-color btnGp
+    border 1px solid btnGp
+    color white
+    margin-left: 50%
+    margin-top 3%
 
 .form-container
     margin-left 7.8%
@@ -572,19 +590,34 @@ nav
         text-align center
         color white
 
-
     .modal-body
         .brand
             padding 7%
             text-align center
+        .login-form
+            .form-container
+                form
+                    #remember_div
+                        text-align left
+                    #forgot_div
+                        text-align right
+
+        .login-form
         .register-form
+            font-size 14px
+            color modalFormGrey
             form
                 .form-group
-                    input[type="checkbox"]
-                        borderRadius(50%)
+                    img
+                        height 172px
+
+                    .btn
+                        borderRadius(0)
                     .form-control
                         borderRadius(0)
                         border 1px solid modalFormGrey
+
+
 
     .modal-footer
         padding 4%

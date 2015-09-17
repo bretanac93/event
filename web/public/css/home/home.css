@@ -811,6 +811,31 @@ nav .list-wrapper {
   font-weight: bold;
 }
 /**********************************************************/
+.btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.btn-fb {
+  background-color: #215bc2;
+  border: 1px solid #215bc2;
+  color: #fff;
+}
+.btn-fb:hover {
+  background-color: #215bc2;
+}
+.btn-tw {
+  background-color: #00bcf2;
+  border: 1px solid #00bcf2;
+  color: #fff;
+}
+.btn-gp {
+  background-color: #ed1c24;
+  border: 1px solid #ed1c24;
+  color: #fff;
+  margin-left: 50%;
+  margin-top: 3%;
+}
 .form-container {
   margin-left: 7.8%;
 }
@@ -826,11 +851,28 @@ nav .list-wrapper {
   padding: 7%;
   text-align: center;
 }
-.modal-content .modal-body .register-form form .form-group input[type="checkbox"] {
-  -webkit-border-radius: 50%;
-  -moz-border-radius: 50%;
-  border-radius: 50%;
+.modal-content .modal-body .login-form .form-container form #remember_div {
+  text-align: left;
 }
+.modal-content .modal-body .login-form .form-container form #forgot_div {
+  text-align: right;
+}
+.modal-content .modal-body .login-form,
+.modal-content .modal-body .register-form {
+  font-size: 14px;
+  color: #a4a9ac;
+}
+.modal-content .modal-body .login-form form .form-group img,
+.modal-content .modal-body .register-form form .form-group img {
+  height: 172px;
+}
+.modal-content .modal-body .login-form form .form-group .btn,
+.modal-content .modal-body .register-form form .form-group .btn {
+  -webkit-border-radius: 0;
+  -moz-border-radius: 0;
+  border-radius: 0;
+}
+.modal-content .modal-body .login-form form .form-group .form-control,
 .modal-content .modal-body .register-form form .form-group .form-control {
   -webkit-border-radius: 0;
   -moz-border-radius: 0;
