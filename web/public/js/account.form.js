@@ -5,9 +5,6 @@ var socialButtons = $('.social-buttons'),
     registerFooter = $('.register-footer'),
     loginFooter = $('.login-footer');
 
-function showInit() {
-
-}
 
 $('.back').click(function (e) {
     e.preventDefault();
@@ -19,15 +16,15 @@ $('.back').click(function (e) {
     loginFooter.show();
 });
 
-$('a[href=#rlogin-modal]').click(function (e) {
-    e.preventDefault();
-    socialButtons.show();
-    brand.show();
-    registerForm.hide();
-    loginForm.hide();
-    registerFooter.hide();
-    loginFooter.show();
-});
+//$('a[href=#rlogin-modal]').click(function (e) {
+//    e.preventDefault();
+//    socialButtons.show();
+//    brand.show();
+//    registerForm.hide();
+//    loginForm.hide();
+//    registerFooter.hide();
+//    loginFooter.show();
+//});
 $('.register-show').click(function (e) {
     e.preventDefault();
     brand.hide();
