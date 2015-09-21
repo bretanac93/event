@@ -44,6 +44,10 @@ function removeClass(selector, class_to_remove) {
         selector.removeClass(class_to_remove);
 }
 
+$('a[href="#rlogin-modal"]').click(function (e) {
+    showInit();
+});
+
 $('.back').click(function (e) {
     e.preventDefault();
     showInit();
@@ -52,12 +56,6 @@ $('.back').click(function (e) {
 $('.register-show').click(function (e) {
     e.preventDefault();
     showRegister();
-    //brand.hide();
-    //socialButtons.hide();
-    //registerForm.show();
-    //loginForm.hide();
-    //registerFooter.hide();
-    //loginFooter.show();
 });
 $('.login-show').click(function (e) {
     e.preventDefault();
