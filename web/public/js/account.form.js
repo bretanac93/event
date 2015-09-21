@@ -8,18 +8,31 @@ var socialButtons = $('.social-buttons'),
 var c = 'hidden-xs hidden-sm';
 
 function showInit() {
-    $('.')
+    removeClass(socialButtons, c);
+    removeClass(brand, c);
+    removeClass(loginFooter, c);
+    addClass(registerForm, c);
+    addClass(loginForm, c);
+    addClass(registerFooter, c);
 }
 
-$('.back').click(function (e) {
-    e.preventDefault();
-    socialButtons.show();
-    brand.show();
-    registerForm.hide();
-    loginForm.hide();
-    registerFooter.hide();
-    loginFooter.show();
-});
+function showRegister() {
+    removeClass(registerForm, c);
+    removeClass(loginFooter, c);
+    addClass(loginForm, c);
+    addClass(brand, c);
+    addClass(socialButtons, c);
+    addClass(registerFooter, c);
+}
+
+function showLogin() {
+    addClass(registerForm, c);
+    addClass(loginFooter, c);
+    removeClass(loginForm, c);
+    addClass(brand, c);
+    addClass(socialButtons, c);
+    removeClass(registerFooter, c);
+}
 
 function addClass(selector, class_to_add) {
     if (!selector.hasClass(class_to_add))
@@ -31,33 +44,24 @@ function removeClass(selector, class_to_remove) {
         selector.removeClass(class_to_remove);
 }
 
-//$('a[href=#rlogin-modal]').click(function (e) {
-//    e.preventDefault();
-//    socialButtons.show();
-//    brand.show();
-//    registerForm.hide();
-//    loginForm.hide();
-//    registerFooter.hide();
-//    loginFooter.show();
-//});
+$('.back').click(function (e) {
+    e.preventDefault();
+    showInit();
+});
 
 $('.register-show').click(function (e) {
     e.preventDefault();
-    brand.hide();
-    socialButtons.hide();
-    registerForm.show();
-    loginForm.hide();
-    registerFooter.hide();
-    loginFooter.show();
+    showRegister();
+    //brand.hide();
+    //socialButtons.hide();
+    //registerForm.show();
+    //loginForm.hide();
+    //registerFooter.hide();
+    //loginFooter.show();
 });
 $('.login-show').click(function (e) {
     e.preventDefault();
-    brand.hide();
-    socialButtons.hide();
-    registerForm.hide();
-    loginForm.removeClass(c);
-    loginFooter.hide();
-    registerFooter.show();
+    showLogin()
 });
 $('#init-show').click(function (e) {
     e.preventDefault();
@@ -69,24 +73,15 @@ $('#init-show').click(function (e) {
 
 $('#init-show-login').click(function (e) {
     e.preventDefault();
-    brand.show();
-    socialButtons.show();
-    loginForm.hide();
-    registerForm.hide();
+    showLogin()
 });
 
 $('.register').click(function (e) {
     e.preventDefault();
-    brand.hide();
-    socialButtons.hide();
-    loginForm.hide();
-    registerForm.show();
+    showRegister()
 });
 
 $('#login').click(function (e) {
     e.preventDefault();
-    brand.hide();
-    socialButtons.hide();
-    loginForm.show();
-    registerForm.hide();
+    showLogin()
 });
