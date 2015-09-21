@@ -196,7 +196,9 @@
         </div>
     </div>
 </div>
-<div id="morphsearch" class="morphsearch">
+
+{% if user %}
+    <div id="morphsearch" class="morphsearch">
     <div class="morphsearch-content">
         <div class="dummy-column text-center">
             {% if not user %}
@@ -266,6 +268,7 @@
     </div>
     <span class="morphsearch-close"></span>
 </div>
+{% endif %}
 <div class="overlay"></div>
 
 {% block body %}

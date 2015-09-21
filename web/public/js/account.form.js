@@ -59,14 +59,11 @@ $('.register-show').click(function (e) {
 });
 $('.login-show').click(function (e) {
     e.preventDefault();
-    showLogin()
+    showLogin();
 });
 $('#init-show').click(function (e) {
     e.preventDefault();
-    brand.show();
-    socialButtons.show();
-    loginForm.hide();
-    registerForm.hide();
+    showInit();
 });
 
 $('#init-show-login').click(function (e) {
@@ -76,10 +73,10 @@ $('#init-show-login').click(function (e) {
 
 $('.register').click(function (e) {
     e.preventDefault();
-    showRegister()
+    showRegister();
 });
 
 $('#login').click(function (e) {
     e.preventDefault();
-    showLogin()
+    showLogin();
 });
