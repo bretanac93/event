@@ -833,7 +833,6 @@ nav .list-wrapper {
   background-color: #ed1c24;
   border: 1px solid #ed1c24;
   color: #fff;
-  margin-left: 50%;
   margin-top: 3%;
 }
 .form-container {
@@ -888,6 +887,10 @@ nav .list-wrapper {
   text-align: center;
   font-size: 1.1em;
 }
+.social-buttons {
+  text-align: center;
+  padding: 0;
+}
 .social-buttons .text {
   margin: 10%;
   text-align: center;
@@ -912,13 +915,31 @@ nav .list-wrapper {
   margin-bottom: 1.3%;
 }
 .social-buttons .in {
-  margin-top: 2%;
+  margin-top: 0;
   background-color: #424842;
   border: 1px #424842 solid;
 }
 .social-button {
   border-radius: 0;
   width: 100%;
+}
+@media screen and (min-width: 992px) {
+  .modal-dialog {
+    width: 73.3333%;
+  }
+  .btn-tw {
+    margin-top: 3%;
+  }
+}
+@media screen and (min-width: 1200px) {
+  .btn-tw {
+    margin-top: 0;
+  }
+}
+@media screen and (min-width: 360px) and (max-width: 992px) {
+  .btn-tw {
+    margin-top: 3%;
+  }
 }
 @media screen and (max-width: 1200px) {
   .done > .list-inline {

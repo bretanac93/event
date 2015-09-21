@@ -83,7 +83,7 @@
                     <h3>Logotipo</h3>
                 </div>
                 <div class="row">
-                    <div class="row social-buttons hidden-lg hidden-md">
+                    <div class="col-xs-12 col-sm-12 social-buttons hidden-md hidden-lg">
                         <a class="btn btn-info social-button gplus" href="#"><span
                                     class="icon fa fa-google-plus"></span><span
                                     class="text">Registrate con <b>Google+</b></span></a>
@@ -94,7 +94,7 @@
                         <a class="btn btn-info social-button in register-show" href="#"><span
                                     class="text">Registrarse</span></a>
                     </div>
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 register-form">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 register-form hidden-xs hidden-sm">
                         <div class="col-xs-10 col-col-sm-10 col-md-10 col-lg-10 form-container">
                             <form action="{{ path('fos_user_security_check') }}" method="post">
                                 <div class="form-group">
@@ -123,13 +123,13 @@
                                 </div>
                                 <div class="form-group">
                                     <input type="submit" class="btn btn-lg btn-primary btn-block" value="Registro">
-                                    <button type="button" class="btn btn-lg btn-success btn-block back">Atrás</button>
+                                    <button type="button" class="btn btn-lg btn-success btn-block back hidden-md hidden-lg">Atrás</button>
                                 </div>
                             </form>
                         </div>
                     </div>
 
-                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 login-form">
+                    <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6 login-form hidden-xs hidden-sm">
                         <div class="col-xs-10 col-col-sm-10 col-md-10 col-lg-10 form-container">
                             <form action="{{ path("fos_user_security_check") }}" method="post">
                                 <div class="form-group">
@@ -161,20 +161,20 @@
                                 <div class="form-container">
                                     <h3>Acceda con:</h3>
 
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        <a href="#" class="btn btn-lg btn-block btn-fb">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                        <a href="#" class="btn btn-lg btn-block btn-fb social-btn">
                                             <i class="fa fa-facebook"></i>
                                             <span> Facebook</span>
                                         </a>
                                     </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        <a href="#" class="btn btn-lg btn-block btn-tw">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-6">
+                                        <a href="#" class="btn btn-lg btn-block btn-tw social-btn">
                                             <i class="fa fa-twitter"></i>
                                             <span> Twitter</span>
                                         </a>
                                     </div>
-                                    <div class="col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                                        <a href="#" class="btn btn-lg btn-block btn-gp">
+                                    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                                        <a href="#" class="btn btn-lg btn-block btn-gp social-btn">
                                             <i class="fa fa-google-plus"></i>
                                             <span> Google+</span>
                                         </a>
@@ -189,7 +189,7 @@
                 <div class="footer-option login-footer">
                     ¿Ya tienes cuenta? <a href="#" class="login-show">ENTRAR</a>
                 </div>
-                <div class="footer-option register-footer">
+                <div class="footer-option register-footer hidden-xs hidden-sm">
                     ¿Eres nuevo? <a href="#" class="register-show">REGISTRATE</a>
                 </div>
             </div>

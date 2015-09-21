@@ -5,6 +5,11 @@ var socialButtons = $('.social-buttons'),
     registerFooter = $('.register-footer'),
     loginFooter = $('.login-footer');
 
+var c = 'hidden-xs hidden-sm';
+
+function showInit() {
+    $('.')
+}
 
 $('.back').click(function (e) {
     e.preventDefault();
@@ -16,6 +21,16 @@ $('.back').click(function (e) {
     loginFooter.show();
 });
 
+function addClass(selector, class_to_add) {
+    if (!selector.hasClass(class_to_add))
+        selector.addClass(class_to_add);
+}
+
+function removeClass(selector, class_to_remove) {
+    if (selector.hasClass(class_to_remove))
+        selector.removeClass(class_to_remove);
+}
+
 //$('a[href=#rlogin-modal]').click(function (e) {
 //    e.preventDefault();
 //    socialButtons.show();
@@ -25,6 +40,7 @@ $('.back').click(function (e) {
 //    registerFooter.hide();
 //    loginFooter.show();
 //});
+
 $('.register-show').click(function (e) {
     e.preventDefault();
     brand.hide();
@@ -39,7 +55,7 @@ $('.login-show').click(function (e) {
     brand.hide();
     socialButtons.hide();
     registerForm.hide();
-    loginForm.show();
+    loginForm.removeClass(c);
     loginFooter.hide();
     registerFooter.show();
 });
